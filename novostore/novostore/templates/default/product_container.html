@@ -1,0 +1,47 @@
+{% load mptt_tags %}
+  <!--Products container-->
+  <div class="container nsized">
+    <div class="span2" style="padding-left:0;margin-left:0;">
+    		<ul class="nav nav nav-list" style="font-size:13px;">
+	          {% recursetree categories %}
+	            {% if node.is_leaf_node %}
+	            <li>
+	              <a href="/{{node.slug}}/"><b style="color:#000">{{ node.name }}</b></a>
+	            </li>
+	            {% else %}
+	            <li>
+	              <a href="/{{node.slug}}/">
+	                <b style="color:#000">{{ node.name }}</b>
+	              </a>
+	              <ul class="nav nav nav-list">
+	              {%for ch in node.get_children.all %}
+	              <li><a href="/{{ch.slug}}/">{{ ch.name }}</a></li>
+	              {% endfor %}
+	              </ul>
+	            </li>
+	            {% endif %}
+	          {% endrecursetree %}
+	        </ul>
+
+    </div>
+    <div class="span9">
+	<ul class="thumbnails">
+	  {% for p in products %}
+	  <li class="span3 bcgwhite">
+	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
+	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
+	      <div class="block-note block-note-green">
+	      {{p.price}}{{p.currency.shortname}}
+	      </div>
+	      <div class="mtopm20 padsizes10 padbot10">
+	      <h5>
+	      {{ p.name }}
+	      </h5>
+	      </div>
+	    </div>
+	  </li>
+	  {% endfor %}
+	</ul>      
+    </div>
+    </div>
+  <!--End of products container-->

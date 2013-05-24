@@ -1,0 +1,49 @@
+{% load mptt_tags %}
+{% load i18n %}
+{% include "default/doctype.html" %}
+<html>
+  <head>
+  {% include "default/basic_head.html" %}
+  {% block additional_head %}{% endblock %}
+  </head>
+  <body>
+    <div id="wrap">
+    {% include "default/nav_bar_top.html" %}
+    {% block wrapper %}
+    {% include "default/categories_breadcrumb.html" with added_word=added_word %} 
+    <div class="container">
+    <p>
+    {% ifequal delivery_address_count 0 %}
+    {% trans "Please enter your delivery address" %}
+    {% else %}
+    {% trans "Confirm your delivery address" %}
+    {% endifequal %}
+    </p>
+    <form action="{% url 'commerce.views.checkout_confirm_address' %}" method="post" class="span4 form-horizontal">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="control-group" {% if field.is_hidden %}style="display:none"{% endif %}>
+            <label class="control-label" for="input01">{{ field.label_tag }}</label>
+            <div class="controls">
+              {{ field }}
+            </div><!-- controls-->
+            {% if field.errors %}
+            <span class="label label-important errored_register">{{ field.errors }}</span>
+            {% endif %}
+         </div><!-- control-group -->
+    {% endfor %}
+    <div class="control-group">
+      <div class="controls">
+        <input type="submit" class="btn btn-brand-ebay" value="{% trans "Confirm" %}">
+      </div>
+    </div>
+    </form>
+    
+    </div>
+    {% endblock %}
+    {% include "default/footer.html" %}
+    </div>
+    {% include "default/scripts.html" %}
+    {% block additional_scripts %}{% endblock %}
+  </body>
+</html>

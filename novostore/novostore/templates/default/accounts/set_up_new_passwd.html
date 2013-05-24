@@ -1,0 +1,25 @@
+{% extends "default/index.html" %}
+{% load i18n %}
+{% block wrapper %}
+<div class="container">
+<br><br>
+{% ifnotequal phase 'ok' %}
+<h4 id="section3"> {% trans "Set up new password" %} </h4>
+{% endifnotequal %}
+</div> <!-- /container -->
+<div class="contentBG"> 
+<div class="container">
+{% ifnotequal phase 'ok' %}
+<form method="post" action="{% url 'accounts.views.change_password' %}" class="form well" style="margin-bottom:0px;">
+{% csrf_token %}
+<div>
+<center>
+<input name="password" type="password" class="input" placeholder="{% trans 'Enter New Password' %}">
+<button type="submit" style="margin-top:-8px;" class="btn btn-primary">{% trans "Change password" %}</button>
+</center>
+</form>
+{% else %}
+{% trans "Congratulations! Your password was changed successfully." %}
+{% endifnotequal %}
+</div>
+{% endblock %}

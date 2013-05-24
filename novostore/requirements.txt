@@ -1,0 +1,8 @@
+Django==1.5.1
+MySQL-python
+south
+django-photologue
+django-suit
+django-extensions
+django-smart-selects
+django-simple-captcha

@@ -1,0 +1,64 @@
+{% load mptt_tags %}
+{% load i18n %}
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner blbck">
+      <div class="nsized">
+	      <a class="brand" style="text-shadow: rgb(255, 255, 255) 0px 1px 0px;font-size:16px;text-transform:uppercase;font-weight:normal;color:#000;font-family:FuturaPTDemi-Reg, sans-serif;" href="/">{{ request.shop.name }}</a>
+	      <ul class="nav pull-right">
+	      <!--
+	      <li>
+	      <div id="cart_nitems_a" class="btn btn-small btn-brand-skype" onclick='window.location.href="{% url 'commerce.views.cart' %}"'>
+	      <span id="cart_nitems">
+	      {% if cart.number_of_items.quantity__sum > 0 %} 
+	      {{ cart.number_of_items.quantity__sum }}
+	      {% else %} 
+	      {% trans "Currently there no" %} 
+	      {% endif %}
+	      {% if cart.number_of_items.quantity__sum == 1 %} 
+	      {% trans "item in" %}
+	      {% else %}
+	      {% trans "items in" %}
+	      {% endif %}
+	      </span>
+	      {% trans "My cart" %}	      
+	      </div>
+	      </li>
+	      -->
+	      
+	      {% if user.is_authenticated %}
+	      <li><a href="#">{{ user }}</a></li>
+	      <li><a href="{% url 'accounts.views.logout' %}">{% trans "Log out" %}</a></li>
+	      {% if user.is_staff %}
+	      <li><a href="/admin/">{% trans "Admin panel" %}</a></li>
+	      {% endif %}
+	      
+	      {% else %}
+	      <li><a class="navlia" href="{% url 'accounts.views.login' %}">{% trans "Sign in" %}</a></li>
+	      <li><a href="{% url 'accounts.views.register' %}">{% trans "New customer" %}</a></li>
+	      {% endif %}
+	      </ul>
+      </div>
+	         <ul class="nav nav-pills">
+	          {% recursetree categories %}
+	            {% if node.is_leaf_node %}
+	            <li>
+	              <a href="/{{node.slug}}/"><b style="color:#000">{{ node.name }}</b></a>
+	            </li>
+	            {% else %}
+	            <li class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
+	              <a slug="/{{node.slug}}/" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
+	                <b style="color:#000">{{ node.name }}</b>
+	              </a>
+	              <ul class="dropdown-menu" dropdown_node_id="{{node.id}}" id="dropdown_node_menu_{{node.id}}">
+	              {%for ch in node.get_children.all %}
+	              <li><a href="/{{ch.slug}}/">{{ ch.name }}</a></li>
+	              {% endfor %}
+	              </ul>
+	            </li>
+	            {% endif %}
+	          {% endrecursetree %}
+	          </ul>
+    </div>
+    </div>
+    </div>

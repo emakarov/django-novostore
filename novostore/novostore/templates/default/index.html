@@ -1,0 +1,23 @@
+{% load mptt_tags %}
+{% load i18n %}
+{% include "default/doctype.html" %}
+<html>
+  <head>
+  {% include "default/basic_head.html" %}
+  {% block additional_head %}{% endblock %}
+  </head>
+  <body>
+    <div id="wrap">
+    {% include "default/nav_bar_top.html" %}
+    {% block wrapper %}
+    {% if show_breadcrumb %}
+    {% include "default/categories_breadcrumb.html" with child_category=category %} 
+    {% endif %}
+    {% include "default/product_container.html" %}
+    {% endblock %}
+    {% include "default/footer.html" %}
+    </div>
+    {% include "default/scripts.html" %}
+    {% block additional_scripts %}{% endblock %}
+  </body>
+</html>

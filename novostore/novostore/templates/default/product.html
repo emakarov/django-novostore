@@ -1,0 +1,16 @@
+{% load mptt_tags %}
+{% include "default/doctype.html" %}
+<html>
+  <head>
+  {% include "default/basic_head.html" %}
+  </head>
+  <body>
+    <div id="wrap">
+    {% include "default/nav_bar_top.html" %}
+    {% include "default/categories_breadcrumb.html" with child_category=child_category product=product %} 
+    {% include "default/product_single.html" %}
+    {% include "default/footer.html" %}
+    </div>
+    {% include "default/scripts.html" %}
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{% load i18n %}
+<!--
+<div id="footer">
+      <div class="container">
+        <p class="muted credit">
+        Our address is Nizhny Novgorod
+        &nbsp;
+        <a href="#">+79200747100</a>
+        </p>
+      </div>
+</div>
+<div style="padding:20px 0;">
+<center><span>©</span>TeaCoffeeShop 2013</center>
+</div>
+-->
+<div id="bottomnavbar" class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+      <li><a href="#">+79200747100</a></li>
+      </ul>
+      <ul class="nav pull-right" style="margin-right:20px;">
+        <li style="margin-right:20px;">
+        <div data-color="coloredpopover" data-toggle="popover" data-placement="top" data-content="{% trans "Item added to cart" %}" style="padding-top:10px;margin-top:0px;font-weight:bold;" id="cart_nitems_a" onclick='window.location.href="{% url 'commerce.views.cart' %}"'>
+           <i class="icon-shopping-cart"></i>
+          <span id="cart_nitems">
+	      {% if cart.number_of_items.quantity__sum > 0 %} 
+	      {{ cart.number_of_items.quantity__sum }}
+	      {% else %} 
+	      {% trans "Currently there no" %} 
+	      {% endif %}
+	      {% if cart.number_of_items.quantity__sum == 1 %} 
+	      {% trans "item in" %}
+	      {% else %}
+	      {% trans "items in" %}
+	      {% endif %}
+	  </span>
+	  {% trans "My cart" %}	      
+	</div>
+	</li>
+	{% ifnotequal hidecheck 1 %}
+	<li>
+	<div style="margin-top: 6px;width:150px;" class="btn btn-brand-skype" onclick='window.location.href="{% url 'commerce.views.cart' %}"'>
+	  <span>{% trans "Checkout" %}</span>
+	</div>
+	</li>
+	{% endifnotequal %}
+      </ul>
+    </div>
+  </div>
+</div>

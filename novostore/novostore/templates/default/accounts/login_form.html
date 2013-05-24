@@ -1,0 +1,59 @@
+{% load i18n %}
+<div class="span5">
+
+<h5>{% trans "Have an account on our site? Please sign in below." %}</h5>
+<p>{% trans "Enter your email or nickname and password to sign in." %}</p>
+<br>
+<form action="/accounts/login/" method=POST class="span4 form-horizontal">
+{% csrf_token %}
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">{% trans "Email" %}</label>
+    <div class="controls">
+      <input name="email" type="text" id="inputEmail" placeholder="Email or login">
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">{% trans "Password" %}</label>
+    <div class="controls">
+      <input name="password" type="password" id="inputPassword" placeholder="Password">
+    </div>
+  </div>
+      <input name="next" type="hidden" value="{{next}}">
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-brand-ebay">{% trans "Sign in" %}</button>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <a id="fp" href="#">{% trans "Forgot Your Password?" %}</a>
+    </div>
+  </div>
+</form>
+<center id="restorediv" style="display:none;">
+   <input id="email_restore" name="password" type="text" class="input" placeholder="{% trans "Enter your email" %}">
+   <div onclick="sendlostlogin()" style="margin-top: -10px;" class="btn btn-primary">{% trans "Restore a password" %}</div>
+   <div style="display:none;" id="restorepasswd">{% trans "Please check your email to proceed password restore." %}</div>
+</center>
+
+<a class="btn btn-primary" href="{% url 'socialauth_begin' 'google' %}">
+{% trans "Login with Google" %}
+</a>
+
+
+</div>
+<div class="span2">
+</div>
+
+<div class="span5">
+{% include "default/accounts/benefits_text.html" %}
+<br>
+<a href="/accounts/register/" class="btn btn-brand-ebay">{% trans "Create an account" %}</a>
+<br><br><br>
+{% blocktrans %}
+<small>
+You don't need a credit card to create an account.<br> 
+Payment information is not required until you make a purchase.
+</small>
+{% endblocktrans %}
+</div>

@@ -1,0 +1,29 @@
+{% load i18n %}
+  <div class="container nsized" style="height: 30px;">
+    <div>
+    <ul class="breadcrumb">
+    {% block breadcrumb %}
+    <li><a href="/">{% trans "Home" %}</a></li>
+    {% if child_category %}
+    {% if child_category.parent %}
+    <i class="icon-chevron-right icon-white"></i>
+    <li><a href="/{{child_category.parent.slug}}">{{ child_category.parent.name }}</a></li>
+    {% endif %}
+    <i class="icon-chevron-right icon-white"></i>
+    <li><a href="/{{child_category.slug}}">{{ child_category.name }}</a></li>
+    {% endif %}
+    {% if product %}
+    <i class="icon-chevron-right icon-white"></i>
+    <li>{{ product.name }}</li>
+    {% endif %}
+    {% if added_word %}
+    <i class="icon-chevron-right icon-white"></i>
+    <li>{{ added_word }}</li>
+    {% endif %}
+    <li class="pull-right">
+    	<b>{% trans "Call us" %} +79200747100 </b>
+    </li>
+    {% endblock %}
+    </ul>
+    </div>
+  </div>

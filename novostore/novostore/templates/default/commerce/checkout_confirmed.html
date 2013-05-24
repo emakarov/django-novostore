@@ -1,0 +1,23 @@
+{% load mptt_tags %}
+{% load i18n %}
+{% include "default/doctype.html" %}
+<html>
+  <head>
+  {% include "default/basic_head.html" %}
+  {% block additional_head %}{% endblock %}
+  </head>
+  <body>
+    <div id="wrap">
+    {% include "default/nav_bar_top.html" %}
+    {% block wrapper %}
+    {% include "default/categories_breadcrumb.html" with added_word=added_word %} 
+    <div class="container">
+    <p>{% trans "Address confirmed" %}</p>
+    </div>
+    {% endblock %}
+    {% include "default/footer.html" %}
+    </div>
+    {% include "default/scripts.html" %}
+    {% block additional_scripts %}{% endblock %}
+  </body>
+</html>
