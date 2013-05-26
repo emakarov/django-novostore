@@ -1,0 +1,688 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 django-novostore Evgeni Makarov
+# This file is distributed under the same license as the django-novostore package.
+# Evgeni Makarov <evgeni.makarov@gmail.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-26 16:17-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: accounts/models.py:19
+msgid "Subscription"
+msgstr "Подписка"
+
+#: accounts/models.py:19
+msgid "Receive notifications by email?"
+msgstr "Получать уведомления по email?"
+
+#: accounts/models.py:20
+msgid "Url To photo"
+msgstr "URL фотографии"
+
+#: accounts/models.py:21
+msgid "Birthday"
+msgstr "День рождения"
+
+#: accounts/models.py:22
+msgid "Male"
+msgstr "Мужчина"
+
+#: accounts/models.py:22
+msgid "Female"
+msgstr "Женщина"
+
+#: accounts/models.py:23
+msgid "Confirmation Key"
+msgstr "Код подтверждения"
+
+#: accounts/models.py:23
+msgid "Key for password restore"
+msgstr "Ключ восстановления пароля"
+
+#: accounts/models.py:24
+msgid "Url To small photo"
+msgstr "URL мини фотографии"
+
+#: accounts/models.py:25
+msgid "Is this user worker"
+msgstr "Является сотрудником?"
+
+#: accounts/models.py:25
+msgid "Whether this user worker or not?"
+msgstr "Является сотрудником?"
+
+#: accounts/views.py:47
+msgid "Password Restore"
+msgstr "Восстановление пароля"
+
+#: accounts/views.py:183
+msgid "User with this email already exists"
+msgstr "Пользователь с этим email уже существует"
+
+#: accounts/views.py:200
+msgid "User with this credentials not found"
+msgstr "Пользователь с этими данными не найден"
+
+#: commerce/models.py:19 commerce/models.py:141 ncatalogue/models.py:22
+#: ncatalogue/models.py:85 shops/models.py:19
+msgid "Name"
+msgstr "Наименование"
+
+#: commerce/models.py:20 ncatalogue/models.py:23
+msgid "Short name"
+msgstr "Сокращение"
+
+#: commerce/models.py:21 ncatalogue/models.py:25
+msgid "Name international"
+msgstr "Международное наименование"
+
+#: commerce/models.py:22 ncatalogue/models.py:26
+msgid "Short name international"
+msgstr "Сокращение международного наименования"
+
+#: commerce/models.py:32 commerce/models.py:144
+msgid "Currency"
+msgstr "Валюта"
+
+#: commerce/models.py:33
+msgid "Currencies"
+msgstr "Валюты"
+
+#: commerce/models.py:39 commerce/models.py:88
+msgid "Is active"
+msgstr "Активен"
+
+#: commerce/models.py:44 commerce/models.py:84
+msgid "Creation time"
+msgstr "Время создания"
+
+#: commerce/models.py:45 commerce/models.py:85
+msgid "Last-modified time"
+msgstr "Время последнего изменения"
+
+#: commerce/models.py:46
+msgid "Random key for direct links"
+msgstr "Случайный ключ для прямой ссылки"
+
+#: commerce/models.py:59 commerce/models.py:65
+msgid "Cart"
+msgstr "Корзина"
+
+#: commerce/models.py:60
+msgid "Carts"
+msgstr "Корзины"
+
+#: commerce/models.py:63 commerce/models.py:108 commerce/models.py:145
+#: ncatalogue/models.py:100
+msgid "Product"
+msgstr "Товар"
+
+#: commerce/models.py:64 commerce/models.py:109
+#: novostore/templates/default/commerce/cart.html:25
+msgid "Quantity"
+msgstr "Количество"
+
+#: commerce/models.py:74 commerce/models.py:126
+msgid "Cart Element"
+msgstr "Элемент корзины"
+
+#: commerce/models.py:75 commerce/models.py:127
+msgid "Cart Elements"
+msgstr "Элементы корзины"
+
+#: commerce/models.py:86
+msgid "Waiting for delivery"
+msgstr "Ожидает доставки"
+
+#: commerce/models.py:87
+msgid "Payment on delivery"
+msgstr "Платеж при доставке"
+
+#: commerce/models.py:98 commerce/models.py:121 commerce/models.py:142
+#: novostore/templates/default/commerce/cart.html:24
+msgid "Price"
+msgstr "Цена"
+
+#: commerce/models.py:104
+msgid "Preorder"
+msgstr "Предзаказ"
+
+#: commerce/models.py:105
+msgid "Preorders"
+msgstr "Предзаказы"
+
+#: commerce/models.py:110
+msgid "PreOrder"
+msgstr "Предзаказ"
+
+#: commerce/models.py:122 novostore/templates/default/commerce/cart.html:26
+msgid "Sum"
+msgstr "Сумма"
+
+#: commerce/models.py:132
+msgid "From currency"
+msgstr "Из валюты"
+
+#: commerce/models.py:133
+msgid "To currency"
+msgstr "В валюту"
+
+#: commerce/models.py:134
+msgid "Course"
+msgstr "Курс"
+
+#: commerce/models.py:137 commerce/models.py:138
+msgid "Currency Exchange"
+msgstr "Обмен валют"
+
+#: commerce/models.py:143
+msgid "Quantity of items"
+msgstr "Количество"
+
+#: commerce/models.py:151
+msgid "Tariff"
+msgstr "Тариф"
+
+#: commerce/models.py:152
+msgid "Tariffs"
+msgstr "Тарифы"
+
+#: commerce/models.py:156
+msgid "Name of partner"
+msgstr "Наименование партнера"
+
+#: commerce/models.py:157
+msgid "User for this promo partner account"
+msgstr "Пользователь для партнерского аккаунта"
+
+#: commerce/models.py:163 commerce/models.py:168
+msgid "Promo Partner"
+msgstr "Промо партнер"
+
+#: commerce/models.py:164
+msgid "Promo Partners"
+msgstr "Промо партнеры"
+
+#: commerce/models.py:169
+msgid "Code"
+msgstr "Код"
+
+#: commerce/models.py:170
+msgid "Discount in percentage"
+msgstr "Скидка в процентах"
+
+#: commerce/models.py:171
+msgid "Number Of Activations Allowed"
+msgstr "Общее количество доступных активаций"
+
+#: commerce/models.py:172
+msgid "Number Of Activations Made"
+msgstr "Количество совершенных активаций"
+
+#: commerce/models.py:178
+msgid "Promo Code"
+msgstr "Промо код"
+
+#: commerce/models.py:179
+msgid "Promo Codes"
+msgstr "Промо коды"
+
+#: commerce/models.py:182
+msgid "City"
+msgstr "Город"
+
+#: commerce/models.py:183
+msgid "Street and house"
+msgstr "Улица и дом"
+
+#: commerce/models.py:184
+msgid "Zip Code"
+msgstr "Индекс"
+
+#: commerce/models.py:185
+msgid "Latitude"
+msgstr "Широта"
+
+#: commerce/models.py:185 commerce/models.py:187
+msgid "Location"
+msgstr "Местоположение"
+
+#: commerce/models.py:187
+msgid "Longitutde"
+msgstr "Долгота"
+
+#: commerce/models.py:189
+msgid "User"
+msgstr "Пользователь"
+
+#: commerce/models.py:190
+msgid "Phone"
+msgstr "Телефон"
+
+#: commerce/models.py:196
+msgid "Delivery Address"
+msgstr "Адрес доставки"
+
+#: commerce/models.py:197
+msgid "Delivery Addresses"
+msgstr "Адреса доставки"
+
+#: commerce/views.py:113 novostore/templates/default/footer.html:38
+#: novostore/templates/default/nav_bar_top.html:24
+msgid "My cart"
+msgstr "Моя корзина"
+
+#: commerce/views.py:120 novostore/templates/default/footer.html:44
+#: novostore/templates/default/commerce/cart.html:19
+msgid "Checkout"
+msgstr "Оплатить"
+
+#: ncatalogue/models.py:24
+msgid "Per name"
+msgstr "За наименование"
+
+#: ncatalogue/models.py:27
+msgid "Per name internationl"
+msgstr "За наименование междунар."
+
+#: ncatalogue/models.py:28 ncatalogue/models.py:86
+msgid "Description"
+msgstr "Описание"
+
+#: ncatalogue/models.py:28
+msgid "Details of this measure unit"
+msgstr "Детали единицы измерения"
+
+#: ncatalogue/models.py:34
+msgid "Measure Unit"
+msgstr "Единица измерения"
+
+#: ncatalogue/models.py:35
+msgid "Measure Units"
+msgstr "Единицы измерения"
+
+#: ncatalogue/models.py:38
+msgid "Category name"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:38
+msgid "Term name"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:39
+msgid "Slug"
+msgstr "slug"
+
+#: ncatalogue/models.py:40
+msgid "Operating status"
+msgstr "Статус активности"
+
+#: ncatalogue/models.py:40
+msgid "Service category status"
+msgstr "Статус активности категории"
+
+#: ncatalogue/models.py:43
+msgid "Requires shipping?"
+msgstr "Требует доставки?"
+
+#: ncatalogue/models.py:47 shops/models.py:30
+msgid "Shop"
+msgstr "Магазин"
+
+#: ncatalogue/models.py:64
+msgid "Category"
+msgstr "Категория"
+
+#: ncatalogue/models.py:65 ncatalogue/models.py:88
+msgid "Categories"
+msgstr "Категории"
+
+#: ncatalogue/models.py:70
+msgid "UPC"
+msgstr "UPC"
+
+#: ncatalogue/models.py:72
+msgid ""
+"Universal Product Code (UPC) is an identifier for a product which is not "
+"specific to a particular  supplier. Eg an ISBN for a book."
+msgstr ""
+"Универсальный товарный код (UPC) это идентификатор продукта который не "
+"специфичен для конкретного поставщика. Например - ISBN для книги"
+
+#: ncatalogue/models.py:75
+msgid "Gallery"
+msgstr "Галлерея"
+
+#: ncatalogue/models.py:82
+msgid "Main photo"
+msgstr "Главное фото"
+
+#: ncatalogue/models.py:87
+msgid "Long description"
+msgstr "Расширенное описание"
+
+#: ncatalogue/models.py:89
+msgid "Text"
+msgstr "Текст"
+
+#: ncatalogue/models.py:90
+msgid "Base Price"
+msgstr "Базовая цена"
+
+#: ncatalogue/models.py:90
+msgid "Base price"
+msgstr "Базовая цена"
+
+#: ncatalogue/models.py:101
+msgid "Products"
+msgstr "Товары"
+
+#: novostore/settings.py:50
+msgid "English"
+msgstr "Английский"
+
+#: novostore/settings.py:51
+msgid "Russian"
+msgstr "Русский"
+
+#: novostore/settings.py:220
+msgid "Users"
+msgstr "Пользователи"
+
+#: novostore/settings.py:233
+msgid "Common Settings"
+msgstr "Общие настройки"
+
+#: novostore/settings.py:240
+msgid "Commerce"
+msgstr "Коммерция"
+
+#: novostore/settings.py:287
+msgid "Register on e-commerce shop"
+msgstr "Регистрация в магазине"
+
+#: novostore/templates/default/categories_breadcrumb.html:6
+#: novostore/templates/default/accounts/login.html:22
+msgid "Home"
+msgstr "Дом"
+
+#: novostore/templates/default/categories_breadcrumb.html:24
+msgid "Call us"
+msgstr "Позвоните нам"
+
+#: novostore/templates/default/footer.html:24
+msgid "Item added to cart"
+msgstr "Товар добавлен в корзину"
+
+#: novostore/templates/default/footer.html:30
+#: novostore/templates/default/nav_bar_top.html:16
+#: novostore/templates/default/scripts.html:3
+msgid "Currently there no"
+msgstr "Сейчас ни"
+
+#: novostore/templates/default/footer.html:33
+#: novostore/templates/default/nav_bar_top.html:19
+#: novostore/templates/default/scripts.html:4
+msgid "item in"
+msgstr "одного товара"
+
+#: novostore/templates/default/footer.html:35
+#: novostore/templates/default/nav_bar_top.html:21
+#: novostore/templates/default/scripts.html:5
+msgid "items in"
+msgstr "товаров в"
+
+#: novostore/templates/default/nav_bar_top.html:31
+msgid "Log out"
+msgstr "Выйти"
+
+#: novostore/templates/default/nav_bar_top.html:33
+msgid "Admin panel"
+msgstr "Админ панель"
+
+#: novostore/templates/default/nav_bar_top.html:37
+#: novostore/templates/default/accounts/login_form.html:24
+msgid "Sign in"
+msgstr "Войти"
+
+#: novostore/templates/default/nav_bar_top.html:38
+msgid "New customer"
+msgstr "Новый пользователь"
+
+#: novostore/templates/default/product_single.html:11
+msgid "Regular price"
+msgstr "Стандартная цена"
+
+#: novostore/templates/default/product_single.html:16
+msgid "Choose quantity"
+msgstr "Выберите кол-во"
+
+#: novostore/templates/default/product_single.html:23
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: novostore/templates/default/product_single.html:26
+msgid "Product details"
+msgstr "Подробное описание товара"
+
+#: novostore/templates/default/product_single.html:37
+msgid "You might also like"
+msgstr "Вам также может понравиться"
+
+#: novostore/templates/default/accounts/benefits_text.html:2
+msgid ""
+"\n"
+"<h5>New Online Customer? Nice to meet you.</h5>\n"
+"The benefits of having an account include:\n"
+"<ul>\n"
+"<li>Fast and easy checkout</li>\n"
+"<li>Exclusive offers</li>\n"
+"<li>Manage your own information</li>\n"
+"</ul>\n"
+msgstr ""
+"\n"
+"<h5>Вы новый покупатель на нашем сайте? Здравствуйте!</h5>\n"
+"Для зарегистрированных пользователей у нас бонусы:\n"
+"<ul>\n"
+"<li>Быстрое оформление заказа</li>\n"
+"<li>Эксклюзивные предложения</li>\n"
+"<li>Персональные настройки профиля</li>\n"
+"</ul>\n"
+
+#: novostore/templates/default/accounts/login.html:26
+msgid "Sign In or Create an Account"
+msgstr "Вход или регистрация"
+
+#: novostore/templates/default/accounts/login.html:31
+msgid "Create an Account"
+msgstr "Зарегистрироваться"
+
+#: novostore/templates/default/accounts/login_form.html:4
+msgid "Have an account on our site? Please sign in below."
+msgstr "У вас уже есть аккаунт на нашем сайте? Пожалуйста авторизуйтесь ниже."
+
+#: novostore/templates/default/accounts/login_form.html:5
+msgid "Enter your email or nickname and password to sign in."
+msgstr "Введите email (или логин) и пароль для входа на сайт"
+
+#: novostore/templates/default/accounts/login_form.html:10
+#: novostore/templates/default/accounts/register_form.html:36
+msgid "Email"
+msgstr "Email"
+
+#: novostore/templates/default/accounts/login_form.html:16
+#: novostore/templates/default/accounts/register_form.html:45
+msgid "Password"
+msgstr "Пароль"
+
+#: novostore/templates/default/accounts/login_form.html:29
+msgid "Forgot Your Password?"
+msgstr "Забыли пароль?"
+
+#: novostore/templates/default/accounts/login_form.html:34
+msgid "Enter your email"
+msgstr "Введите ваш email"
+
+#: novostore/templates/default/accounts/login_form.html:35
+msgid "Restore a password"
+msgstr "Восстановить пароль"
+
+#: novostore/templates/default/accounts/login_form.html:36
+msgid "Please check your email to proceed password restore."
+msgstr "Проверьте ваш email для восстановления пароля"
+
+#: novostore/templates/default/accounts/login_form.html:40
+msgid "Login with Google"
+msgstr "Войти через Google"
+
+#: novostore/templates/default/accounts/login_form.html:51
+msgid "Create an account"
+msgstr "Создать аккаунт"
+
+#: novostore/templates/default/accounts/login_form.html:53
+msgid ""
+"\n"
+"<small>\n"
+"You don't need a credit card to create an account.<br> \n"
+"Payment information is not required until you make a purchase.\n"
+"</small>\n"
+msgstr ""
+"\n"
+"<small>\n"
+"Для создания аккаунта не нужна кредитная карта.<br> \n"
+"Платежная информация необходима только при совершении покупки.\n"
+"</small>\n"
+
+#: novostore/templates/default/accounts/register_form.html:3
+msgid ""
+"\n"
+"Enter your login, name, email address and password to create an account. \n"
+"We guarantee that every transaction you make at our site will be safe. \n"
+"This means you pay nothing if unauthorized charges are made to your credit "
+"card as a result of shopping here.\n"
+msgstr ""
+"\n"
+"Для создания аккаунта введите ваш логин, мя, email и пароль. \n"
+"Мы гарантируем безопасность всех транзакций, совершенных на нашем сайте. \n"
+"Это, в частности, означает что мы не храним данные о кредитных картах "
+"покупателей нашего сайта.\n"
+
+#: novostore/templates/default/accounts/register_form.html:15
+msgid "Login"
+msgstr "Логин"
+
+#: novostore/templates/default/accounts/register_form.html:24
+msgid "First Name"
+msgstr "Имя"
+
+#: novostore/templates/default/accounts/register_form.html:30
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: novostore/templates/default/accounts/register_form.html:54
+msgid "Repeat Password"
+msgstr "Повторите пароль"
+
+#: novostore/templates/default/accounts/register_form.html:65
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:7
+msgid "Set up new password"
+msgstr "Установить новый пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:17
+msgid "Enter New Password"
+msgstr "Введите новый пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:18
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:22
+msgid "Congratulations! Your password was changed successfully."
+msgstr "Поздравляем! Ваш пароль успешно изменен."
+
+#: novostore/templates/default/commerce/cart.html:23
+msgid "Product Name"
+msgstr "Наименование товара"
+
+#: novostore/templates/default/commerce/cart.html:27
+msgid "Action"
+msgstr "Действие"
+
+#: novostore/templates/default/commerce/cart.html:53
+msgid "Delete"
+msgstr "Удалить"
+
+#: novostore/templates/default/commerce/cart.html:58
+msgid "Total"
+msgstr "Итого"
+
+#: novostore/templates/default/commerce/cart.html:70
+msgid "Confirm and Checkout"
+msgstr "Подтвердить заказ"
+
+#: novostore/templates/default/commerce/checkout.html:17
+msgid "Please enter your delivery address"
+msgstr "Введите адрес доставки"
+
+#: novostore/templates/default/commerce/checkout.html:19
+msgid "Confirm your delivery address"
+msgstr "Подтверждение адреса доставки"
+
+#: novostore/templates/default/commerce/checkout.html:37
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: novostore/templates/default/commerce/checkout_confirmed.html:15
+msgid "Address confirmed"
+msgstr "Адрес подтвержден"
+
+#: shops/models.py:20
+msgid "Domain"
+msgstr "Домен"
+
+#: shops/models.py:22
+msgid "Theme of website"
+msgstr "Тема оформления"
+
+#: shops/models.py:31
+msgid "Shops"
+msgstr "Магазины"
+
+#: shops/models.py:43
+msgid "Worker"
+msgstr "Сотрудник"
+
+#: shops/models.py:44
+msgid "Workers"
+msgstr "Сотрудники"
+
+#: shops/models.py:56
+msgid "Client"
+msgstr "Клиент"
+
+#: shops/models.py:57
+msgid "Clients"
+msgstr "Клиенты"
+
+#: utils/visibility.py:219
+msgid "None"
+msgstr "None"
+
+#: utils/visibility.py:310
+msgid "Passwords don't match"
+msgstr "Пароли не совпадают"
