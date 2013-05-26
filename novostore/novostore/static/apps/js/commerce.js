@@ -20,14 +20,28 @@ function deletefrombag(element_id){
     });
 }
 function resetitemsincart(n,mode){
+      console.log(n);
       if (n==0){
         $("#cart_nitems").html(currentlyThereNoStr+itemsInStr);
       }
       if (n==1){
         $("#cart_nitems").html(n+' '+itemInStr);
       }
-      if (n>1){
+      var settedrus = false;
+      if (lanuage_code == 'ru'){
+        if (n%10 ==1 && n != 11){
+          $("#cart_nitems").html(n+' товар в');
+          settedrus = true;
+        }
+        if ( ( n%10==2 || n%10 == 3 || n%10 == 4 ) && n != 12 && n != 13 && n != 14){
+          $("#cart_nitems").html(n+' товара в');
+          settedrus = true;
+        }
+      }
+      if (n>1 && !settedrus){
         $("#cart_nitems").html(n+' '+itemsInStr);
+      }
+      if (n>0){
         if (mode == 'add' ){
           $('#cart_nitems_a').popover('show');
           $('.popover').css('background-color','#00aff0').css('color','#fff');
@@ -52,12 +66,12 @@ function modifyelement(element_id, modify){
     $.post(changeelementincarturl, datasend, function(data) {
     	var ajax_status = data['ajax_status'];
     	if (ajax_status == 'deleted'){
-    		console.log('deleted');
+    	  //	console.log('deleted');
     	  var element_id = data['element_id'];
     	  $('#product_tr_'+element_id).fadeOut('slow', function() {
          	  recalculateprice();
     	  });
-    	  resetitemsincart(data['cartitems'],'delete');
+    	  resetitemsincart(data['total_quantity'],'');
     	}
     	else if (ajax_status != 'error') {
     	  var element_id = data['element_id'];
@@ -66,6 +80,7 @@ function modifyelement(element_id, modify){
     	  var price = $("#product_price_"+element_id).html();
     	  $("#product_sum_"+element_id).html(price*quant);
           recalculateprice();
+    	  resetitemsincart(data['total_quantity'],'');
     	}
     });
 }

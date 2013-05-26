@@ -36,7 +36,7 @@
       {{ element.product.name }}
       </div>
       <td id="product_price_{{element.id}}">
-      {{ element.product.price }}
+      {{ element.product.price|floatformat  }}
       <td>
       <div>
       <div class="input-prepend input-append">

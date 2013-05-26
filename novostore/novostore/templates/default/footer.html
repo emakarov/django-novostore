@@ -24,6 +24,7 @@
         <div data-color="coloredpopover" data-toggle="popover" data-placement="top" data-content="{% trans "Item added to cart" %}" style="padding-top:10px;margin-top:0px;font-weight:bold;" id="cart_nitems_a" onclick='window.location.href="{% url 'commerce.views.cart' %}"'>
            <i class="icon-shopping-cart"></i>
           <span id="cart_nitems">
+          {% comment %}
 	      {% if cart.number_of_items.quantity__sum > 0 %} 
 	      {{ cart.number_of_items.quantity__sum }}
 	      {% else %} 
@@ -34,6 +35,7 @@
 	      {% else %}
 	      {% trans "items in" %}
 	      {% endif %}
+          {% endcomment %}
 	  </span>
 	  {% trans "My cart" %}	      
 	</div>

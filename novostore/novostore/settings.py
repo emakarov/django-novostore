@@ -44,7 +44,13 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
+
+LANGUAGES = (
+#        ('en', _('English')),
+        ('ru', _('Russian')),
+)
 
 SITE_ID = 1
 
@@ -120,6 +126,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'shops.shopdetectionmiddleware.ShopDetectionMiddleware',
 )
 
@@ -133,6 +140,10 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     path.join(PROJECT_ROOT,'templates'),
+)
+
+LOCALE_PATHS = (
+    path.join(PROJECT_ROOT,'locale'),
 )
 
 INSTALLED_APPS = (
@@ -195,9 +206,10 @@ TWEET_STORAGE = path.join(ROOT_DIR, 'tweet_storage/')
 
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.i18n',
     'django.core.context_processors.request',
     'ncatalogue.context_processors.categories_context',
-    'ncatalogue.context_processors.cart_context',
+    'commerce.context_processors.cart_context',
 )
 
 

@@ -100,7 +100,8 @@ def changeelementincart(request):
         return HttpResponse(json.dumps({
         	                        'element_id': element_id,
                                         'quantity' : elem.quantity,
-                                        'ajax_status' : status
+                                        'ajax_status' : status,
+                                        'total_quantity' : get_cart_elements_quantity(cart)
                                        }
                            ),content_type="application/json")
       #except:
@@ -110,7 +111,7 @@ def changeelementincart(request):
   
 
 def cart(request):
-    added_word = _("My cart")
+    added_word = _("Cart")
     params = { 'added_word' : added_word }
     return render_to_response(settings.CART_PAGE_HTML, params ,  context_instance = RequestContext(request))
 
@@ -170,6 +171,9 @@ def get_cart(request):
       return get_or_create_cart_by_user(user,request.session['cartkey'])
     except:
       return get_or_create_cart_by_user(user)
+
+def get_cart_elements_quantity(cart):
+    return cart.number_of_items()['quantity__sum']
 
 def copy_cart_to_order(cart,user):
     preorder = commerce_models.PreOrder()
