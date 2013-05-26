@@ -282,7 +282,7 @@ msgstr "Адреса доставки"
 #: commerce/views.py:113 novostore/templates/default/footer.html:38
 #: novostore/templates/default/nav_bar_top.html:24
 msgid "My cart"
-msgstr "Моя корзина"
+msgstr "моей корзине"
 
 #: commerce/views.py:120 novostore/templates/default/footer.html:44
 #: novostore/templates/default/commerce/cart.html:19
@@ -430,13 +430,13 @@ msgstr "Товар добавлен в корзину"
 #: novostore/templates/default/nav_bar_top.html:16
 #: novostore/templates/default/scripts.html:3
 msgid "Currently there no"
-msgstr "Сейчас ни"
+msgstr "Сейчас нет"
 
 #: novostore/templates/default/footer.html:33
 #: novostore/templates/default/nav_bar_top.html:19
 #: novostore/templates/default/scripts.html:4
 msgid "item in"
-msgstr "одного товара"
+msgstr "товар в"
 
 #: novostore/templates/default/footer.html:35
 #: novostore/templates/default/nav_bar_top.html:21
