@@ -48,7 +48,7 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
-#        ('en', _('English')),
+        ('en', _('English')),
         ('ru', _('Russian')),
 )
 
