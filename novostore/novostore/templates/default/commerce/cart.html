@@ -1,88 +1,20 @@
-{% load mptt_tags %}
-{% load i18n %}
-{% include "default/doctype.html" %}
-<html>
-  <head>
-  {% include "default/basic_head.html" %}
-  </head>
-  <body>
-    <div id="wrap">
-    {% include "default/nav_bar_top.html" %}
+{% extends "default/index.html" %}
+{% block rotator %}
+{% endblock %}
+{% block breadcrumb %}
     {% include "default/categories_breadcrumb.html" with added_word=added_word %} 
-    <div class="container">
-    <table class="table">
-    {% if len_cart_elements > 10 %}
-      <tr>
-      <td>
-      <td>
-      <td>
-      <td style="width:150px;"><div class="btn btn-brand-ebay">{% trans "Checkout" %}</div> 
-      </tr>
-    {% endif %}
-    <tr>
-    <th>{% trans "Product Name" %}
-    <th>{% trans "Price" %}
-    <th>{% trans "Quantity" %}
-    <th>{% trans "Sum" %}
-    <th style="width:30px">{% trans "Action" %}
-    </tr>
-    {% for element in cart_elements %}
-      <tr id="product_tr_{{element.id}}">
-      <td>
-      <div class="media">
-        <a class="pull-left" target="_blank" href="{% url 'ncatalogue.views.productpage' product_id=element.product.id %}">
-          <img class="media-object" src="{{ element.product.cover.get_s64x64_url }}">
-        </a>
-      {{ element.product.name }}
-      </div>
-      <td id="product_price_{{element.id}}">
-      {{ element.product.price|floatformat  }}
-      <td>
-      <div>
-      <div class="input-prepend input-append">
-        <div class="btn-group">
-        <input id="quant_{{ element.id }}" style="width:20px;" id="product_quant_{{element.quantity}}" type="text" value="{{ element.quantity }}"/>
-        <button onclick="increase({{ element.id }})" class="btn">+</button>
-        <button onclick="decrease({{ element.id }})" class="btn">-</button>
-        </div>
-      </div>
-      </div>
-      <td class="product_sum" id="product_sum_{{element.id}}">{{ element.sum }}
-      <td style="width:30px">
-        <button onclick="deletefrombag({{element.id}})" class="btn btn-small">
-          {% trans "Delete" %}
-        </button>
-      </tr>
-    {% endfor %}
-    <tr>
-    <th>{% trans "Total" %}
-    <th>
-    <th>
-    <th>
-    <th id="total_sum">
-    </tr>
-      <tr>
-      <td>
-      <td>
-      <td>
-      <td colspan=2>
-      <a style="width:150px;float: right;" href="{% url 'commerce.views.checkout' %}" class="btn btn-brand-ebay">
-      {% trans "Confirm and Checkout" %}
-      </a> 
-      </tr>
-    </table>
-      <div>
-      
-      </div>
-    </div>
-    {% include "default/footer.html" with hidecheck=1 %}
-    </div>
-    {% include "default/scripts.html" %}
+{% endblock %}
+{% block wrapper %}
+    {% include "default/commerce/cart_table.html" %} 
+{% endblock %}
+{% block footer %}
+  {% include "default/footer.html" with hidecheck=1 %}
+{% endblock %}
+{% block additional_scripts %}
     <script>
     var total_sum = 0;
     $(document).ready(function(){
       recalculateprice();
     });
     </script>
-  </body>
-</html>
+{% endblock %}

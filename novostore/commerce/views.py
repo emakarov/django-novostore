@@ -113,10 +113,11 @@ def changeelementincart(request):
 def cart(request):
     added_word = _("Cart")
     params = { 'added_word' : added_word }
-    return render_to_response(settings.CART_PAGE_HTML, params ,  context_instance = RequestContext(request))
+    return render_to_response(settings.CART_PAGE_HTML(request), params ,  context_instance = RequestContext(request))
 
 def checkout(request):
     if not request.user.is_authenticated():
+      request.session['nextp'] = '/commerce/checkout/'
       return redirect('/accounts/login/?next=/commerce/checkout/')
     added_word = _("Checkout")
     delivery_addresses = commerce_models.DeliveryAddress.objects.filter(user=request.user)
@@ -129,7 +130,7 @@ def checkout(request):
     else:
       delivery_address = delivery_addresses[0]
     #delivery_addresses = commerce_models.DeliveryAddress.objects.filter(user=request.user)
-    form = commerce_forms.DeliveryAddressForm(instance=delivery_address)
+    form = commerce_forms.DeliveryAddressFormWithUser(instance=delivery_address)
     form.fields['user'].widget = forms.HiddenInput()
     #print delivery_address
     params = { 'added_word' : added_word , 
@@ -137,7 +138,7 @@ def checkout(request):
     		'delivery_address_count' : delivery_address_count,
     		'form' : form
     	     }
-    return render_to_response(settings.CHECKOUT_PAGE_HTML, params ,  context_instance = RequestContext(request))
+    return render_to_response(settings.CHECKOUT_PAGE_HTML(request), params ,  context_instance = RequestContext(request))
     
 def checkout_confirm_address(request):
     if request.method == 'POST':
@@ -161,9 +162,9 @@ def checkout_confirm_address(request):
         delivery_address.user = user
         delivery_address.save()
         cart = get_cart(request)
-        copy_cart_to_order(cart,user)
-      params = {}
-      return render_to_response(settings.CHECKOUT_CONFIRMED_HTML, params ,  context_instance = RequestContext(request))
+        preorder = copy_cart_to_order(cart,user)
+      params = {'preorder' : preorder}
+      return render_to_response(settings.CHECKOUT_CONFIRMED_HTML(request), params ,  context_instance = RequestContext(request))
 
 def get_cart(request):
     user=request.user
@@ -190,8 +191,16 @@ def copy_cart_to_order(cart,user):
       pol.quantity = el.quantity
       pol.preorder = preorder
       pol.save()
-    return 0
+    return preorder
     
+
+def get_cart_by_request_cartkey(request):
+    cartkey = request.session['cartkey']
+    try:
+      cart = commerce_models.Cart.objects.get(random_key = cartkey)
+    except:
+      cart = None
+    return cart
 
 def get_or_create_cart_by_user(user,cartkey=None):
     cart = None

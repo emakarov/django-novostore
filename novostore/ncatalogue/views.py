@@ -20,6 +20,7 @@ from shops import models as shop_models
 PPP = settings.NCATALOGUE_PRODUCTS_PER_PAGE
 index_page_html = settings.INDEX_PAGE_HTML
 product_page_html = settings.PRODUCT_PAGE_HTML
+product_list_html = settings.PRODUCT_LIST_HTML
 
 def index(request):
 #  print request.session.session_key
@@ -36,9 +37,9 @@ def index(request):
   	).distinct()
   params = {  
   	'products' : products,
-  	'show_breadcrumb' : True,
+  	'show_breadcrumb' : False,
   }
-  return render_to_response(index_page_html, params, context_instance = RequestContext(request))
+  return render_to_response(index_page_html(request), params, context_instance = RequestContext(request))
 
 def category_list(request,category_slug):
   category = ncatalogue_models.Category.objects.get(slug = category_slug)
@@ -50,7 +51,7 @@ def category_list(request,category_slug):
   	'show_breadcrumb' : True,
   	'category' : category
   }
-  return render_to_response(index_page_html, params, context_instance = RequestContext(request))
+  return render_to_response(product_list_html(request), params, context_instance = RequestContext(request))
 
 
 def productpage(request,product_id):
@@ -69,4 +70,4 @@ def productpage(request,product_id):
   	'might_like_products' : might_like_products,
   	'show_breadcrumb' : True
   }
-  return render_to_response(product_page_html, params, context_instance = RequestContext(request))
+  return render_to_response(product_page_html(request), params, context_instance = RequestContext(request))

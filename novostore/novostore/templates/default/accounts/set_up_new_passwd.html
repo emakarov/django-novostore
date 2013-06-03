@@ -1,23 +1,44 @@
 {% extends "default/index.html" %}
 {% load i18n %}
+{% block rotator %}
+{% endblock %}
 {% block wrapper %}
 <div class="container">
 <br><br>
 {% ifnotequal phase 'ok' %}
-<h4 id="section3"> {% trans "Set up new password" %} </h4>
+  {% if not social %}
+  <h4 id="section3"> {% trans "Set up new password" %} </h4>
+  {% else %}
+  <div>{% trans "You logged in with social network, but you also can use standard login/password" %}</div>
+  <br>
+  <div>{% trans "Your login was automatically created from social account:" %} <b>{{ request.user.username }}</b></div>
+  <br>
+  <div>{% trans "Here please enter your desired password for this login:" %}</div>
+  <br>
+  
+  {% endif %}
 {% endifnotequal %}
 </div> <!-- /container -->
 <div class="contentBG"> 
 <div class="container">
 {% ifnotequal phase 'ok' %}
-<form method="post" action="{% url 'accounts.views.change_password' %}" class="form well" style="margin-bottom:0px;">
+<div class="well" style="height: 30px;">
+<form method="post" action="{% url 'accounts.views.change_password' %}" class="form" style="margin-bottom:0px;">
 {% csrf_token %}
 <div>
 <center>
 <input name="password" type="password" class="input" placeholder="{% trans 'Enter New Password' %}">
-<button type="submit" style="margin-top:-8px;" class="btn btn-primary">{% trans "Change password" %}</button>
+<button type="submit" style="margin-top:-8px;" class="btn btn-brand-skype">{% trans "Change password" %}</button>
 </center>
 </form>
+</div>
+{% ifnotequal phase 'ok' %}
+<br><br>
+<a href="{{ nextp }}" style="margin-top:-8px;" class="btn btn-brand-skype">
+{% trans "No, thanks. I will always login with my social network account without login and password" %}
+</a>
+{% endifnotequal %}
+
 {% else %}
 {% trans "Congratulations! Your password was changed successfully." %}
 {% endifnotequal %}

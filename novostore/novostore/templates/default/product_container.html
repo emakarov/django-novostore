@@ -1,6 +1,7 @@
 {% load mptt_tags %}
   <!--Products container-->
-  <div class="container nsized">
+  <div class="container nsized" style="padding-bottom:0px;{% if index %}padding-top:10px;{% endif %}" >
+  {% if not hidecats %}
     <div class="span2" style="padding-left:0;margin-left:0;">
     		<ul class="nav nav nav-list" style="font-size:13px;">
 	          {% recursetree categories %}
@@ -25,18 +26,24 @@
 
     </div>
     <div class="span9">
+    {% else %}
+    <div class="span12">
+    {% endif %}
+    
 	<ul class="thumbnails">
 	  {% for p in products %}
 	  <li class="span3 bcgwhite">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
 	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
-	      <div class="block-note block-note-green">
+	      <!--<div class="block-note block-note-green">
 	      {{p.price}}{{p.currency.shortname}}
-	      </div>
-	      <div class="mtopm20 padsizes10 padbot10">
-	      <h5>
-	      {{ p.name }}
-	      </h5>
+	      </div>-->
+	      <div class="padbot10">
+	        <div style="line-height:12px;font-size:10px;font-family:verdana;padding-top:3px;color:#333;">
+	        {{ p.name }}
+	        </div>
+	        <div style="line-height:12px;font-size:11px;padding-top:2px;font-family:verdana;">{{p.price}}{{p.currency.shortname}}
+	        </div>
 	      </div>
 	    </div>
 	  </li>

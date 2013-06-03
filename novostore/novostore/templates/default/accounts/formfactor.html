@@ -1,0 +1,19 @@
+{% load i18n %}
+<h4>{{ formtitle }}</h4>
+<form  id="form_{{ formtag }}" class="form-horizontal">
+{% for f in form %}
+<div class="control-group">
+<label style="text-align:left" class="control-label pull-left">{{ f.label_tag }}</label>
+<div class="controls" style="width:200px">
+  {{ f }}
+</div>
+</div>
+{% endfor %}
+  <div onclick="saveform('{{formtag}}');" id="btn_{{ formtag }}" class="btn btn-primary">
+  {% trans "Save" %}</div>
+  &nbsp;
+  <div id="{{formtag}}_label" style="display:none;" class="label label-success">
+  {% trans "saved" %}</div>
+  <div id="{{formtag}}_label_error" style="display:none;" class="label label-important">
+  {% trans "error happened" %}</div>
+</form>

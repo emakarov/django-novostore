@@ -28,6 +28,7 @@
 	      
 	      {% if user.is_authenticated %}
 	      <li><a href="#">{{ user }}</a></li>
+	      <li><a href="{% url 'accounts.views.profile' %}">{% trans "Profile" %}</a></li>
 	      <li><a href="{% url 'accounts.views.logout' %}">{% trans "Log out" %}</a></li>
 	      {% if user.is_staff %}
 	      <li><a href="/admin/">{% trans "Admin panel" %}</a></li>

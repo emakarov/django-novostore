@@ -1,0 +1,11 @@
+{% extends "default/index.html" %}
+{% block rotator %}
+{% endblock %}
+{% block breadcrumb %}
+  {% include "default/categories_breadcrumb.html" with child_category=category %} 
+{% endblock %}
+{% block wrapper %}
+  {% include "default/product_container.html" %}
+{% endblock %}
+
+

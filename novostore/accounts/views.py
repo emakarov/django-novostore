@@ -7,7 +7,7 @@ from django.contrib.auth import views as auth_views
 from django.http import HttpResponse
 from django.utils import simplejson
 from django.conf import settings
-from django import forms
+import forms as account_forms
 from django.forms import widgets
 from django.contrib.auth.forms import UserCreationForm, SetPasswordForm
 from django.utils.translation import ugettext_lazy as _
@@ -25,10 +25,51 @@ import json
 import hmac
 import hashlib
 from django.core import mail
-from commerce.views import get_cart, get_or_create_cart_by_user, combine_carts
+from commerce.views import get_cart, get_or_create_cart_by_user, combine_carts, get_cart_by_request_cartkey
+from commerce import forms as commerce_forms
+from commerce import models as commerce_models
+from utils.stuff import deserialize_form
 
 login_page_html = settings.LOGIN_PAGE_HTML
 setup_new_passwd = settings.SETUP_NEW_PASSWD_PAGE_HTML
+profile_page = settings.PROFILE_PAGE_HTML
+
+def saveprofileajax(request):
+    form = request.REQUEST.get('form')
+    #print deserialize_form(form)
+    try:
+      formtag = request.REQUEST.get('formtag')
+      user = request.user
+      if user.is_authenticated():
+        if formtag == 'account_form':
+          formname_form = account_forms.AccountsUserFormShort(deserialize_form(form),instance=user)
+        elif formtag == 'delivery_form' :
+          formname_form = commerce_forms.DeliveryAddressForm(deserialize_form(form),instance=user.delivery_addresses.all()[0])
+        formname_form.save()
+        jsondumps =  json.dumps({'status': 'saved', 'formtag' : formtag})
+      else:
+        jsondumps = json.dumps({'status' : 'notautorized', 'formtag' : formtag})
+    except:
+      jsondumps = json.dumps({'status' : 'error', 'formtag' : formtag})
+    return HttpResponse(jsondumps, content_type="application/json")
+
+
+def profile(request):
+    account_form = account_forms.AccountsUserFormShort(instance=request.user)
+    try:
+      da = commerce_models.DeliveryAddress.objects.get(user=request.user)
+    except:
+      da = commerce_models.DeliveryAddress()
+      da.user = user
+      da.save()
+    delivery_form = commerce_forms.DeliveryAddressForm(instance = da)
+    preorders = commerce_models.PreOrder.objects.filter(shopoholic = request.user)
+    params = { 'account_form' : account_form, 
+    		'delivery_form' : delivery_form,
+    		'preorders' : preorders, 
+    		'added_word' : _("My profile") }
+    return render_to_response(profile_page(request), params , context_instance = RequestContext(request))
+
 
 def email_for_restorepassword(request):
   if request.method == "POST":    
@@ -59,18 +100,71 @@ def email_for_restorepassword(request):
     user = User.objects.get(confirm_key = confirm_key)
     user.backend='django.contrib.auth.backends.ModelBackend'
     auth.login(request, user)
-    return render_to_response(setup_new_passwd, {'phase' : 'input' } ,  context_instance = RequestContext(request))
+    return render_to_response(setup_new_passwd(request), {'phase' : 'input' } ,  context_instance = RequestContext(request))
 
 def change_password(request):
   password = request.REQUEST.get("password",None)
+  try:
+    cart = get_cart_by_request_cartkey(request)
+  except:
+    return redirect('/')
+  try:
+    nextp = request.session['nextp']
+  except:
+    nextp = '/'
+  user = request.user  
+  if user is not None:
+    cart2 = get_or_create_cart_by_user(user)
+    combine_carts(cart,cart2)
   if password and len(password)>1:
     u = request.user
     u.set_password(password)
     u.save()
-    return render_to_response(setup_new_passwd, {'phase' : 'ok' } ,  context_instance = RequestContext(request))
+    if nextp != '/':
+      return redirect(nextp)
+    return render_to_response(setup_new_passwd(request), {'phase' : 'ok' } ,  context_instance = RequestContext(request))
   else: 
-    return render_to_response(setup_new_passwd, {'phase' : 'badpasswd' } ,  context_instance = RequestContext(request))
+    return render_to_response(setup_new_passwd(request), {'phase' : 'badpasswd' } ,  context_instance = RequestContext(request))
+
+def change_password_by_new_social_user(request):
+  password = request.REQUEST.get("password",None)
+  cart = None
+  try:
+    cart = get_cart_by_request_cartkey(request)
+  except:
+    pass
+  try:
+    nextp = request.session['nextp']
+  except:
+    nextp = '/'
+  user = request.user  
+  if user is not None and cart is not None:
+    cart2 = get_or_create_cart_by_user(user)
+    combine_carts(cart,cart2)
+  if password and len(password)>1:
+    u = request.user
+    u.set_password(password)
+    u.save()
+    return render_to_response(setup_new_passwd(request), {'phase' : 'ok', 'social' : True, 'nextp' : nextp } ,  context_instance = RequestContext(request))
+  else: 
+    return render_to_response(setup_new_passwd(request), {'phase' : 'badpasswd', 'social' : True, 'nextp' : nextp } ,  context_instance = RequestContext(request))
     
+
+def combinecarts(request):
+  try:
+    cart = get_cart_by_request_cartkey(request)
+  except:
+    return redirect('/')
+  try:
+    nextp = request.session['nextp']
+  except:
+    nextp = '/'
+  user = request.user  
+  if user is not None:
+    cart2 = get_or_create_cart_by_user(user)
+    combine_carts(cart,cart2)
+  return redirect(nextp)
+
 def login(request):
     if request.method == "POST":
         #username = request.POST['username']
@@ -111,20 +205,20 @@ def login(request):
             # Return an 'invalid login' error message.
     else:
         nextp = request.REQUEST.get('next',None)
-        form = HRUserCreationForm()
+        form = account_forms.HRUserCreationForm()
         if request.user.is_authenticated() :
             return redirect('/')
         if nextp:
 	  params = {'next' : nextp , 'form' : form, 'mode' : 'login'}
 	else:
 	  params = {'next' : '/' , 'form' : form , 'mode' : 'login'}
-        return  (render_to_response(login_page_html,
+        return  (render_to_response(login_page_html(request),
         params,  
         context_instance = RequestContext(request)))
 
 def register(request):
     if request.method == "POST":
-        form = HRUserCreationForm(request.POST)
+        form = account_forms.HRUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             if user is not None:
@@ -156,48 +250,18 @@ def register(request):
             else:
                 return redirect('/')
         else:
-            return render_to_response(login_page_html, {'form': form, 'mode' : 'register' } ,  context_instance = RequestContext(request))
+            return render_to_response(login_page_html(request), {'form': form, 'mode' : 'register' } ,  context_instance = RequestContext(request))
             #return redirect('/')
             # Return an 'invalid login' error message.
     else:
-        form = HRUserCreationForm()
-        return render_to_response(login_page_html, {'form': form, 'mode' : 'register' } ,  context_instance = RequestContext(request))
+        form = account_forms.HRUserCreationForm()
+        return render_to_response(login_page_html(request), {'form': form, 'mode' : 'register' } ,  context_instance = RequestContext(request))
 
 def logout(request):
     auth.logout(request)
     return redirect('/')
 
 #FORMS
-class HRUserCreationForm(auth.forms.UserCreationForm):
-    email = forms.EmailField(required=True)
-    first_name = forms.CharField(max_length=100)
-    last_name = forms.CharField(max_length=100)
-    #captcha = CaptchaField()
-
-    def clean_email(self):
-        email = self.cleaned_data['email']
-        try:
-            user = User.objects.get(email__exact = email)
-        except User.DoesNotExist:
-            return email
-        raise forms.ValidationError(_("User with this email already exists"))
-
-    class Meta:
-        model = User
-        fields = ('username', 'email')
-
-class LoginForm(forms.Form):
-    email_or_login = forms.CharField(max_length=100)
-    password = forms.CharField()
-
-    def clean_email_or_login(self):
-        email_or_login = self.cleaned_data['email_or_login']
-        password = self.cleaned_data['password']
-        try:
-            user = User.objects.get(email__exact = email_or_login, password = password)
-        except User.DoesNotExist:
-            return email
-        raise forms.ValidationError(_("User with this credentials not found"))
 
 def randomconfirmationlink():
 	digits = "".join( [random.choice(string.digits) for i in xrange(10)] )

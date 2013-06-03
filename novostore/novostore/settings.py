@@ -281,15 +281,17 @@ SUIT_CONFIG = {
 
 PHOTOLOGUE_MAXBLOCK = 1024*2**10
 
-NCATALOGUE_THEME = 'default'
+NCATALOGUE_THEME = lambda r: r.shop.theme #'default'
 NCATALOGUE_PRODUCTS_PER_PAGE = 20
-INDEX_PAGE_HTML = NCATALOGUE_THEME+'/index.html'
-PRODUCT_PAGE_HTML = NCATALOGUE_THEME+'/product.html'
-LOGIN_PAGE_HTML = NCATALOGUE_THEME + '/accounts/login.html'
-SETUP_NEW_PASSWD_PAGE_HTML = NCATALOGUE_THEME + '/accounts/set_up_new_passwd.html'
-CART_PAGE_HTML = NCATALOGUE_THEME+'/commerce/cart.html'
-CHECKOUT_PAGE_HTML = NCATALOGUE_THEME+'/commerce/checkout.html'
-CHECKOUT_CONFIRMED_HTML = NCATALOGUE_THEME+'/commerce/checkout_confirmed.html'
+INDEX_PAGE_HTML = lambda r: (r.shop.theme + '/index.html')
+PRODUCT_LIST_HTML = lambda r: (r.shop.theme +'/product_list.html')
+PRODUCT_PAGE_HTML = lambda r: (r.shop.theme +'/product.html')
+LOGIN_PAGE_HTML = lambda r: (r.shop.theme +'/accounts/login.html')
+PROFILE_PAGE_HTML = lambda r: (r.shop.theme +'/accounts/profile.html')
+SETUP_NEW_PASSWD_PAGE_HTML = lambda r: (r.shop.theme +'/accounts/set_up_new_passwd.html')
+CART_PAGE_HTML = lambda r: (r.shop.theme +'/commerce/cart.html')
+CHECKOUT_PAGE_HTML = lambda r: (r.shop.theme +'/commerce/checkout.html')
+CHECKOUT_CONFIRMED_HTML = lambda r: (r.shop.theme + '/commerce/checkout_confirmed.html')
 
 REGISTER_TEXT_SUBJECT = _("Register on e-commerce shop")
 EMAIL_SERVER_ADRESS_NOREPLY = "info@drivepixels.ru"
@@ -327,8 +329,13 @@ AUTHENTICATION_BACKENDS = (
 )
 TWITTER_CONSUMER_KEY         = ''
 TWITTER_CONSUMER_SECRET      = ''
-FACEBOOK_APP_ID              = ''
-FACEBOOK_API_SECRET          = ''
+
+##FACEBOOK TO BE REDONE##
+FACEBOOK_APP_ID = '382245681888119'
+FACEBOOK_API_SECRET = '4e6db570c3127b66dbba5939b8b2e4a6'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+##==##
+
 LINKEDIN_CONSUMER_KEY        = ''
 LINKEDIN_CONSUMER_SECRET     = ''
 ORKUT_CONSUMER_KEY           = ''
@@ -355,7 +362,7 @@ LOGIN_REDIRECT_URL = '/accounts/logged-in/'
 LOGIN_ERROR_URL    = '/accounts/login-error/'
 
 #SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/accounts/another-login-url/'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/accounts/combinecarts/'
 SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/accounts/new-users-redirect-url/'
 SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/accounts/new-association-redirect-url/'
 SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/accounts/account-disconnected-redirect-url/'
