@@ -47,13 +47,14 @@
     {% include "aboutcompany.html" with hidecats=True index=True %}
     {% include "howitworks.html" with hidecats=True index=True %}
     <div class="row">
-    <div class="container nsized"><div class="span12 indexheader"><center>Оборудование</center></div></div>
+    <div class="container nsized" style="padding-top:10px;"><div class="span12 indexheader"><center>Каталог оборудования</center></div></div>
     </div>
     {% include "product_container.html" with hidecats=True index=True %}
-    <div class="row">
-    <div class="container nsized"><div class="span12 indexheader"><center>Выполненные работы</center></div></div>
-    </div>
     {% include "product_container.html" with hidecats=True index=True %}
+    <br>
+    <center>
+    <a href="/antennas/" class="btn btn-brand-skype">Смотреть весь каталог оборудования</a>
+    </center>
     {% endblock %}
     {% block footer %}
     {% include "footer.html" %}
