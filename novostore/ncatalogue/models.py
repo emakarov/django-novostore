@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import Q,F
-from django.contrib import auth
+#from django.contrib import auth
 
 from django.core.validators import *
 
@@ -45,6 +45,8 @@ class Category(MPTTModel):
                             related_name='children')
   order = models.PositiveIntegerField()
   shop = models.ForeignKey(shop_models.Shop,verbose_name = _("Shop"),related_name='categories')
+  photo = models.ForeignKey(Photo, null=True, blank=True,verbose_name=_("Photo"))
+  description =  models.CharField(_("Description"), max_length=255, blank=True, default='', help_text = _("Description"),db_index=True)
 
 
   objects = VisibleTreeManager(Q(shop__owner=lambda r:r.user))

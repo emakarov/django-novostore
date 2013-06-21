@@ -1,0 +1,20 @@
+{% extends "default/index.html" %}
+{% block rotator %}
+{% endblock %}
+{% block breadcrumb %}
+    {% include "default/categories_breadcrumb.html" with added_word=added_word %} 
+{% endblock %}
+{% block wrapper %}
+    {% include "default/commerce/cart_table.html" %} 
+{% endblock %}
+{% block footer %}
+  {% include "default/footer.html" with hidecheck=1 %}
+{% endblock %}
+{% block additional_scripts %}
+    <script>
+    var total_sum = 0;
+    $(document).ready(function(){
+      recalculateprice();
+    });
+    </script>
+{% endblock %}

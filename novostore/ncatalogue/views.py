@@ -71,3 +71,22 @@ def productpage(request,product_id):
   	'show_breadcrumb' : True
   }
   return render_to_response(product_page_html(request), params, context_instance = RequestContext(request))
+  
+def simpleproductsearch(request):
+  q = request.REQUEST.get('q',None)
+  if q:
+    products = ncatalogue_models.Product.objects.filter(
+                                              Q(upc__icontains=q) |
+                                              Q(name__icontains=q) |
+                                              Q(description__icontains=q) |
+                                              Q(long_description__icontains=q)
+                                              )
+  else:
+    products = ncatalogue_models.Product.objects.none()
+  params = {  
+  	'products' : products,
+  	'show_breadcrumb' : True,
+  	'category' : None,
+  	'searchstring' : q
+  }
+  return render_to_response(product_list_html(request), params, context_instance = RequestContext(request))

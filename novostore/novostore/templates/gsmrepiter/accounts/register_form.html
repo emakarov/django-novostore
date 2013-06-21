@@ -1,0 +1,77 @@
+{% load i18n %}
+<div class="span12" style="margin-bottom:20px;">
+{% blocktrans %}
+Enter your login, name, email address and password to create an account. 
+We guarantee that every transaction you make at our site will be safe. 
+This means you pay nothing if unauthorized charges are made to your credit card as a result of shopping here.
+{% endblocktrans %}
+</div>
+<br><br>
+<div class="span5">
+        <form id="login_form" method="post" action="{% url 'accounts.views.register' %}"  class="form-horizontal">
+          <fieldset>
+          {% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="input01">{% trans "Login" %}</label>
+            <div class="controls">
+              {{ form.username }}
+            </div><!-- controls-->
+            {% if form.username.errors %}
+            <span class="label label-important errored_register">{{ form.username.errors }}</span>
+            {% endif %}
+          </div><!-- control-group -->
+          <div class="control-group">
+            <label class="control-label" for="input001">{% trans "First Name" %}</label>
+            <div class="controls">
+              {{ form.first_name }}
+            </div><!-- controls-->
+          </div><!-- control-group -->
+          <div class="control-group">
+            <label class="control-label" for="input001">{% trans "Last Name" %}</label>
+            <div class="controls">
+              {{ form.last_name }}
+            </div><!-- controls-->
+          </div><!-- control-group -->
+          <div class="control-group">
+            <label class="control-label" for="input02">{% trans "Email" %}</label>
+            <div class="controls">
+              {{ form.email }}
+            </div><!-- controls-->
+            {% if form.email.errors %}
+            <span class="label label-important errored_register">{{ form.email.errors }}</span>
+            {% endif %}
+          </div><!-- control-group -->
+          <div class="control-group">
+            <label class="control-label" for="input03">{% trans "Password" %}</label>
+            <div class="controls">
+              {{ form.password1 }}
+            </div><!-- controls-->
+            {% if form.password1.errors %}
+            <span class="label label-important errored_register">{{ form.password1.errors }}</span>
+            {% endif %}
+          </div><!-- control-group -->
+          <div class="control-group">
+            <label class="control-label" for="input03">{% trans "Repeat Password" %}</label>
+            <div class="controls">
+              {{ form.password2 }}
+            </div><!-- controls-->
+            {% if form.password2.errors %}
+            <span class="label label-important errored_register">{{ form.password2.errors }}</span>
+            {% endif %}
+          </div><!-- control-group -->
+          <input type="hidden" name="next" value="/">
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-brand-ebay">{% trans "Register" %}</button>
+    </div>
+  </div>
+
+        </fieldset>
+      </form>
+</div>
+<div class="span2">
+</div>
+<div class="span5">
+<br><br><br>
+{% include "default/accounts/benefits_text.html" %}
+</div>

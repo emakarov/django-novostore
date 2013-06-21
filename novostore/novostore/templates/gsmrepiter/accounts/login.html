@@ -1,0 +1,49 @@
+{% extends "default/index.html" %}
+{% load i18n %}
+{% block additional_head %}
+{% if mode == "login" %}
+<style>
+.form-horizontal .controls {
+  margin-left: 80px;
+}
+.form-horizontal .control-label {
+float: left;
+width: 60px;
+padding-top: 5px;
+text-align: right;
+}
+{% endif %}
+</style>
+{% endblock %}
+{% block rotator %}
+{% endblock %}
+{% block wrapper %}
+  <div class="container nsized" style="height: 30px;">
+    <div>
+    <ul class="breadcrumb">
+    <li><a href="/">{% trans "Home" %}</a></li>
+    <i class="icon-chevron-right icon-white"></i>
+    <li>
+    {% if mode == "register" %}<a href="/accounts/login/">{% endif %}
+    {% trans "Sign In or Create an Account" %}
+    {% if mode == "register" %}</a>{% endif %}
+    </li>
+    {% if mode == "register" %}
+    <i class="icon-chevron-right icon-white"></i>
+    <li>{% trans "Create an Account" %}</li>
+    {% endif %}
+    </div>
+  </div>
+<div class="container">
+<div class="row">
+{% if mode == "login" %}
+{% include "default/accounts/login_form.html" %}
+{% else %}
+{% include "default/accounts/register_form.html" %}
+{% endif %}
+</div>
+</div>
+{% endblock %}
+{% block additional_scripts %}
+<script type="text/javascript" src="/static/apps/js/restore_password.js"></script>
+{% endblock %}

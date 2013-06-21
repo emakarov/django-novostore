@@ -170,6 +170,7 @@ INSTALLED_APPS = (
     #'tagging',
     'utils',
     'django.contrib.comments',
+    'sitemanagement',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -210,6 +211,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
     'ncatalogue.context_processors.categories_context',
     'commerce.context_processors.cart_context',
+    'sitemanagement.context_processors.menu_context',
 )
 
 
@@ -296,10 +298,10 @@ CHECKOUT_CONFIRMED_HTML = lambda r: (r.shop.theme + '/commerce/checkout_confirme
 REGISTER_TEXT_SUBJECT = _("Register on e-commerce shop")
 EMAIL_SERVER_ADRESS_NOREPLY = "info@drivepixels.ru"
 
-from south.modelsinspector import add_introspection_rules 
+#from south.modelsinspector import add_introspection_rules 
 
-add_introspection_rules([], ["^photologue\.models\.TagField"])
-add_introspection_rules([], ["^tagging\.fields\.TagField"])
+#add_introspection_rules([], ["^photologue\.models\.TagField"])
+#add_introspection_rules([], ["^tagging\.fields\.TagField"])
 
 AUTH_USER_MODEL = 'accounts.AccountsUser'
 

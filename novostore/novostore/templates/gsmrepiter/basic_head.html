@@ -1,0 +1,239 @@
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}bootstrap/css/buttons.css" rel="stylesheet" media="screen">
+    <style>
+    html, body{
+     font-size:13px;
+     font-family: OpenSansRegular, Arial, Helvetica, sans-serif;
+     font-weight: normal;
+    }
+    .sbtl{
+    background-image:url({{STATIC_URL}}/subtlenet/subtlenet2.png);
+    }
+    .navbar-inner {
+      padding-left:200px;
+    }
+    .nsized{
+    width:945px;
+    margin:0 auto;
+    }
+    .blbck{
+    	background:#fff;
+        //background:url(http://500px.com/unity/img/header/background.png) repeat-x;
+        -webkit-box-shadow: 0;        
+        -moz-box-shadow: 0;
+        box-shadow: 0;
+        height:40px;    
+     }
+    .bcgwhite{
+     background:#fff;
+     margin-bottom: 0px;
+    }
+    .fullpctwidth{
+    width: 100%;
+    }
+    .nopad{
+    padding:0;
+    }
+    .padsizes10{
+    padding:0 10px;
+    }
+    .padbot10{
+    padding-bottom:5px;
+    }
+    .padbot5{
+    padding-bottom:0px;
+    }
+    .noround{
+    border-radius:0;
+    border-bottom-right-radius: 0px;
+    border: 1px solid #eee;
+    border:0;
+    }
+    .color-green {
+    	color: #2dcf79;
+    	font-family: 'PTSansRegular', Arial, sans-serif;
+    	font-size: 13px;
+    }
+    .mtopm20{
+      margin-top: -20px;
+    }
+    .noborder{
+    border:0;
+    }
+    .block-note{
+	position:relative;
+	top: -200px;
+	left: -4px;
+	z-index: 10;
+	width: 78px;
+	height: 12px;
+	color: #fff;
+	padding: 8px 0;
+	line-height: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: nowrap;
+	letter-spacing: 1px;
+	font-size: 11px;
+	font-family: 'PTSansNarrowBold', Arial, sans-serif;
+	background-image: url({{STATIC_URL}}img/block-note-bg.png);
+	background-repeat: no-repeat;
+	cursor: default;
+    }
+    .block-note-green {
+    	background-position: 0 -84px;
+    }
+    .btn-group>.btn:first-child, .btn-group>.btn:last-child, .btn-group>.dropdown-toggle{
+     border-radius:0;
+    }
+    .btn-group>.btn:first-child{
+     border-left:0;
+    }
+    .nav>li>a .navlia{
+    text-decoration: underline;
+    }
+      #wrap {
+        min-height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+        width:960px;
+        margin:20px auto 0;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+      .container .credit {
+        margin: 20px 0;
+        padding-left:20px;
+      }
+      #wrap > .container {
+        padding-top: 30px;
+      }
+      .cursored {
+       cursor:pointer;cursor:hand;
+      }
+      .smallheader{
+      color:#000;font-size:12px;font-weight:bold;
+      }
+      .errored_register>li,.errored_register>ul{
+      list-style-type: none; padding: 0px; margin: 0px;
+      width: 290px;
+      text-align: center;
+      }
+      .errored_register{
+      	margin-top: 10px;
+      }
+      #cart_nitems_a{
+       padding-top:10px;margin-top:0px;font-weight:bold;
+      }
+      #cart_nitems_a:hover{
+       text-decoration:underline;cursor:pointer;cursor:hand;
+      }
+      
+      .carousel-indicators {
+      	left: 50%;
+      	top: 250px;
+      }
+      .carousel-indicators li {
+      	//border: 1px solid rgb(56,123,221);
+      	border: 2px solid white;
+      	cursor:pointer; cursor:hand;
+      	border-radius: 6px;
+      	width: 8px;
+      	height: 8px;
+      	background-color:#aaa;
+      
+      }
+      .carousel-indicators .active {
+      	background-color: #00aff0; // #16a765; //rgb(71,167,226);
+      }
+      .carousel-control {
+      	height: 80px;
+      	margin-top: 0;
+      	font-size: 120px;
+      	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      	background-color: transparent;
+      	border: 0;
+      	z-index: 10;
+      	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      }
+      
+      .carousel-control:hover, .carousel-control:focus {
+      	color: #ffffff;
+      	text-decoration: none;
+      	opacity: 0.9;
+      	filter: alpha(opacity=90);
+      }      
+      .carousel-inner{
+        -moz-box-shadow: 0px 2px 10px rgba(0,0,0,0.5); /* Для Firefox */
+        -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.5); /* Параметры тени */	
+      }
+      .carousel-inner>.item {
+       height: 280px;
+      }
+      
+      ul, ol {
+      	padding: 0;
+      	margin: 0 0 0px 0px;
+      }     
+      .thumbnails>li {
+      	float: left;
+      	margin-bottom: 0px;
+      	margin-left: 20px;
+      } 
+      @font-face {
+	font-family: 'OpenSansLight';
+	src: url('/static/fonts/OpenSans-Light.eot');
+	src: url('/static/fonts/OpenSans-Light.eot?') format('eot'),
+	url('/static/fonts/OpenSans-Light.woff') format('woff'),
+	url('/static/fonts/OpenSans-Light.ttf') format('truetype'),
+	url('/static/fonts/OpenSans-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+      }
+      
+      @font-face {
+	font-family: 'OpenSansRegular';
+	src: url('/static/fonts/OpenSans-Regular.eot');
+	src: url('/static/fonts/OpenSans-Regular.eot?') format('eot'),
+	url('/static/fonts/OpenSans-Regular.woff') format('woff'),
+	url('/static/fonts/OpenSans-Regular.ttf') format('truetype'),
+	url('/static/fonts/OpenSans-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+       }
+       
+       .yell{
+       	      	background: #fce302;
+       }
+
+      .indexbrand{
+      	position:relative;top:-100px;
+      	font-family: OpenSansLight, Arial, Helvetica, sans-serif;
+      	font-size: 40px;font-weight:normal;
+      	line-height: 42px;
+      	padding: 0 15px;
+      }
+      .navbar .nav>li>a {
+      	color: #000;
+      	text-shadow: none;
+      }
+      .indexheader{
+      	font-size: 24px;
+      	padding:10px 0;
+      }
+           
+      </style>
+      <script>
+      var lanuage_code = "{{request.LANGUAGE_CODE}}";
+      </script>

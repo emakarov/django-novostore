@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^commerce/', include('commerce.urls')),
     url(r'', include('social_auth.urls')),
     (r'^$', 'ncatalogue.views.index'),
+    (r'psearch/$', 'ncatalogue.views.simpleproductsearch'),
 ) 
 
 urlpatterns += patterns('django.contrib.staticfiles.views',

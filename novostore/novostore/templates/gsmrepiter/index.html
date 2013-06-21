@@ -1,0 +1,69 @@
+{% load mptt_tags %}
+{% load i18n %}
+{% include "doctype.html" %}
+<html>
+  <head>
+  {% include "basic_head.html" %}
+  {% block additional_head %}{% endblock %}
+  </head>
+  <body>
+    <div id="wrap">
+    {% include "nav_bar_top.html" %}
+    {% block rotator %}
+    <div id="maincarousel" class="carousel slide">
+
+      <ol class="carousel-indicators">
+        <li data-target="#maincarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#maincarousel" data-slide-to="1"></li>
+        <li data-target="#maincarousel" data-slide-to="2"></li>
+        <li data-target="#maincarousel" data-slide-to="3"></li>
+      </ol>
+
+      <div class="carousel-inner">
+      <div class="active item">
+        <img style="height:280px;width:100%" src="/static/some/cell-phone-airplane-etiquette1.jpg">
+        <div class="container nsized"><span class="yell indexbrand">Улучшаем качество сотовой связи с 1995 г.</span></div>
+      </div>
+      <div class="item">
+        <img style="height:280px;width:100%" src="/static/some/gsmv4.jpg">
+        <div class="container nsized"><span class="yell indexbrand">Поставка оборудования</span></div>
+      </div>
+      <div class="item">
+        <img style="height:280px;width:100%" src="/static/some/cellstation.jpg">
+        <div class="container nsized"><span class="yell indexbrand">Проектирование сети</span></div>
+      </div>
+      <div class="item">
+        <img style="height:280px;width:100%" src="/static/some/maxresdefault.jpg">
+        <div class="container nsized"><span class="yell indexbrand">Установка GSM репитеров</span></div>
+      </div>
+      </div>
+      <a class="carousel-control left" href="#maincarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#maincarousel" data-slide="next">&rsaquo;</a>
+    </div>
+    {% endblock %}
+    {% block breadcrumb %}
+    {% endblock %}
+    {% block wrapper %}
+    {% include "aboutcompany.html" with hidecats=True index=True %}
+    <div class="row">
+    <div class="container nsized"><div class="span12 indexheader"><center>Оборудование</center></div></div>
+    </div>
+    {% include "product_container.html" with hidecats=True index=True %}
+    <div class="row">
+    <div class="container nsized"><div class="span12 indexheader"><center>Выполненные работы</center></div></div>
+    </div>
+    {% include "product_container.html" with hidecats=True index=True %}
+    {% endblock %}
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+    </div>
+    {% include "gsmrepiter/scripts.html" %}
+    {% block additional_scripts %}
+    <script>
+    $('.carousel').carousel()
+    </script>
+    {% endblock %}
+    <div style="height:60px"></div>
+  </body>
+</html>

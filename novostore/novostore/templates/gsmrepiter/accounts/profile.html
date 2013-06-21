@@ -1,0 +1,72 @@
+{% extends "default/index.html" %}
+{% load i18n %}
+{% block additional_head %}
+<script>
+function saveform(formtag){
+   var dataform = $('#form_'+formtag).serialize(true);
+   var datasend = { 'form' : dataform, 'formtag' : formtag }
+    $.post('/accounts/saveprofileajax/', datasend, function(data) {
+       formsave_callback(data);
+    });
+}
+
+function formsave_callback(data){
+  if (data.status != "error"){
+    $("#"+data.formtag+"_label").show();
+    var s = "fadelabel('#"+data.formtag+"_label')";
+  }
+  else{
+    $("#"+data.formtag+"_label_error").show();
+    var s = "fadelabel('#"+data.formtag+"_label_error')";
+  }
+  setTimeout(s,500)
+}
+
+function fadelabel(labelid){
+  $(labelid).fadeOut("slow");
+}
+
+</script>
+{% endblock %}
+{% block rotator %}
+{% endblock %}
+{% block wrapper %}
+<div class="container">
+{% include 'default/categories_breadcrumb.html' with added_word=added_word %}
+<br>
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#basicinfo" data-toggle="tab">{% trans "Basic information" %}</a>
+  </li>
+  <li><a href="#deliveryaddress" data-toggle="tab">{% trans "Delivery address" %}</a></li>
+  <li><a href="#orders" data-toggle="tab">{% trans "My orders" %}</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="basicinfo" style="margin-left: 0;">
+  {% include "default/accounts/formfactor.html" with form=account_form formtag="account_form" %}
+  </div>
+  <div class="tab-pane" id="deliveryaddress">
+  {% include "default/accounts/formfactor.html" with form=delivery_form formtag="delivery_form" %}
+  </div>
+  <div class="tab-pane" id="orders">
+  <table class="table">
+  <tr>
+  <th>{% trans "Order number" %}
+  <th>{% trans "Date of order" %}
+  <th>{% trans "Payment status" %}
+  {% for p in preorders %}
+  <tr>
+  <td>{{ p.id }}
+  <td>{{ p.created_at }}
+  <td>
+  {% if p.paid %}
+  <div class="badge btn-brand-ebay"><i class="icon-ok icon-white"></i></div>
+  {% else %}
+  <div class="badge"><i class="icon-exclamation-sign icon-white"></i></div>&nbsp;Not paid
+  {% endif %}
+  </tr>
+  {% endfor %}
+  </table>
+  </div>
+</div>
+{% endblock %}

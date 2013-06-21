@@ -26,6 +26,7 @@
 	      </li>
 	      -->
 	      
+	      <!--
 	      {% if user.is_authenticated %}
 	      <li><a href="#">{{ user }}</a></li>
 	      <li><a href="{% url 'accounts.views.profile' %}">{% trans "Profile" %}</a></li>
@@ -38,6 +39,7 @@
 	      <li><a class="navlia" href="{% url 'accounts.views.login' %}">{% trans "Sign in" %}</a></li>
 	      <li><a href="{% url 'accounts.views.register' %}">{% trans "New customer" %}</a></li>
 	      {% endif %}
+	      -->
 	      </ul>
       </div>
 
@@ -53,16 +55,16 @@
 	          {% recursetree topmenu %}
 	            {% if node.is_leaf_node %}
 	            <li>
-	              <a href="/{{node.slug}}/"><b style="color:#000">{{ node.text }}</b></a>
+	              <a href="{{node.url}}">{{ node.text }}</a>
 	            </li>
 	            {% else %}
 	            <li class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
-	              <a slug="/{{node.slug}}/" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
-	                <b style="color:#000">{{ node.text }}</b>
+	              <a slug="{{node.url}}" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
+	                {{ node.text }}
 	              </a>
 	              <ul class="dropdown-menu" dropdown_node_id="{{node.id}}" id="dropdown_node_menu_{{node.id}}">
 	              {% for ch in node.get_children.all %}
-	              <li><a href="/{{ch.url}}/">{{ ch.text }}</a></li>
+	              <li><a href="{{ch.url}}">{{ ch.text }}</a></li>
 	              {% endfor %}
 	              </ul>
 	            </li>

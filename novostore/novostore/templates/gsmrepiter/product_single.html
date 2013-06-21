@@ -1,0 +1,51 @@
+{% load i18n %}
+  <!--Products container-->
+    <div class="container">
+    <div class="row">
+    <div class="span4">
+	      <img src="{{product.cover.get_s340x340_url}}" alt="">
+    </div>
+    <div class="span5">
+    <h4>{{product.name}}</h4>
+    <p>
+    {% trans "Regular price" %}
+    {{product.price}} {{product.currency.shortname}}
+    </p>
+    <!--
+    <form class="form-inline">
+    <input id="productid" type="hidden" value="{{product.id}}"></input>
+    <label>{% trans "Choose quantity" %}</label>
+    <select id="productquantity" style="margin-left:10px;font-size:11px;height: 18px;width:50px;">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    </select>
+    </form>
+    <div onclick="addproducttocart()" id="addtobagbtn" class="btn btn-brand-ebay">{% trans "Add to cart" %}</div>
+    -->
+    {% ifnotequal product.long_description '' %}
+    <div class="smallheader" style="margin-top:20px;">
+    {% trans "Product details" %}
+    </div>
+    <p style="font-size:11px;text-align:justify;">
+    {{ product.long_description }}
+    </p>
+    {% endifnotequal %}
+    </div>
+    <div class="span1">
+    &nbsp;
+    </div>
+    <div class="span2">
+    <p class="smallheader">{% trans "You might also like" %}</p>
+    {% for p in might_like_products %}
+    <div class="media" style="margin-top:0px;">
+    <a href="/product/{{p.id}}/">
+    <img src="{{p.cover.get_s120x120_url}}" alt="">
+    <p class="smallheader">{{p.name}}</p>
+    </a>
+    </div>
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+  <!--End of products container-->

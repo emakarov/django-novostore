@@ -1,0 +1,17 @@
+{% extends "default/index.html" %}
+{% load i18n %}
+{% block rotator %}
+{% endblock %}
+{% block breadcrumb %}
+    {% include "default/categories_breadcrumb.html" with added_word=added_word %} 
+{% endblock %}
+{% block wrapper %}
+    <div class="container">
+    <p>{% trans "Your order and delivery address are confirmed. Please wait for call from our manager." %}</p>
+    <p>{% trans "Number of your order" %}: {{ preorder.id }} </p>
+    </div>
+{% endblock %}
+{% block footer %}
+  {% include "default/footer.html" with hidecheck=1 %}
+{% endblock %}
+{% block additional_scripts %}{% endblock %}
