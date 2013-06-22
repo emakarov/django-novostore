@@ -1,7 +1,7 @@
     <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}bootstrap/css/gsmrepiter/bootstrap.css" rel="stylesheet" media="screen">
     <link href="{{STATIC_URL}}bootstrap/css/buttons.css" rel="stylesheet" media="screen">
     <style>
     html, body{
@@ -234,8 +234,57 @@
       }
       .control-group {
       	margin-bottom: 0px;
-      	}      
-      </style>
+      	}   
+      	.dropdown-menu {
+	background-color: #fce302;
+	border-radius: 0;
+	margin: 0 0 0;
+	border:0;
+	}
+	.navbar .nav > li:focus,
+	.navbar .nav > li:hover,
+	.navbar .nav > li:hover a,
+	.navbar .nav > li.open,
+	.navbar .nav li.dropdown.open > .dropdown-toggle, 
+	.navbar .nav li.dropdown.active > .dropdown-toggle, 
+	.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	    background-color: #fce302;
+	}   
+	.nav-pills>li>a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 2px;
+	margin-bottom: 4px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 5px;
+	border-radius: 0px;
+	}
+	.nav-pills .dropdown-menu {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	}
+	.navbar .nav>li>.dropdown-menu:before {
+		display:none;
+	}
+	.navbar .nav>li>.dropdown-menu:after {
+		display:none;
+	}
+	.caret{
+	display:none;
+	}
+	.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
+	color: #ffffff;
+	text-decoration: none;
+	background-color: #000;
+	}      
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #000;
+}	</style>
       <script>
       var lanuage_code = "{{request.LANGUAGE_CODE}}";
       </script>

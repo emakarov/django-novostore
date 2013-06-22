@@ -55,7 +55,7 @@
 	          {% recursetree topmenu %}
 	            {% if node.is_leaf_node %}
 	            <li>
-	              <a href="{{node.url}}">{{ node.text }}</a>
+	              <a class="dropdown-toggle" dropdown_node_id="{{node.id}}" href="{{node.url}}">{{ node.text }}</a>
 	            </li>
 	            {% else %}
 	            <li class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
