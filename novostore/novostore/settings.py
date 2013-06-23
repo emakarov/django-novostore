@@ -171,6 +171,7 @@ INSTALLED_APPS = (
     'utils',
     'django.contrib.comments',
     'sitemanagement',
+    'blog',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -294,6 +295,9 @@ SETUP_NEW_PASSWD_PAGE_HTML = lambda r: (r.shop.theme +'/accounts/set_up_new_pass
 CART_PAGE_HTML = lambda r: (r.shop.theme +'/commerce/cart.html')
 CHECKOUT_PAGE_HTML = lambda r: (r.shop.theme +'/commerce/checkout.html')
 CHECKOUT_CONFIRMED_HTML = lambda r: (r.shop.theme + '/commerce/checkout_confirmed.html')
+BLOG_INDEX_HTML = lambda r: (r.shop.theme + '/blog/index.html')
+BLOG_ARTICLELIST_HTML = lambda r: (r.shop.theme + '/blog/articlelist.html')
+BLOG_ARTICLE_HTML = lambda r: (r.shop.theme + '/blog/article.html')
 
 REGISTER_TEXT_SUBJECT = _("Register on e-commerce shop")
 EMAIL_SERVER_ADRESS_NOREPLY = "info@drivepixels.ru"
