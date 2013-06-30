@@ -65,7 +65,7 @@ class Category(MPTTModel):
   class Meta:
     verbose_name = _("Category")
     verbose_name_plural = _("Categories")
-  
+    
 class Product(models.Model):
   from commerce.models import Currency 
   # Universal product code
@@ -101,6 +101,32 @@ class Product(models.Model):
   class Meta:
     verbose_name = _("Product")
     verbose_name_plural = _("Products")
+
+class ProductAttachment(models.Model):
+  name = models.CharField(_("File name"), max_length=255, blank=True, default='', help_text = _("File name"), db_index=True)
+  file = models.FileField(_("File"), upload_to="attachments/")
+  product = models.ForeignKey(Product,verbose_name=_("Product"), related_name="attachments")
+
+  def __unicode__(self):
+    return self.name
+  
+  class Meta:
+    verbose_name = _("Product Attachment")
+    verbose_name_plural = _("Product Attachments")
+
+class ProductDetail(models.Model):
+  name = models.CharField(_("Name"), max_length=255, blank=True, default='', help_text = _("Detail name"), db_index=True)
+  value = models.CharField(_("Value"), max_length=255, blank=True, default='', help_text = _("Value"), db_index=True)
+  product = models.ForeignKey(Product,verbose_name=_("Product"), related_name="details")
+
+  def __unicode__(self):
+    return self.name
+  
+  class Meta:
+    verbose_name = _("Product Detail")
+    verbose_name_plural = _("Product Details")
+  
+  
 
 #Use of django comments framework to support ratings
 #class ProductComment(Comment):

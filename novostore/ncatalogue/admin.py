@@ -31,6 +31,12 @@ class TreeModelInlineForm(forms.ModelForm):
 class MeasureUnitAdmin(admin.ModelAdmin):
   list_display = ['name']
 
+class ProductDetailInline(admin.TabularInline):
+  model = ProductDetail
+  extra = 20
+
+class ProductAttachmentInline(admin.TabularInline):
+  model = ProductAttachment
 
 class CategoryInline(admin.TabularInline):
   model = Category
@@ -47,6 +53,10 @@ class CategoryAdmin(VisibleAdmin, MPTTModelAdmin, SortableModelAdmin):
 class ProductAdmin(VisibleAdmin):
   list_display = ('name', 'price', 'currency', 'measure_unit', 'upc')
   list_per_page = 20
+  inlines = [
+    ProductAttachmentInline,
+    ProductDetailInline
+  ]
 
 admin.site.register(MeasureUnit, MeasureUnitAdmin)
 #admin.site.register(Currency, CurrencyAdmin)

@@ -31,6 +31,29 @@
     {{ product.long_description }}
     </p>
     {% endifnotequal %}
+    {% for a in product.attachments.all %}
+      {% if forloop.first %}
+       <div class="smallheader" style="margin-top:20px;">
+        {% trans "Attachments" %}
+       </div>
+      {% endif %}
+      <a href="{{ a.file.url }}">{{ a.name }}</a>
+    {% endfor %}
+
+    {% for d in product.details.all %}
+      {% if forloop.first %}
+       <div class="smallheader" style="margin-top:20px;">
+        {% trans "Details" %}
+       </div>
+       <table class="table table-condensed table-bordered">
+      {% endif %}
+      <tr><td>{{ d.name }}<td>{{ d.value }}</tr>
+      {% if forloop.last %}
+       </table>
+      {% endif %}
+    {% endfor %}
+
+
     </div>
     <div class="span1">
     &nbsp;
