@@ -48,7 +48,7 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
-        ('en', _('English')),
+#        ('en', _('English')),
         ('ru', _('Russian')),
 )
 
@@ -143,8 +143,9 @@ TEMPLATE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    path.join(PROJECT_ROOT,'locale'),
+  path.join(PROJECT_ROOT,'locale'),
 )
+#print LOCALE_PATHS
 
 INSTALLED_APPS = (
     'suit',

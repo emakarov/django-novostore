@@ -1,0 +1,45 @@
+{% load mptt_tags %}
+  <!--Products container-->
+  <div class="container nsized" style="padding-bottom:0px;{% if index %}padding-top:10px;{% endif %}" >
+  {% if not hidecats %}
+    <div class="span2" style="padding-left:0;margin-left:0;">
+    		<ul class="nav nav nav-list" style="font-size:13px;">
+	          {% recursetree categories %}
+	            {% if node.is_leaf_node %}
+	            <li>
+	              <a href="/{{node.slug}}/">{{ node.name }}</a>
+	            </li>
+	            {% else %}
+	            <li>
+	              <a style="color:#000" href="/{{node.slug}}/">
+	                {{ node.name }}
+	              </a>
+	              <ul class="nav nav nav-list">
+	              {%for ch in node.get_children.all %}
+	              <li><a href="/{{ch.slug}}/">{{ ch.name }}</a></li>
+	              {% endfor %}
+	              </ul>
+	            </li>
+	            {% endif %}
+	          {% endrecursetree %}
+	        </ul>
+
+    </div>
+    <div class="span9">
+    {% else %}
+    <div class="span12">
+    {% endif %}
+	  {% for p in products %}
+	  <div class="span4" style="padding:10px;">
+	  <a style="padding-right:10px;" class="pull-left" href="/product/{{p.id}}/">
+	    <img width=100 class="media-object" src="{{p.cover.get_s280x280_url}}">
+	  </a>
+	  <div class="media-body">
+	  <div>{{ p.name }}</div>
+	  {{p.price}}{{p.currency.shortname}}
+	  </div>
+	  </div>
+	  {% endfor %}
+    </div>
+    </div>
+  <!--End of products container-->

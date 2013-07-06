@@ -60,7 +60,7 @@ def profile(request):
       da = commerce_models.DeliveryAddress.objects.get(user=request.user)
     except:
       da = commerce_models.DeliveryAddress()
-      da.user = user
+      da.user = request.user
       da.save()
     delivery_form = commerce_forms.DeliveryAddressForm(instance = da)
     preorders = commerce_models.PreOrder.objects.filter(shopoholic = request.user)

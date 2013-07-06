@@ -32,9 +32,12 @@ def index(request):
 #  request.session['has_commented'] = 'fffff'
   #print request.session['has_commented']
   categories_all = ncatalogue_models.Category.objects.filter(is_operating = True, shop=request.shop)
-  products = ncatalogue_models.Product.objects.filter(
+  try:
+    products = ncatalogue_models.Product.objects.filter(
   	  Q(categories = categories_all[0]) | Q(categories__parent=categories_all[0])
   	).distinct()
+  except:
+    products = None
   params = {  
   	'products' : products,
   	'show_breadcrumb' : False,
