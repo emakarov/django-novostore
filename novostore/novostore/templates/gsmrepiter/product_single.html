@@ -4,7 +4,9 @@
     <div class="row">
     <div class="span4">
 	<img src="{{product.cover.get_s340x340_url}}" alt="">
-	<div class="btn" onclick="makeproductrequest()">{% trans "Make a request" %}</div>
+	<center>
+	<div style="margin-top:20px;" class="btn btn-brand-skype" onclick="makeproductrequest()">{% trans "Make a request" %}</div>
+	</center>
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
