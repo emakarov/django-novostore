@@ -14,17 +14,30 @@ from django.utils.encoding import force_unicode
 from django.contrib import admin
 from models import *
 #from util import base_admin as util_admin
-from django.forms import ModelForm
+from django import forms
+from suit_redactor.widgets import RedactorWidget
+
+class ArticleForm(forms.ModelForm):
+    model = Article
+    text = forms.CharField(widget=RedactorWidget())
+    class Meta:
+        widgets = {
+            'name': RedactorWidget()
+        }
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish_status')
     list_per_page = 20
     list_filter = ['user','terms']
-#    class Media:
-#        js = [
-#            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
-#            '/static/grappelli/tinymce_setup/tinymce_setup.js',
-#        ]                
+    class Media:
+        css = {
+        	'all' : ( '/static/redactor/redactor.css', )
+        }
+        js = (
+            '/static/redactor/redactor.js',
+            '/static/redactor/redactorlauncher.js',
+            #'/static/textredactor/textredactor.js',
+        )                
 #    inlines = [
 #        ArticleCoverInline,
 #    ]

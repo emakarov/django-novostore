@@ -1,0 +1,1 @@
+[{% for p in photos %}{ "thumb": "{{ p.get_s120x120_url }}", "image": "{{ p.image.url }}", "title": "", "folder": ""}{% if not forloop.last %},{% endif %}{% endfor %}]

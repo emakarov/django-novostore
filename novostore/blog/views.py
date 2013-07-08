@@ -14,6 +14,7 @@ from django.utils.translation import ugettext_noop
 from django.utils.translation import get_language
 from blog import models as blog_models
 from django.db.models import Q,F
+from photologue.models import ImageModel, Gallery, Photo
 
 blog_index_html = settings.BLOG_INDEX_HTML
 blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
@@ -52,3 +53,10 @@ def article(request,artid):
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
   return render_to_response(blog_article_html(request), params, context_instance = RequestContext(request))
+  
+def redactorimagejson(request):
+  photos = Photo.objects.all().order_by('-id')
+  template = loader.get_template('redactorimagesjson.html')
+  params = { 'photos' : photos }
+  context = RequestContext(request, params)  
+  return HttpResponse(template.render(context),mimetype='application/json')  

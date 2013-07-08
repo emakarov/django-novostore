@@ -9,7 +9,7 @@
   <div class="row">
     <div class="span9">
       <div style="font-size:20px;padding:0 0 20px;">{{ article.title }}</div>
-      <div style="text-align:justify;">{{ article.text }}</div>
+      <div style="text-align:justify;">{{ article.text|safe }}</div>
     </div>
     <div class="span3">
       <div>Другие статьи</div>
