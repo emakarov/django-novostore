@@ -17,10 +17,10 @@
       {% endfor %}
     </div>
     <div class="span3">
-      <div>Другие статьи</div>
+      <div>Рубрики</div>
       <div>
-      {% for a in sidebar %}
-        <a href="/blog/article/{{a.id}}/">{{ a.title }}</a>
+      {% for е in terms %}
+        <a href="/blog/t/{{t.termslug}}/">{{ t.termname }}</a>
       {% endfor %}
       </div>
     </div>
