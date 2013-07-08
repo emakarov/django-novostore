@@ -31,3 +31,5 @@ TEMPLATE_DIRS = (
     path.join(PROJECT_ROOT,'templates'),
     path.join(PROJECT_ROOT,'templates/gsmrepiter'),
 )
+
+ROOT_URLCONF = 'novostore.confs.urls_gsmrepiter'
