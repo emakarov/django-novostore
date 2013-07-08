@@ -15,15 +15,6 @@ from django.contrib import admin
 from models import *
 #from util import base_admin as util_admin
 from django import forms
-from suit_redactor.widgets import RedactorWidget
-
-class ArticleForm(forms.ModelForm):
-    model = Article
-    text = forms.CharField(widget=RedactorWidget())
-    class Meta:
-        widgets = {
-            'name': RedactorWidget()
-        }
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish_status')
