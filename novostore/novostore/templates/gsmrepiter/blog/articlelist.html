@@ -1,9 +1,29 @@
 {% extends "index.html" %}
+{% load i18n %}
 {% block rotator %}
 {% endblock %}
 {% block breadcrumb %}
   {% include "categories_breadcrumb.html" %} 
 {% endblock %}
 {% block wrapper %}
-  {% include "product_container.html" %}
+  <div class="container nsized">
+  <div class="row">
+    <div class="span9">
+      {% for a in articles %}
+        <div><a href="/blog/article/{{a.id}}/">{{ a.title }}</a></div>
+        <div>{{ a.description|safe }}</div>
+        <a class="btn btn-mini" href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
+        <br><br>
+      {% endfor %}
+    </div>
+    <div class="span3">
+      <div>Другие статьи</div>
+      <div>
+      {% for a in sidebar %}
+        <a href="/blog/article/{{a.id}}/">{{ a.title }}</a>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
 {% endblock %}
