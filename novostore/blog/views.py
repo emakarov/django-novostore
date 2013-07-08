@@ -15,6 +15,10 @@ from django.utils.translation import get_language
 from blog import models as blog_models
 from django.db.models import Q,F
 from photologue.models import ImageModel, Gallery, Photo
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+import random
+import string
+from django.template.defaultfilters import slugify
 
 blog_index_html = settings.BLOG_INDEX_HTML
 blog_articlelist_html = settings.BLOG_ARTICLELIST_HTML
@@ -60,3 +64,26 @@ def redactorimagejson(request):
   params = { 'photos' : photos }
   context = RequestContext(request, params)  
   return HttpResponse(template.render(context),mimetype='application/json')  
+
+@csrf_exempt  
+def uploadimagejson(request):
+  p = Photo()
+  if request.user.is_authenticated():
+    if request.method == 'POST':
+      pt = codegenerator()+codegenerator()
+      p.image = request.FILES['file']
+      p.title = pt
+      p.title_slug = slugify(pt) #+codegenerator()
+      p.save()
+#  template = loader.get_template('redactorimageupload.html')
+    params = { 'photo' : p }
+#  context = RequestContext(request, params)  
+  return render_to_response('redactorimageupload.html',params,context_instance = RequestContext(request))
+#  return HttpResponse(template.render(context),mimetype='application/json')  
+        
+    
+def codegenerator():
+  digits = "".join( [random.choice(string.digits) for i in xrange(3)] )
+  chars = "".join( [random.choice(string.letters) for i in xrange(4)] ).lower()
+  digits2 = "".join( [random.choice(string.digits) for i in xrange(3)] )
+  return digits+chars+digits2

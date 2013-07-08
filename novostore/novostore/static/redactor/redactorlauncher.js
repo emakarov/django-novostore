@@ -1,7 +1,7 @@
 Suit.$(function(){
   Suit.$('textarea').redactor({
     focus: true,
-    imageUpload: '../demo/scripts/image_upload.php',
+    imageUpload: '/blog/uploadimagejson/',
     fileUpload: '../demo/scripts/file_upload.php',
     imageGetJson: '/blog/redactorimagejson/'
   });

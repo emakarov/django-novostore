@@ -27,6 +27,7 @@ class ArticleAdmin(admin.ModelAdmin):
         js = (
             '/static/redactor/redactor.js',
             '/static/redactor/redactorlauncher.js',
+            '/static/utils/suit-admin-csrf.js',
             #'/static/textredactor/textredactor.js',
         )                
 #    inlines = [
