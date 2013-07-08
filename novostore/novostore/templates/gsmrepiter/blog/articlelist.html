@@ -19,7 +19,7 @@
     <div class="span3">
       <div>Рубрики</div>
       <div>
-      {% for е in terms %}
+      {% for t in terms %}
         <a href="/blog/t/{{t.termslug}}/">{{ t.termname }}</a>
       {% endfor %}
       </div>
