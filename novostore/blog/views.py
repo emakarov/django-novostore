@@ -28,7 +28,7 @@ def index(request):
   
 def blogtermpage(request,termslug):
   term = blog_models.Term.objects.filter(termslug = termslug)
-  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2').exclude(cover=None)
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2')
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'articles' : articles, 'terms' : terms }
   return render_to_response(blog_articlelist_html(request), params, context_instance = RequestContext(request))
