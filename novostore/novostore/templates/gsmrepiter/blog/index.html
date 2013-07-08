@@ -11,7 +11,7 @@
     <div class="span9">
       {% for a in articles %}
         <div><a href="/blog/article/{{a.id}}/">{{ a.title }}</a></div>
-        <div>{{ a.description }}</div>
+        <div>{{ a.description|safe }}</div>
         <a class="btn btn-mini" href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
         <br><br>
       {% endfor %}
