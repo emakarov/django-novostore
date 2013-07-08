@@ -13,11 +13,11 @@
     </div>
     <div class="span3">
       <div>Другие статьи</div>
-      <div>
       {% for a in sidebar %}
+      <div>
         <a href="/blog/article/{{a.id}}/">{{ a.title }}</a>
-      {% endfor %}
       </div>
+      {% endfor %}
     </div>
   </div>
   </div>
