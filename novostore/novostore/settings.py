@@ -149,7 +149,6 @@ LOCALE_PATHS = (
 
 INSTALLED_APPS = (
     'suit',
-    'suit_redactor',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
