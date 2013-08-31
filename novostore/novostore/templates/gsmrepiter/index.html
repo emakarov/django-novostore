@@ -6,14 +6,65 @@
   {% include "basic_head.html" %}
   <style>
   {% block additional_head %}
-      #wrap > .container {
-        padding-top: 60px;
-      }
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 1080px;
   }
-  </style>
+  .carousel-inner {
+  	-moz-box-shadow: none;
+  	-webkit-box-shadow: none;
+  	box-shadow: none;
+  }
+  #wrap > .container {
+padding-top: 0px;
+}
+.navbar {
+margin-bottom: 0px;
+overflow: visible;
+}
+element.style {
+height: 60px;
+}
+Matched CSS Rules
+.navbar-inner {
+min-height: 40px;
+padding-right: 20px;
+padding-left: 20px;
+background-repeat: repeat-x;
+border: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+-moz-box-shadow: 0;
+box-shadow: 0;
+}
+.blbck {
+background: #fff;
+-webkit-box-shadow: 0;
+-moz-box-shadow: 0;
+box-shadow: 0;
+height: 40px;
+}
+.navbar-inner {
+padding-left: 200px;
+}
+.navbar-inner {
+min-height: 40px;
+padding-right: 20px;
+padding-left: 20px;
+background-color: #fff;
+background-image: none;
+background-repeat: repeat-x;
+border: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
   {% endblock %}
+  </style>
   </head>
   <body>
     <div id="wrap">
@@ -74,6 +125,5 @@
     //$('.carousel').carousel()
     </script>
     {% endblock %}
-    <div style="height:40px"></div>
   </body>
 </html>

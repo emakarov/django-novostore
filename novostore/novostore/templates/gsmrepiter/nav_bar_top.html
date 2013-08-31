@@ -1,47 +1,13 @@
 {% load mptt_tags %}
 {% load i18n %}
   <div class="container">
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar">
     <div class="navbar-inner blbck"  style="height:60px">
       <div class="nsized">
 	      <a class="brand" style="text-shadow: rgb(255, 255, 255) 0px 1px 0px;font-size:16px;text-transform:uppercase;font-weight:normal;color:#000;font-family:FuturaPTDemi-Reg, sans-serif;" href="/">
 	      <img style="height:40px;" src="{{STATIC_URL}}gsmrepiter/logo1.png">
 	      </a>
 	      <ul class="nav pull-right">
-	      <!--
-	      <li>
-	      <div id="cart_nitems_a" class="btn btn-small btn-brand-skype" onclick='window.location.href="{% url 'commerce.views.cart' %}"'>
-	      <span id="cart_nitems">
-	      {% if cart.number_of_items.quantity__sum > 0 %} 
-	      {{ cart.number_of_items.quantity__sum }}
-	      {% else %} 
-	      {% trans "Currently there no" %} 
-	      {% endif %}
-	      {% if cart.number_of_items.quantity__sum == 1 %} 
-	      {% trans "item in" %}
-	      {% else %}
-	      {% trans "items in" %}
-	      {% endif %}
-	      </span>
-	      {% trans "My cart" %}	      
-	      </div>
-	      </li>
-	      -->
-	      
-	      <!--
-	      {% if user.is_authenticated %}
-	      <li><a href="#">{{ user }}</a></li>
-	      <li><a href="{% url 'accounts.views.profile' %}">{% trans "Profile" %}</a></li>
-	      <li><a href="{% url 'accounts.views.logout' %}">{% trans "Log out" %}</a></li>
-	      {% if user.is_staff %}
-	      <li><a href="/admin/">{% trans "Admin panel" %}</a></li>
-	      {% endif %}
-	      
-	      {% else %}
-	      <li><a class="navlia" href="{% url 'accounts.views.login' %}">{% trans "Sign in" %}</a></li>
-	      <li><a href="{% url 'accounts.views.register' %}">{% trans "New customer" %}</a></li>
-	      {% endif %}
-	      -->
 	      </ul>
       </div>
 
@@ -74,5 +40,7 @@
 	          {% endrecursetree %}
 	          </ul>
     </div>
+    <div style="height:10px;width:1080px;margin:0 auto;background:#eee;"></div>
     </div>
+
     </div>
