@@ -2,9 +2,11 @@
 {% load i18n %}
   <div class="container">
     <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner blbck">
+    <div class="navbar-inner blbck"  style="height:60px">
       <div class="nsized">
-	      <a class="brand" style="text-shadow: rgb(255, 255, 255) 0px 1px 0px;font-size:16px;text-transform:uppercase;font-weight:normal;color:#000;font-family:FuturaPTDemi-Reg, sans-serif;" href="/">{{ request.shop.name }}</a>
+	      <a class="brand" style="text-shadow: rgb(255, 255, 255) 0px 1px 0px;font-size:16px;text-transform:uppercase;font-weight:normal;color:#000;font-family:FuturaPTDemi-Reg, sans-serif;" href="/">
+	      <img style="height:40px;" src="{{STATIC_URL}}gsmrepiter/logo1.png">
+	      </a>
 	      <ul class="nav pull-right">
 	      <!--
 	      <li>
@@ -43,7 +45,7 @@
 	      </ul>
       </div>
 
-	         <ul class="nav nav-pills">
+	         <ul class="nav nav-pills" style="margin-left:50px">
 	         <!--
 	            <li>
     	<form class="form-search" action="/psearch/" method=GET>
@@ -54,11 +56,11 @@
 	            -->
 	          {% recursetree topmenu %}
 	            {% if node.is_leaf_node %}
-	            <li>
+	            <li style="padding-top:10px;padding-bottom:10px">
 	              <a class="dropdown-toggle" dropdown_node_id="{{node.id}}" href="{{node.url}}">{{ node.text }}</a>
 	            </li>
 	            {% else %}
-	            <li class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
+	            <li style="padding-top:10px;padding-bottom:10px" class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
 	              <a slug="{{node.url}}" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
 	                {{ node.text }}
 	              </a>

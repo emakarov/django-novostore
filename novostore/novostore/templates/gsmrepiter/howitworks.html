@@ -1,27 +1,26 @@
-    <div class="row" style="padding:20px 0;width:100%;background:#eeeeee;margin-left: 0px;">
-    <div class="container nsized"><div class="span12 indexheader"><center>Как это работает?</center></div></div>
-      <div class="container nsized" style="padding:10px 0;">
-      <div class="row">
-      <div class="span7">
-      <p style="text-align:justify;">
-Чтобы построить систему ретрансляции сотовой связи к репитеру требуются комплектующие такие как:
-      <br>
-а) внешняя антенна (устанавливается как правило за пределами помещения, она выполняет функцию антенны которая передает и принимает сигнал базовой станции сотового оператора);
-      <br>
-б) коаксиальный кабель (по нему сигнал поступает в репитер и от репитера идет дальше на внутреннюю систему распределения);
-      <br>
-в) внутренняя антенна (устанавлявается внутри помещения, их может быть несколько, они выполняют функцию приема-передачи радиосигнала который идет с мобильного телефона абонента);
-      <br>
-г) делитель мощности-сплиттер ( используется в случае если внутри помещения требуется установить 2 и более внутренних антенны).
-      </p>
+{% load webdesign %}
+<div class="row">
+      <div class="container nsized">
+      <div class="row" style="margin-left:10px;margin-right: -10px;padding:20px 0 10px;">
+            <div class="span6">
+             <center style="color:#13a844;font-size:22px;">
+               О компании
+             </center> 
+             <p style="padding-top:20px">
+             {% lorem %}
+             {% lorem %}
+             </p>
+            </div>
+            <div class="span6" style="padding-left:40px">
+             <center style="color:#13a844;font-size:22px;">
+               О компании
+             </center>
+             <p style="padding-top:20px">
+             {% lorem %}
+             {% lorem %}
+             </p>
+            </div>
+
       </div>
-      <div class="span1">
-      &nbsp;
-      </div>
-      <div class="span4">
-      <img width=250 src="/static/some/repeater.jpg" class="img-circle">
-      <p style="padding-left:20px;">Пример установки оборудования</p>
-      </div>
-      </div>
-      </div>
-    </div>
+ </div>
+</div>

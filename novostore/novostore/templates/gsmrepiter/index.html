@@ -4,21 +4,28 @@
 <html>
   <head>
   {% include "basic_head.html" %}
-  {% block additional_head %}{% endblock %}
+  <style>
+  {% block additional_head %}
+      #wrap > .container {
+        padding-top: 60px;
+      }
+  .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 1080px;
+  }
+  </style>
+  {% endblock %}
   </head>
   <body>
     <div id="wrap">
     {% include "nav_bar_top.html" %}
     {% block rotator %}
-    <div id="maincarousel" class="carousel slide">
-
+    <div id="maincarousel" class="carousel slide" style='width:1080px;margin:0 auto'>
       <ol class="carousel-indicators">
         <li data-target="#maincarousel" data-slide-to="0" class="active"></li>
         <li data-target="#maincarousel" data-slide-to="1"></li>
         <li data-target="#maincarousel" data-slide-to="2"></li>
         <li data-target="#maincarousel" data-slide-to="3"></li>
       </ol>
-
       <div class="carousel-inner">
       <div class="active item">
         <img style="height:280px;width:100%" src="/static/some/cell-phone-airplane-etiquette1.jpg">
@@ -47,7 +54,8 @@
     {% include "aboutcompany.html" with hidecats=True index=True %}
     {% include "howitworks.html" with hidecats=True index=True %}
     <div class="row">
-    <div class="container nsized" style="padding-top:10px;"><div class="span12 indexheader"><center>Каталог оборудования</center></div></div>
+    <div class="container nsized" style="padding-top:10px;">
+      <div class="span12 indexheader"><center>Каталог оборудования</center></div></div>
     </div>
     {% include "product_container.html" with hidecats=True index=True %}
     <br>
@@ -63,7 +71,7 @@
     {% include "gsmrepiter/scripts.html" %}
     {% block additional_scripts %}
     <script>
-    $('.carousel').carousel()
+    //$('.carousel').carousel()
     </script>
     {% endblock %}
     <div style="height:40px"></div>

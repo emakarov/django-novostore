@@ -6,7 +6,7 @@
     <style>
     html, body{
      font-size:13px;
-     font-family: OpenSansRegular, Arial, Helvetica, sans-serif;
+     font-family: Tahoma;
      font-weight: normal;
     }
     .sbtl{
@@ -214,15 +214,15 @@
        }
        
        .yell{
-       	      	background: #fce302;
+       	      	background: #eee;
        }
 
       .indexbrand{
       	position:relative;top:-100px;
-      	font-family: OpenSansLight, Arial, Helvetica, sans-serif;
-      	font-size: 40px;font-weight:normal;
-      	line-height: 42px;
-      	padding: 0 15px;
+      	font-size: 26px;font-weight:normal;
+      	line-height: 32px;
+      	padding: 10px;
+      	left:100px;
       }
       .navbar .nav>li>a {
       	color: #000;
@@ -236,7 +236,7 @@
       	margin-bottom: 0px;
       	}   
       	.dropdown-menu {
-	background-color: #fce302;
+	background-color: #eee;
 	border-radius: 0;
 	margin: 0 0 0;
 	border:0;
@@ -248,7 +248,8 @@
 	.navbar .nav li.dropdown.open > .dropdown-toggle, 
 	.navbar .nav li.dropdown.active > .dropdown-toggle, 
 	.navbar .nav li.dropdown.open.active > .dropdown-toggle {
-	    background-color: #fce302;
+	    //background-color: #fce302;
+	    background-color: #eee;
 	}   
 	.nav-pills>li>a {
 	padding-top: 8px;
@@ -278,13 +279,32 @@
 	text-decoration: none;
 	background-color: #000;
 	}      
-.dropdown-menu > .active > a,
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: #000;
-}	</style>
+	.dropdown-menu > .active > a,
+	.dropdown-menu > .active > a:hover,
+	.dropdown-menu > .active > a:focus {
+	  color: #ffffff;
+	  text-decoration: none;
+	  background-color: #000;
+	}
+	.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	}
+	.navbar-inner {
+	min-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-repeat: repeat-x;
+	border: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+	-moz-box-shadow: 0;
+	box-shadow: 0;
+	}      
+      </style>
       <script>
       var lanuage_code = "{{request.LANGUAGE_CODE}}";
       </script>

@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 urlpatterns += patterns('django.contrib.staticfiles.views',
         (r'^favicon.ico', 'serve', {'path' : 'favicon.png'}),
         url(r'^static/(?P<path>.*)$', 'serve'),
+        url(r'^ru/static/(?P<path>.*)$', 'serve'),
         url(r'^media/(?P<path>.*)$', 'serve'),
         )
         
