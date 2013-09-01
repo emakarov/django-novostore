@@ -11,6 +11,9 @@
       <center style="font-size: 18px;color: #009933;margin-bottom:20px;">{{ article.title }}</center>
       <div style="text-align:justify;">{{ article.description|safe }}</div>
     </div>
+    <div class="span4">
+    {{ article.text|safe }}
+    </div>
   </div>
   </div>
 {% endblock %}
