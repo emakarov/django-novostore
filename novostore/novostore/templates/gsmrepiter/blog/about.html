@@ -14,6 +14,39 @@
     <div class="span4">
     {{ article.text|safe }}
     </div>
+<script src="http://api-maps.yandex.ru/1.0/?key=ADgv40oBAAAAKAzTPQIAk9NMytH0PKL2OGQNDiNb23XaabUAAAAAAAAAAABAX_pNYiGbX_5jdemj-dviF5ji9w==&wizard=constructor" type="text/javascript"></script> <script type="text/javascript">
+    window.onload = function () {
+        var map = new YMaps.Map(document.getElementById("YMapsID"));
+        map.setCenter(new YMaps.GeoPoint(44.002429,56.321766), 16, YMaps.MapType.MAP);
+        map.addControl(new YMaps.Zoom());
+        map.addControl(new YMaps.ToolBar());
+        map.addControl(new YMaps.TypeControl());        
+        var s = new YMaps.Style();
+        s.iconStyle = new YMaps.IconStyle();
+        s.iconStyle.offset = new YMaps.Point(-13,-40);
+        s.iconStyle.href = "http://api-maps.yandex.ru/i/0.3/placemarks/pmrdl.png";
+        s.iconStyle.size = new YMaps.Point(36,41);
+        YMaps.Styles.add("wizard#rdl0Point", s);
+
+
+        var s = new YMaps.Style();
+        s.iconStyle = new YMaps.IconStyle();
+        s.iconStyle.offset = new YMaps.Point(-7,-19);
+        s.iconStyle.href = "http://api-maps.yandex.ru/i/0.3/placemarks/pmwts.png";
+        s.iconStyle.size = new YMaps.Point(19,20);
+        YMaps.Styles.add("wizard#wts0Point", s);
+
+        
+        var placemark1 = new YMaps.Placemark(new YMaps.GeoPoint(44.00481,56.321221), {style: "wizard#rdl0Point", balloonOptions: {maxWidth: 300}});
+        map.addOverlay(placemark1);
+        placemark1.setBalloonContent("Усилители gsm, gsm репитеры, антенны gsm, усилители сотового сигнала<br/>(831) 415-16-51, 415-38-43, 437-33-36");
+        var placemark2 = new YMaps.Placemark(new YMaps.GeoPoint(44.004378,56.321551), {style: "wizard#wts0Point", balloonOptions: {maxWidth: 300}});
+        map.addOverlay(placemark2);
+        placemark2.setBalloonContent("Магазин-салон сотовой связи &quot;Атлант&quot; (наличный расчет):<br/>Сотовые телефоны, терминалы, шлюзы, аксессуары. ");        
+    }
+</script> <!-- Этот блок кода вставляется в тег <HEAD> (конец) -->  <!-- Этот блок кода нужно вставить в ту часть страницы, где вы хотите разместить карту (начало) -->
+    <div id="YMapsID" class="span8">
+    </div>
   </div>
   </div>
 {% endblock %}
