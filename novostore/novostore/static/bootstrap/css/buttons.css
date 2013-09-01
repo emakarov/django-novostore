@@ -631,6 +631,14 @@
 	.btn-brand-zootool, .btn-brand-zootool:hover{
 		background-color:#5e8b1d;
 	}
+
+	.btn-brand-priem{
+		background-color:#009933;
+	}
+	.btn-brand-priem:hover{
+		background-color:#006633;
+	}
+
 	
 	.bordered3{
 	  border-radius:3px;

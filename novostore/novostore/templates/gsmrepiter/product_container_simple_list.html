@@ -1,45 +1,70 @@
 {% load mptt_tags %}
   <!--Products container-->
   <div class="container nsized" style="padding-bottom:0px;{% if index %}padding-top:10px;{% endif %}" >
-  {% if not hidecats %}
-    <div class="span2" style="padding-left:0;margin-left:0;">
-    		<ul class="nav nav nav-list" style="font-size:13px;">
-	          {% recursetree categories %}
-	            {% if node.is_leaf_node %}
-	            <li>
-	              <a href="/{{node.slug}}/">{{ node.name }}</a>
-	            </li>
-	            {% else %}
-	            <li>
-	              <a style="color:#000" href="/{{node.slug}}/">
-	                {{ node.name }}
-	              </a>
-	              <ul class="nav nav nav-list">
-	              {%for ch in node.get_children.all %}
-	              <li><a href="/{{ch.slug}}/">{{ ch.name }}</a></li>
-	              {% endfor %}
-	              </ul>
-	            </li>
-	            {% endif %}
-	          {% endrecursetree %}
-	        </ul>
-
+    <div class="span12" style="padding-left:0;margin-left:0;">
+    {% recursetree categories %}
+      {% if node.is_leaf_node %}
+        <a style="margin-right:10px;font-size:14px;color:#009933;text-decoration:underline" href="/{{node.slug}}/">
+          {{ node.name }}</a>
+      {% endif %}
+    {% endrecursetree %}
     </div>
-    <div class="span9">
-    {% else %}
-    <div class="span12">
-    {% endif %}
+    <div class="span12" style="margin-top:20px;width:1060px;padding-left:0;margin-left:0;background:#eee;padding:20px 10px 10px;">
+      {% recursetree categories %}
+	{% if not node.is_leaf_node %}
+          <div class="span2">
+	   <span style="font-size:14px;color:#000;">
+	                {{ node.name }}
+	   </span>
+	   {%for ch in node.get_children.all %}
+	   <div style="margin-top:5px;">
+	   <label class="checkbox">
+	     <input type="checkbox"> {{ ch.name }}
+	   </label>	   
+           </div>
+	   {% endfor %}
+	  </div>
+	{% endif %}
+      {% endrecursetree %}
+    </div>
+    <div class="span12" style="width:1060px;padding-left:0;margin-left:0;background:#eee;padding:10px;">
+     <div class="span4">
+     <form class="form-inline">
+       Цена
+       <input type="text" class="input-small" placeholder="От">
+       <input type="password" class="input-small" placeholder="До">
+     </form>
+     </div>
+     <div class="span6">
+     <form class="form-inline">
+       Поиск. слово
+       <input type="text" class="input" style="width: 300px;">
+     </form>
+     </div>
+     <div class="span3">
+       <div class="btn btn-brand-priem">Применить фильтр</div>
+     </div>
+    </div>
+    <div class="span12" style="margin-top:40px;padding-left:40px;">
+	<ul class="thumbnails">
 	  {% for p in products %}
-	  <div class="span4" style="padding:10px;">
-	  <a style="padding-right:10px;" class="pull-left" href="/product/{{p.id}}/">
-	    <img width=100 class="media-object" src="{{p.cover.get_s280x280_url}}">
-	  </a>
-	  <div class="media-body">
-	  <div>{{ p.name }}</div>
-	  {{p.price}}{{p.currency.shortname}}
-	  </div>
-	  </div>
+	  <li class="span3 bcgwhite">
+	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
+	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
+	      <!--<div class="block-note block-note-green">
+	      {{p.price}}{{p.currency.shortname}}
+	      </div>-->
+	      <div class="padbot10">
+	        <div style="margin-top:10px;text-align:center;text-decoration:underline;font-size:14px;font-family:verdana;padding-top:3px;color:#333;">
+	        {{ p.name }}
+	        </div>
+	        <div style="text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">{{p.price}}{{p.currency.shortname}}
+	        </div>
+	      </div>
+	    </div>
+	  </li>
 	  {% endfor %}
+	</ul>      
     </div>
     </div>
   <!--End of products container-->
