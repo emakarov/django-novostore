@@ -5,7 +5,9 @@
     <div class="span4">
 	<img src="{{product.cover.get_s340x340_url}}" alt="">
 	<center>
+	<!--
 	<div style="margin-top:20px;" class="btn btn-brand-priem" onclick="makeproductrequest()">{% trans "Make a request" %}</div>
+	-->
 	</center>
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
@@ -58,7 +60,12 @@
 	</div>
     </div>
     <div class="span8">
-    <h4>{{product.name}} {{product.price}} {{product.currency.shortname}}</h4>
+    <h4>
+    {{product.name}} {{product.price}} {{product.currency.shortname}}
+    <div style="margin-top:20px;" class="btn btn-brand-priem pull-right" onclick="makeproductrequest()">
+      {% trans "Make a request" %}
+    </div>
+    </h4>
     <!--
     <p>
     {% trans "Regular price" %}
