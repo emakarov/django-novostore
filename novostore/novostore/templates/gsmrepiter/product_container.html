@@ -29,7 +29,6 @@
     {% else %}
     <div class="span12">
     {% endif %}
-    
 	<ul class="thumbnails">
 	  {% for p in products %}
 	  <li class="span3 bcgwhite">
@@ -39,10 +38,10 @@
 	      {{p.price}}{{p.currency.shortname}}
 	      </div>-->
 	      <div class="padbot10">
-	        <div style="line-height:12px;font-size:10px;font-family:verdana;padding-top:3px;color:#333;">
+	        <div style="margin-top:10px;text-align:center;text-decoration:underline;font-size:14px;font-family:verdana;padding-top:3px;color:#333;">
 	        {{ p.name }}
 	        </div>
-	        <div style="line-height:12px;font-size:11px;padding-top:2px;font-family:verdana;">{{p.price}}{{p.currency.shortname}}
+	        <div style="text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">{{p.price}}{{p.currency.shortname}}
 	        </div>
 	      </div>
 	    </div>
