@@ -55,6 +55,7 @@ class Article(models.Model):
 
     latitude = models.DecimalField(max_digits=11,decimal_places=7, verbose_name=_("Latitude"),
             validators=[MinValueValidator(-90),MaxValueValidator(90)],null=True, blank=True)
+    template = models.CharField(max_length=100, choices=settings.BLOG_TEMPLATES)
 
     def __unicode__(self):
         return self.title

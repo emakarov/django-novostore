@@ -113,3 +113,10 @@ SUIT_CONFIG = {
         #]},
     )
 }
+
+BLOG_TEMPLATES = (
+  ('gsmrepiter/blog/article.html',_("Simple article")),
+  ('gsmrepiter/blog/about.html',_("About page")),
+  ('blog/contacts.html',_("Contacts")),
+)
+

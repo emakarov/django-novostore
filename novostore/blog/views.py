@@ -56,7 +56,7 @@ def article(request,artid):
   sidebar = blog_models.Article.objects.filter(publish_status = '2').exclude(id=artid).order_by('?')[0:20]
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
-  return render_to_response(blog_article_html(request), params, context_instance = RequestContext(request))
+  return render_to_response(article.template, params, context_instance = RequestContext(request))
   
 def redactorimagejson(request):
   photos = Photo.objects.all().order_by('-id')
