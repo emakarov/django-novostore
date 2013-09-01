@@ -8,6 +8,7 @@ from django.utils.translation import ugettext_noop
 from smart_selects.db_fields import ChainedForeignKey 
 from photologue.models import ImageModel, Gallery, Photo
 from django.conf import settings
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
@@ -49,6 +50,11 @@ class Article(models.Model):
         verbose_name=_("Cover"), 
         null=True, blank=True
     )
+    longitude = models.DecimalField(max_digits=11,decimal_places=7, verbose_name=_("Longitude"),
+            validators=[MinValueValidator(-180),MaxValueValidator(180)],null=True, blank=True)
+
+    latitude = models.DecimalField(max_digits=11,decimal_places=7, verbose_name=_("Latitude"),
+            validators=[MinValueValidator(-90),MaxValueValidator(90)],null=True, blank=True)
 
     def __unicode__(self):
         return self.title
