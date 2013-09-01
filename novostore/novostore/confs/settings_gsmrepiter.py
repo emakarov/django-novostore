@@ -33,3 +33,83 @@ TEMPLATE_DIRS = (
 )
 
 ROOT_URLCONF = 'novostore.confs.urls_gsmrepiter'
+
+SUIT_CONFIG = {
+    'MENU': (
+
+        # Keep original label and models
+        #'sites',
+        #'-',
+
+        # Rename app and set icon
+        #{'app': 'accounts', 'label': 'Users', 'icon':'icon-user'},
+        #{'app': 'auth', 'label': 'Groups', 'icon':'icon-user'},
+
+        {'label': _('Users'), 'icon':'icon-user', 'models': (
+            'accounts.accountsuser','auth.group', 
+        )},
+
+
+        # Reorder app models
+        #{'app': 'auth', 'models': ('user', 'group')},
+
+        # Custom app, with models
+        #{'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
+        
+        #{'label' : _('Shops'), 'app' : 'shops' },
+
+#        {'label': _('Common Settings'), 
+#        	'models': ('commerce.currency',
+#        		   'commerce.currencyexchange',
+#          		   'ncatalogue.measureunit',
+#        		  ),
+#        },
+        {'label': _('Blog'), 
+        	'models': ('blog.term',
+        		   'blog.article',
+          		   'sitemanagement.websitemenu',
+        		  ),
+        },
+        {'label': _('Photo'), 
+        	'models': ('photologue.gallery',
+          		   'photologue.photo',
+          		   'photologue.galleryupload',
+        		  ),
+        },
+        {'label': _('Commerce'), 
+        	'models': (
+        		'shops.shop',
+#        		'shops.worker',
+#        		'shops.client',
+        		'ncatalogue.category',
+        		'ncatalogue.product',
+#        	 	'commerce.tariff',
+#        		'commerce.preorder',
+#        		'commerce.deliveryaddress',
+#        		'commerce.cart',
+#        		'commerce.currency',
+#        		'commerce.currencyexchange',
+#          		'ncatalogue.measureunit',
+        		          		),
+        	'icon' : 'icon-shopping-cart'
+        },
+
+
+        # Cross-linked models with custom name; Hide default icon
+        #{'label': 'Custom', 'icon':None, 'models': (
+        #    'auth.group',
+        #    {'model': 'auth.user', 'label': 'Staff'}
+        #)},
+
+        # Custom app, no models (child links)
+        #{'label': 'Users', 'url': 'auth.user', 'icon':'icon-user'},
+
+        # Separator
+        '-',
+
+        # Custom app and model with permissions
+        #{'label': 'Secure', 'permissions': 'auth.add_user', 'models': [
+        #    {'label': 'custom-child', 'permissions': ('auth.add_user', 'auth.add_group')}
+        #]},
+    )
+}
