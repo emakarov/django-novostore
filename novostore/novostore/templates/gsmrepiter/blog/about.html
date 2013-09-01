@@ -27,7 +27,7 @@ function init () {
     var myMap = new ymaps.Map("map", {
             center: [parseFloat("{{article.longitude}}".replace(",",".")), 
                     parseFloat("{{article.latitude}}".replace(",","."))],
-            zoom: 5
+            zoom: 14
         }),
         myPlacemark = new ymaps.Placemark([parseFloat("{{article.longitude}}".replace(",",".")), 
                     parseFloat("{{article.latitude}}".replace(",","."))], {
