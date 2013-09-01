@@ -25,7 +25,7 @@ class MeasureUnit(models.Model):
   name_international = models.CharField(_("Name international"),max_length=50,blank=True,null=True)
   shortname_international = models.CharField(_("Short name international"),max_length=50,blank=True,null=True)
   per_name_international = models.CharField(_("Per name internationl"),max_length=50,blank=True,null=True)
-  description = models.TextField(blank=True, default='', verbose_name=_('Description'), help_text=_('Details of this measure unit'),db_index=True)
+  description = models.TextField(blank=True, default='', verbose_name=_('Description'), help_text=_('Details of this measure unit'))
   
   def __unicode__(self):
     return "%s" % (self.shortname)
@@ -70,7 +70,6 @@ class Product(models.Model):
   from commerce.models import Currency 
   # Universal product code
   upc = models.CharField(_("UPC"), max_length=64, blank=True, null=True,
-                           unique=True,
         help_text=_("Universal Product Code (UPC) is an identifier for "
                     "a product which is not specific to a particular "
                     " supplier. Eg an ISBN for a book."))    
@@ -86,9 +85,9 @@ class Product(models.Model):
   )
   name = models.CharField(_("Name"), max_length=255, help_text = "name", db_index=True)
   description =  models.CharField(_("Description"), max_length=255, blank=True, default='', help_text = _("Description"),db_index=True)
-  long_description = models.TextField(blank=True, default='', verbose_name=_('Long description'), help_text=_('Long description'),db_index=True)
+  long_description = models.TextField(blank=True, default='', verbose_name=_('Long description'), help_text=_('Long description'))
   categories = models.ManyToManyField(Category,verbose_name=_("Categories"),blank=True)
-  text = models.TextField(_("Text"),blank=True,null=True, db_index=True)
+  text = models.TextField(_("Text"),blank=True,null=True)
   price = models.FloatField(_("Base Price"),blank=True,null=True,help_text=_("Base price"))
   currency = models.ForeignKey(Currency)
   measure_unit = models.ForeignKey(MeasureUnit)
