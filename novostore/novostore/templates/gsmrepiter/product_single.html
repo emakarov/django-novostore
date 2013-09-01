@@ -58,11 +58,13 @@
 	</div>
     </div>
     <div class="span8">
-    <h4>{{product.name}}</h4>
+    <h4>{{product.name}} {{product.price}} {{product.currency.shortname}}</h4>
+    <!--
     <p>
     {% trans "Regular price" %}
     {{product.price}} {{product.currency.shortname}}
     </p>
+    -->
     <!--
     <form class="form-inline">
     <input id="productid" type="hidden" value="{{product.id}}"></input>
