@@ -33,7 +33,7 @@ class MeasureUnitAdmin(admin.ModelAdmin):
 
 class ProductDetailInline(admin.TabularInline):
   model = ProductDetail
-  extra = 20
+  #extra = 20
 
 class ProductAttachmentInline(admin.TabularInline):
   model = ProductAttachment
