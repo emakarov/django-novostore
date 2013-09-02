@@ -2,10 +2,10 @@
 {% load i18n %}
   <div class="container">
     <div class="navbar">
-    <div class="navbar-inner blbck"  style="height:100px">
+    <div class="navbar-inner blbck"  style="height:60px">
       <div class="nsized">
 	      <a class="brand" style="text-shadow: rgb(255, 255, 255) 0px 1px 0px;font-size:16px;text-transform:uppercase;font-weight:normal;color:#000;font-family:FuturaPTDemi-Reg, sans-serif;" href="/">
-	      <img src="{{STATIC_URL}}gsmrepiter/logo1.png">
+	      <img style="height:40px;" src="{{STATIC_URL}}gsmrepiter/logo.png">
 	      </a>
 	      <ul class="nav pull-right">
 	      </ul>
@@ -22,11 +22,11 @@
 	            -->
 	          {% recursetree topmenu %}
 	            {% if node.is_leaf_node %}
-	            <li style="padding-top:50px;padding-bottom:10px">
+	            <li style="padding-top:10px;padding-bottom:10px">
 	              <a class="dropdown-toggle" dropdown_node_id="{{node.id}}" href="{{node.url}}">{{ node.text }}</a>
 	            </li>
 	            {% else %}
-	            <li style="padding-top:50px;padding-bottom:10px" class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
+	            <li style="padding-top:10px;padding-bottom:10px" class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
 	              <a slug="{{node.url}}" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
 	                {{ node.text }}
 	              </a>
