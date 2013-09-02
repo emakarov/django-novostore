@@ -57,7 +57,7 @@ class ProductAdmin(VisibleAdmin):
     ProductAttachmentInline,
     ProductDetailInline
   ]
-  exclude = ('text',)
+  exclude = ('upc','text',)
 
 admin.site.register(MeasureUnit, MeasureUnitAdmin)
 #admin.site.register(Currency, CurrencyAdmin)
