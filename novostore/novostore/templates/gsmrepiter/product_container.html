@@ -31,7 +31,7 @@
     {% endif %}
 	<ul class="thumbnails">
 	  {% for p in products %}
-	  <li class="span4 bcgwhite">
+	  <li class="span3 bcgwhite">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
 	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
 	      <!--<div class="block-note block-note-green">
