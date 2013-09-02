@@ -22,11 +22,11 @@
 	            -->
 	          {% recursetree topmenu %}
 	            {% if node.is_leaf_node %}
-	            <li style="padding-top:10px;padding-bottom:10px">
+	            <li style="padding-top:50px;padding-bottom:10px">
 	              <a class="dropdown-toggle" dropdown_node_id="{{node.id}}" href="{{node.url}}">{{ node.text }}</a>
 	            </li>
 	            {% else %}
-	            <li style="padding-top:10px;padding-bottom:10px" class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
+	            <li style="padding-top:50px;padding-bottom:10px" class="dropdown{% ifequal forloop.counter 1 %} active{% endifequal %}">
 	              <a slug="{{node.url}}" class="dropdown-toggle" dropdown_node_id="{{node.id}}" data-toggle="dropdown" href="/">
 	                {{ node.text }}
 	              </a>
