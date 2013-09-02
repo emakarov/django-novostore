@@ -29,9 +29,9 @@
     {% else %}
     <div class="span12" style="margin-left:0;">
     {% endif %}
-	<ul class="thumbnails" style="width:1080px">
+	<ul class="thumbnails" style="width:1080px;margin-left:0;">
 	  {% for p in products %}
-	  <li class="span3 bcgwhite">
+	  <li class="span3 bcgwhite" style="width:250px;">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
 	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
 	      <!--<div class="block-note block-note-green">
