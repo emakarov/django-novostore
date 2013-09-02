@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'', include('social_auth.urls')),
     (r'^$', 'ncatalogue.views.index'),
     (r'psearch/$', 'ncatalogue.views.simpleproductsearch'),
+    (r'^photologue/', include('photologue.urls')),
 ) 
 
 urlpatterns += patterns('django.contrib.staticfiles.views',
