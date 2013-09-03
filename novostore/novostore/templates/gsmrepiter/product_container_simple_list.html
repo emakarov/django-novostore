@@ -1,7 +1,10 @@
 {% load mptt_tags %}
   <!--Products container-->
   <div class="container nsized" style="padding-bottom:0px;{% if index %}padding-top:10px;{% endif %}" >
-    <div class="span12" style="padding-left:0;margin-left:0;">
+    <div class="span12" style="padding-left:0;margin-left:0;padding-bottom:15px">
+    <span class="internalheader">Оборудование</span>
+    </div>
+    <div class="span12" style="padding-left:0;margin-left:0;padding-bottom:5px;">
     {% recursetree categories %}
       {% if node.is_leaf_node %}
         <a style="margin-right:10px;font-size:14px;color:#009933;text-decoration:underline" href="/{{node.slug}}/">
