@@ -632,15 +632,13 @@
 		background-color:#5e8b1d;
 	}
 
-	.btn-brand-priem, .btn-brand-priem:hover{
-		background-color:#6DF853;
+	.btn-brand-priem {
+		background-color:#00dd4a;
 	}
-	/*
+	
 	.btn-brand-priem:hover{
-		background-color:#006633;
+		background-color:#0c4;
 	}
-	*/
-
 	
 	.bordered3{
 	  border-radius:3px;
