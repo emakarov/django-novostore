@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% block rotator %}
+{% endblock %}
+{% block breadcrumb %}
+  {% include "categories_breadcrumb.html" %} 
+{% endblock %}
+{% block wrapper %}
+  <div class="container nsized">
+  <div class="row">
+    <div class="span14">
+      <center style="font-size: 18px;color: #009933;margin-bottom:20px;">{{ article.title }}</center>
+      <div style="text-align:justify;">{{ article.description|safe }}</div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px">
+    <div class="span4">
+    {{ article.text|safe }}
+    </div>
+    <div id="map" style="height:400px;" class="span9 pull-right">
+    </div>
+  </div>
+  </div>
+<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+<script src="http://yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script>
+ymaps.ready(init);
+
+function init () {
+    var myMap = new ymaps.Map("map", {
+            center: [parseFloat("{{article.longitude}}".replace(",",".")), 
+                    parseFloat("{{article.latitude}}".replace(",","."))],
+            zoom: 14
+        }),
+        myPlacemark = new ymaps.Placemark([parseFloat("{{article.longitude}}".replace(",",".")), 
+                    parseFloat("{{article.latitude}}".replace(",","."))], {
+            // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+            //balloonContentHeader: "Балун метки",
+            //balloonContentBody: "Содержимое <em>балуна</em> метки",
+            //balloonContentFooter: "Подвал",
+            //hintContent: "Хинт метки"
+        });
+    myMap.geoObjects.add(myPlacemark);
+}
+</script>
+{% endblock %}
