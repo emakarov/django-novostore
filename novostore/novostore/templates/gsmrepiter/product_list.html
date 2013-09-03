@@ -9,9 +9,17 @@
 {% endblock %}
 {% block additional_scripts %}
     <script>
+    var hidden = 0
     $("#hider").on('click', function(){
+    	if (hidden == 0){
+    	  $("#hider").html('показать фильтр');
+    	}
+    	else{
+    	  $("#hider").html('скрыть фильтр');
+    	}
     	$("#filterproduct").toggle();
     	$("#filterprice").toggle();
+    	hidden = 1 - hidden;
     });
     </script>
 {% endblock %}
