@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="row" style="margin-top:20px">
-    <div class="span4">
+    <div class="span12" style="width:1080px">
      Мы предлагаем Вам разумное решение – установка локального репитера сотовой связи. Установка данного оборудования нашей компанией решит для Вас проблему с отсутствием мобильной связи максимально быстро и эффективно. Все оборудование и установка всего комплекса обойдутся не дороже установки кондиционера, но в отличие от него, работать будет круглый год, а может окупиться всего одним важным не пропущенным звонком
     </div>
     <div id="map" style="height:400px;width:1080px;" class="span12">
@@ -26,9 +26,9 @@
 ymaps.ready(init);
 function init () {
     var myMap = new ymaps.Map("map", {
-            center: [parseFloat("{{article.longitude}}".replace(",",".")), 
-                    parseFloat("{{article.latitude}}".replace(",","."))],
-            zoom: 14
+            center: [parseFloat("{{articles.all.0.longitude}}".replace(",",".")), 
+                    parseFloat("{{articles.all.0.latitude}}".replace(",","."))],
+            zoom: 10
     });
     {% for article in articles %}
     var pm = new ymaps.Placemark([parseFloat("{{article.longitude}}".replace(",",".")), 
