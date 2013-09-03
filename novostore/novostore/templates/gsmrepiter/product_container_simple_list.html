@@ -12,7 +12,11 @@
       {% endif %}
     {% endrecursetree %}
     </div>
-    <div class="span12" style="margin-top:20px;width:1060px;padding-left:0;margin-left:0;background:#eee;padding:20px 10px 10px;">
+    <div class="span12" style="margin-top:20px;width:1040px;margin-left:0;background:#eee;padding:20px 10px 20px 30px;">
+    <span style="font-size:20px;font-weight:bold">Фильтр</span>
+    <span id="hider" style="text-decoration:underline;cursor:pointer;margin-left:40px">скрыть фильтр</span>
+    </div>
+    <div id="filterproduct" class="span12" style="padding-top:0px">
       {% recursetree categories %}
 	{% if not node.is_leaf_node %}
           <div class="span2">
@@ -30,7 +34,7 @@
 	{% endif %}
       {% endrecursetree %}
     </div>
-    <div class="span12" style="width:1060px;padding-left:0;margin-left:0;background:#eee;padding:10px;">
+    <div id="filterprice" class="span12" style="width:1060px;padding-left:0;margin-left:0;background:#eee;padding:10px;">
      <div class="span4">
      <form class="form-inline">
        Цена
