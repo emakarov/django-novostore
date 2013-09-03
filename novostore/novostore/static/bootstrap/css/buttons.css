@@ -639,6 +639,32 @@
 	.btn-brand-priem:hover{
 		background-color:#0c4;
 	}
+
+	.btn-brand-priemgrey {
+	background:-moz-linear-gradient(center top, rgba(255, 255, 255, .0) 0%, rgba(0, 0, 0, .7) 100%);
+	background:-webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0, .0)), to(rgba(255, 255, 255, .7)));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#00FFFFFF', EndColorStr='#19000000');
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#00FFFFFF', EndColorStr='#19000000')";
+		background-color:#bbb;
+		color:#000;
+		font-weight:bold;
+		font-size:13px;
+	}
+	.btn-brand-priemgrey:hover {
+	background:-moz-linear-gradient(center top, rgba(255, 255, 255, .0) 0%, rgba(0, 0, 0, .7) 100%);
+	background:-webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0, .0)), to(rgba(255, 255, 255, .7)));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#00FFFFFF', EndColorStr='#19000000');
+	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#00FFFFFF', EndColorStr='#19000000')";
+		background-color:#cccccc;
+		color:#000;
+		font-weight:bold;
+		font-size:13px;
+	
+
+
+
+	}
+
 	
 	.bordered3{
 	  border-radius:3px;
