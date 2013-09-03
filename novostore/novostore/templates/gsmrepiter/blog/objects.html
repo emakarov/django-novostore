@@ -29,7 +29,7 @@ function init () {
             center: [parseFloat("{{article.longitude}}".replace(",",".")), 
                     parseFloat("{{article.latitude}}".replace(",","."))],
             zoom: 14
-        }),
+    });
     {% for article in articles %}
     var pm = new ymaps.Placemark([parseFloat("{{article.longitude}}".replace(",",".")), 
                     parseFloat("{{article.latitude}}".replace(",","."))], {
