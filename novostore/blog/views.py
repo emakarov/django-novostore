@@ -57,6 +57,15 @@ def article(request,artid):
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'article' : article, 'sidebar' : sidebar, 'terms' : terms }
   return render_to_response(article.template, params, context_instance = RequestContext(request))
+
+def objects(request):
+  termslug = 'objects'
+  term = blog_models.Term.objects.filter(termslug = termslug)
+  articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2')
+  terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
+  params = { 'articles' : articles }
+  return render_to_response('gsmrepiter/blog/objects.html', params, context_instance = RequestContext(request))
+
   
 def redactorimagejson(request):
   photos = Photo.objects.all().order_by('-id')
