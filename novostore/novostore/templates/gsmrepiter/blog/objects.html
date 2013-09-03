@@ -12,11 +12,11 @@
       <div style="text-align:justify;padding-top:20px">{{ article.description|safe }}</div>
     </div>
   </div>
-  <div class="row" style="margin-top:20px">
+  <div class="row">
     <div class="span12" style="width:1080px">
      Мы предлагаем Вам разумное решение – установка локального репитера сотовой связи. Установка данного оборудования нашей компанией решит для Вас проблему с отсутствием мобильной связи максимально быстро и эффективно. Все оборудование и установка всего комплекса обойдутся не дороже установки кондиционера, но в отличие от него, работать будет круглый год, а может окупиться всего одним важным не пропущенным звонком
     </div>
-    <div id="map" style="height:400px;width:1080px;" class="span12">
+    <div id="map" style="margin-top:20px;height:400px;width:1080px;" class="span12">
     </div>
   </div>
   </div>
@@ -26,13 +26,13 @@
 ymaps.ready(init);
 function init () {
     var myMap = new ymaps.Map("map", {
-            center: [parseFloat("{{articles.all.0.longitude}}".replace(",",".")), 
-                    parseFloat("{{articles.all.0.latitude}}".replace(",","."))],
+            center: [parseFloat("{{articles.all.0.latitude}}".replace(",",".")), 
+                    parseFloat("{{articles.all.0.longitude}}".replace(",","."))],
             zoom: 10
     });
     {% for article in articles %}
-    var pm = new ymaps.Placemark([parseFloat("{{article.longitude}}".replace(",",".")), 
-                    parseFloat("{{article.latitude}}".replace(",","."))], {
+    var pm = new ymaps.Placemark([parseFloat("{{article.latitude}}".replace(",",".")), 
+                    parseFloat("{{article.longitude}}".replace(",","."))], {
     });
     myMap.geoObjects.add(pm);
     {% endfor %}
