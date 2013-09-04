@@ -44,6 +44,26 @@
   </div>
     <div id="map" style="margin-top:20px;height:400px;width:1080px;" class="span12">
     </div>
+    {% for article in articles %}
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    <div class="span2">
+    <img src="{{article.cover.get170_url}}">
+    </div>
+    {% endfor %}
   </div>
   </div>
 <script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
