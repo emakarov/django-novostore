@@ -92,7 +92,9 @@ class Product(models.Model):
   currency = models.ForeignKey(Currency)
   measure_unit = models.ForeignKey(MeasureUnit)
   
-  objects = VisibleManager(categories__shop__owner=lambda r:r.user)
+  if settings.SINGLE_SHOP is not None:
+    if not settings.SINGLE_SHOP:
+      objects = VisibleManager(categories__shop__owner=lambda r:r.user)
 
   def __unicode__(self):
     return "%s : %s" % (self.name, self.upc)
