@@ -98,7 +98,7 @@ class Product(models.Model):
     if not settings.SINGLE_SHOP:
       objects = VisibleManager(categories__shop__owner=lambda r:r.user)
     else:
-      objects = VisibleManager(id__gt=1)
+      objects = VisibleManager(id__gt=0)
   except:
       objects = VisibleManager(categories__shop__owner=lambda r:r.user)
 
