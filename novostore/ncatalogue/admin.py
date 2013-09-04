@@ -36,6 +36,7 @@ def duplicate_product(modeladmin, request, queryset):
     p = cloneobj(obj)
     for a in obj.details.all():
       b = cloneobj(a)
+      p.details.add(b)
     for c in obj.categories.all():
       p.categories.add(c)
     p.name = p.name+' (COPY)'
