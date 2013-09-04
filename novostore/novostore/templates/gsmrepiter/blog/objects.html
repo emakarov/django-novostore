@@ -49,6 +49,7 @@
     </div>
     {% for article in articles %}
     <div class="span2" style="width: 163px;margin-bottom:20px;">
+    <a href="/blog/article/{{article.id}}">
     <img src="{{article.cover.get_s170_url}}">
     </div>
     <div class="span2" style="width: 163px;margin-bottom:20px;">
