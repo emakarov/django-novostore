@@ -22,6 +22,23 @@ from mptt.forms import TreeNodeChoiceField
 from django import forms
 from utils.visibility import VisibleAdmin
 
+import copy
+
+def cloneobj(obj):
+  dup = obj
+  dup.id = None
+  dup.pk = None
+  dup.save()
+  return dup
+
+def duplicate_product(modeladmin, request, queryset):
+  for obj in queryset:
+    p = cloneobj(obj)
+    for a in obj.details.all():
+      b = cloneobj(a)
+
+duplicate_product.short_description = "Copy this item (duplicate)"
+
 class TreeModelInlineForm(forms.ModelForm): 
   tree_field = TreeNodeChoiceField(queryset=Category.objects.all())
 
@@ -51,13 +68,14 @@ class CategoryAdmin(VisibleAdmin, MPTTModelAdmin, SortableModelAdmin):
   
 
 class ProductAdmin(VisibleAdmin):
-  list_display = ('name', 'price', 'currency', 'measure_unit', 'upc')
+  list_display = ('name', 'price', 'currency', 'measure_unit',)
   list_per_page = 20
   inlines = [
     ProductAttachmentInline,
     ProductDetailInline
   ]
   exclude = ('upc','text',)
+  actions = [duplicate_product]
 
 admin.site.register(MeasureUnit, MeasureUnitAdmin)
 #admin.site.register(Currency, CurrencyAdmin)
