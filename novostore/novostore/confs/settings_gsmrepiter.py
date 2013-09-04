@@ -120,3 +120,4 @@ BLOG_TEMPLATES = (
   ('blog/contacts.html',_("Contacts")),
 )
 
+SINGLE_SHOP = True
