@@ -42,25 +42,25 @@
     </div>
   <div class="span12" style="background:url({{STATIC_URL}}gsmrepiter/downblock.jpg);height:40px;width:1080px;margin-top:20px;">
   </div>
-    <div id="map" style="margin-top:20px;height:400px;width:1080px;" class="span12">
+    <div id="map" style="margin-top:20px;margin-bottom:20px;height:400px;width:1080px;" class="span12">
     </div>
     {% for article in articles %}
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
-    <div class="span2">
+    <div class="span2" style="width: 163px;">
     <img src="{{article.cover.get_s170_url}}">
     </div>
     {% endfor %}
