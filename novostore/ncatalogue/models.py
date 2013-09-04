@@ -15,6 +15,8 @@ from django.contrib.comments.models import Comment
 from shops import models as shop_models
 from utils.visibility import VisibleManager, VisibleTreeManager
 
+from django.conf import settings
+
 #from commerce import models as commerce_models
 # Create your models here.
 
