@@ -140,6 +140,10 @@ class ProductCategoryFilterGroup(models.Model):
 
   objects = VisibleManager(id__gt=0)  #not multishop support
 
+  def __unicode__(self):
+    return self.name
+
+
   class Meta:
     verbose_name = _("Category Filter")
     verbose_name_plural = _("Category Filters")
