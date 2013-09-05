@@ -117,6 +117,41 @@
 
     </div>
     </div>
+    
+    <div class="span12" style="margin-left:0;">
+	<ul class="thumbnails" style="width:1080px;margin-left:0;">
+	  {% for p in might_like_products %}
+	  <li class="span3 bcgwhite" style="width:250px;">
+	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
+	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
+	      <!--<div class="block-note block-note-green">
+	      {{p.price}}{{p.currency.shortname}}
+	      </div>-->
+	      <div class="padbot10">
+	        <div style="margin-top:10px;text-align:center;text-decoration:underline;font-size:14px;font-family:verdana;padding-top:3px;color:#333;">
+	        {{ p.name }}
+	        </div>
+	        <div style="text-align:center;margin-top: 10px;">
+	        {{p.description}}
+	        </div>
+	        <div style="font-weight: bold;text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">
+	        {{p.price}}{{p.currency.shortname}}
+	        </div>
+	        <div style="text-align:center;height:40px;">
+	        <div style="margin-top:10px" class="btn btn-brand-priem">
+	        Подробнее
+	        </div>
+	        </div>
+	      </div>
+	    </div>
+	  </li>
+	  {% endfor %}
+	</ul>      
+    </div>
+
+    
+    
+    
 <!--
     <div class="span2">
     <p class="smallheader">{% trans "You might also like" %}</p>
