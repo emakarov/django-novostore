@@ -25,7 +25,7 @@ from utils.visibility import VisibleAdmin
 import copy
 
 def cloneobj(obj):
-  dup = obj
+  dup = copy.copy(obj)
   dup.id = None
   dup.pk = None
   dup.save()
