@@ -132,8 +132,27 @@ class ProductDetail(models.Model):
   class Meta:
     verbose_name = _("Product Detail")
     verbose_name_plural = _("Product Details")
+
   
-  
+class ProductCategoryFilterGroup(models.Model):  
+  name = models.CharField(_("Name"), max_length=255, blank=True, default='', help_text = _("Detail name"), db_index=True)
+  category = models.ForeignKey(Category,verbose_name=_("Category"), related_name="filtergroups")
+
+  objects = VisibleManager(id__gt=0)  #not multishop support
+
+  class Meta:
+    verbose_name = _("Category Filter")
+    verbose_name_plural = _("Category Filters")
+
+class ProductCategoryFilterGroupItem(models.Model):
+  filtergroup = models.ForeignKey(ProductCategoryFilterGroup,verbose_name=_("Filter group"), related_name="items")
+  category = models.ForeignKey(Category,verbose_name=_("Category"), related_name="filtergroupitems")
+
+  class Meta:
+    verbose_name = _("Category Filter Item")
+    verbose_name_plural = _("Category Filter Items")
+   
+
 
 #Use of django comments framework to support ratings
 #class ProductComment(Comment):

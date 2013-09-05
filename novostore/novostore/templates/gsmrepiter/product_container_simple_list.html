@@ -17,13 +17,12 @@
     <span id="hider" style="text-decoration:underline;cursor:pointer;margin-left:40px">скрыть фильтр</span>
     </div>
     <div id="filterproduct" class="span12" style="padding-top:0px">
-      {% recursetree categories %}
-	{% if not node.is_leaf_node %}
+	{% for c in catfilter.items.all %}
           <div class="span2">
 	   <span style="font-size:14px;color:#000;">
-	                {{ node.name }}
+	       {{ c.category.name }}
 	   </span>
-	   {%for ch in node.get_children.all %}
+	   {%for ch in c.category.get_children.all %}
 	   <div style="margin-top:5px;">
 	   <label class="checkbox">
 	     <input type="checkbox"> {{ ch.name }}
@@ -31,8 +30,9 @@
            </div>
 	   {% endfor %}
 	  </div>
-	{% endif %}
-      {% endrecursetree %}
+	{% endfor %}
+
+
     </div>
     <div id="filterprice" class="span12" style="width:1060px;padding-left:0;margin-left:0;background:#eee;padding:10px;">
      <div class="span4">

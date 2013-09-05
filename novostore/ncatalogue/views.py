@@ -49,10 +49,13 @@ def category_list(request,category_slug):
   products = ncatalogue_models.Product.objects.filter(
   	  Q(categories = category) | Q(categories__parent=category)
   	).distinct()
+  catfilter = category.filtergroups.all()[0]
+  #print catfilter.items.all()[0].name
   params = {  
   	'products' : products,
   	'show_breadcrumb' : True,
-  	'category' : category
+  	'category' : category,
+  	'catfilter' : catfilter
   }
   return render_to_response(product_list_html(request), params, context_instance = RequestContext(request))
 

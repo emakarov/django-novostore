@@ -84,7 +84,16 @@ class ProductAdmin(VisibleAdmin):
   exclude = ('upc','text',)
   actions = [duplicate_product]
 
+class ProductCategoryFilterGroupItemInline(admin.TabularInline):
+  model = ProductCategoryFilterGroupItem
+
+class ProductCategoryFilterGroupAdmin(VisibleAdmin):
+  inlines = [
+    ProductCategoryFilterGroupItemInline
+  ]
+
 admin.site.register(MeasureUnit, MeasureUnitAdmin)
 #admin.site.register(Currency, CurrencyAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(ProductCategoryFilterGroup, ProductCategoryFilterGroupAdmin)
