@@ -40,6 +40,8 @@ def duplicate_product(modeladmin, request, queryset):
     for c in obj.categories.all():
       p.categories.add(c)
     p.name = p.name+' (COPY)'
+    p.gallery = None
+    p.cover = None
     p.save()
 
 duplicate_product.short_description = "Copy this item (duplicate)"
