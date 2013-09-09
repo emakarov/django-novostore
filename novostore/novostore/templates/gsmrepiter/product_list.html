@@ -59,6 +59,13 @@
     $("#price_from").val({{price_from|default:''}});
     $("#price_to").val({{price_to|default:''}});
     $("#searchq").val("{{q|default:''}}");
+    
+    $('#searchbox input').bind('keypress', function(e) {
+      var code = (e.keyCode ? e.keyCode : e.which);
+      if(code == 13) { 
+        loadfilter();      
+      }
+    });
     </script>
 {% endblock %}
 
