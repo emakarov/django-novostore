@@ -1,5 +1,5 @@
 {% extends "index.html" %}
-{% load i18n %}
+{% load webdesign %}
 {% block rotator %}
 {% endblock %}
 {% block breadcrumb %}
@@ -8,22 +8,34 @@
 {% block wrapper %}
   <div class="container nsized">
   <div class="row">
-    <div class="span9">
+    <div class="span12" style="width:1080px;">
+      <center class="internalheader">Статьи</center>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12" style="width:1080px;margin-bottom:20px;">
+    </div>
+  <div class="span12" style="background:url({{STATIC_URL}}gsmrepiter/upblock.jpg);height:20px;width:1080px;margin-bottom:20px">
+  </div>
+  
+  <div>
+    {% for t in terms %}
+        <a style="margin-right:10px;font-size:14px;color:#009933;text-decoration:underline;" href="/article/t/{{t.termslug}}/">
+        {{ t.termname }}</a>
+    {% endfor %}
+   </div>
+
       {% for a in articles %}
         <div><a href="/blog/article/{{a.id}}/">{{ a.title }}</a></div>
         <div>{{ a.description|safe }}</div>
-        <a class="btn btn-mini" href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
+        <a href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
         <br><br>
       {% endfor %}
-    </div>
-    <div class="span3">
-      <div>Другие статьи</div>
-      <div>
-      {% for a in sidebar %}
-        <a href="/blog/article/{{a.id}}/">{{ a.title }}</a>
-      {% endfor %}
-      </div>
-    </div>
+
+
+  
+  <div class="span12" style="background:url({{STATIC_URL}}gsmrepiter/downblock.jpg);height:40px;width:1080px;margin-top:20px;">
+  </div>
   </div>
   </div>
 {% endblock %}
