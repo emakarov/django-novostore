@@ -3,11 +3,11 @@
     <div class="container">
     <div class="row" style="margin-left: 0px;border: 1px solid #eee;padding: 10px;">
     <div class="span4">
-	<img src="{{product.cover.get_s340x340_url}}" alt="">
-	<center>
-	<!--
-	<div style="margin-top:20px;" class="btn btn-brand-priem" onclick="makeproductrequest()">{% trans "Make a request" %}</div>
-	-->
+	<img id="mainimage" src="{{product.cover.get_s340x340_url}}" alt="">
+	<center style="margin-top:20px">
+	{% for p in product.gallery.sample %}
+          <img class="productimg{% if p.id = product.cover.id %} activeproductimg{% else %} productimgborder{% endif %}" src="{{p.get_s340x340_url}}" alt="">
+	{% endfor %}
 	</center>
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">

@@ -7,3 +7,14 @@
 {% block wrapper %}
     {% include "product_single.html" %}
 {% endblock %}
+{% block additional_scripts %}
+<script>
+    $(".productimg").on('click', function(){
+      $(".productimg").removeClass("activeproductimg");
+      $(".productimg").addClass("productimgborder");
+      $(this).removeClass("productimgborder");
+      $(this).addClass("activeproductimg");
+      $('#mainimage').attr('src', $(this).attr('src'));
+    });
+</script>
+{% endblock %}
