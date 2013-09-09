@@ -8,12 +8,10 @@
     {% recursetree categories %}
       {% if node.is_leaf_node %}
         {% if node.id = category.id %}
-        <a style="margin-right:10px;font-size:14px;color:#000;text-decoration:underline;" href="/{{node.slug}}/">
+        <a style="margin-right:10px;font-size:14px;color:#000;font-weight:bold;" href="/{{node.slug}}/">
         {% else %}
         <a style="margin-right:10px;font-size:14px;color:#009933;text-decoration:underline;" href="/{{node.slug}}/">
-        {% endif %}
-          {{ node.name }}
-        </a>
+        {% endif %}{{ node.name }}</a>
       {% endif %}
     {% endrecursetree %}
     </div>
