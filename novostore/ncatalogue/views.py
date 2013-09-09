@@ -51,11 +51,35 @@ def category_list(request,category_slug):
   	).distinct()
   catfilter = category.filtergroups.all()[0]
   #print catfilter.items.all()[0].name
+  ids = request.GET.get('ids', None)
+  price_from = request.GET.get('price_from', None)
+  price_to = request.GET.get('price_to', None)
+  q = request.GET.get('q', None)
+  if ids:
+    ids = ids.replace('+', ' ').split(' ')
+    for i in ids:
+      cat = ncatalogue_models.Category.objects.get(id=int(i))
+      products = products.filter(categories=cat)
+  if price_from:
+    products = products.filter(price__gte=price_from)
+  if price_to:
+    products = products.filter(price__lte=price_to)
+  if q:
+    products = products.filter(
+                   Q(name__icontains=q) | 
+                   Q(description__icontains=q) |
+                   Q(long_description__icontains=q) |
+                   Q(text__icontains=q)
+             )
   params = {  
   	'products' : products,
   	'show_breadcrumb' : True,
   	'category' : category,
-  	'catfilter' : catfilter
+  	'catfilter' : catfilter,
+  	'ids' : ids,
+  	'price_from' : price_from,
+  	'price_to' : price_to,
+  	'q' : q
   }
   return render_to_response(product_list_html(request), params, context_instance = RequestContext(request))
 

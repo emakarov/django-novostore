@@ -21,6 +21,44 @@
     	$("#filterprice").toggle();
     	hidden = 1 - hidden;
     });
+    function loadfilter(){
+      var catchilds = $(".catchild");
+      var urlbase = "{{request.path}}?ids=";
+       var added = 0;
+      for (var c = 0; c < catchilds.length; c++){
+       var catc = catchilds[c];
+       if ( $(catc).is(':checked') ){
+       if (added != 0 ){
+         urlbase += "+"
+       }
+       urlbase += $(catc).attr("value");
+         added = 1;
+      }
+      }
+      var price_from = $("#price_from").val();
+      var price_to = $("#price_to").val();
+       if (price_from >0){
+         urlbase += "&price_from="+price_from;
+       }
+       if (price_to >0){
+         urlbase += "&price_to="+price_to;
+       }
+
+      if ($("#searchq").val() != undefined){
+        urlbase += "&q="+$("#searchq").val();
+      }
+      window.location.href=urlbase;
+    }
+    var ids = new Array();
+    {% for i in ids %}
+      ids.push({{ i }});
+    {% endfor %}
+    for (var i in ids){
+      $("#catcheck_"+ids[i]).attr('checked', true);
+    }
+    $("#price_from").val({{price_from|default:''}});
+    $("#price_to").val({{price_to|default:''}});
+    $("#searchq").val("{{q|default:''}}");
     </script>
 {% endblock %}
 
