@@ -64,7 +64,7 @@
       var code = (e.keyCode ? e.keyCode : e.which);
       if(code == 13) { 
         loadfilter();
-        event.stopPropagation();      
+        e.stopPropagation();      
       }
     });
     </script>
