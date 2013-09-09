@@ -60,11 +60,12 @@
     $("#price_to").val({{price_to|default:''}});
     $("#searchq").val("{{q|default:''}}");
     
-    $('#searchbox input').bind('keypress', function(e) {
+    $('input').bind('keypress', function(e) {
       var code = (e.keyCode ? e.keyCode : e.which);
       if(code == 13) { 
         loadfilter();
         e.stopPropagation();      
+        e.preventDefault();      
       }
     });
     </script>
