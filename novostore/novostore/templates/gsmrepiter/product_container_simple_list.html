@@ -62,7 +62,7 @@
 	  {% for p in products %}
 	  <li class="span3 bcgwhite" style="width:250px;{% if forloop.first %}margin-left:10px;{% endif %}">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
-	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
+	      <img style="height:228px;" src="{{p.cover.get_s280x280_url}}" alt="">
 	      <!--<div class="block-note block-note-green">
 	      {{p.price}}{{p.currency.shortname}}
 	      </div>-->
