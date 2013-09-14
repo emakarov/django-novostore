@@ -36,10 +36,10 @@ def sendreply(request):
       leadcontent[l[0]] = l[1][0]
     c = Context({ 'leadcontent' : leadcontent})
     message = leadformtemplate.render(c)
-    #try:
-    mail.send_mail(subj, message, request.shop.server_email , [ request.shop.contact_email ])
-    #except:
-    #  pass
+    try:
+      mail.send_mail(subj, message, request.shop.server_email , [ request.shop.contact_email ])
+    except:
+      pass
     #print message.encode('utf-8')
     lead.content = message
     lead.save()
