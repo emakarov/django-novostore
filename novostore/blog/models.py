@@ -37,9 +37,9 @@ class Article(models.Model):
     description =  models.TextField(_("Description"),  blank=True, default='', help_text = _("Description"))
     terms = models.ManyToManyField(Term,verbose_name=_("Terms"),blank=True)
     text = models.TextField(_("Text"),blank=True)
-    publish_status = models.CharField(max_length=1, choices=PUBLISH_STATUS_CHOICES)
-    publish_date = models.DateTimeField(blank=True,null=True)
-    article_type = models.CharField(max_length=1, choices=ARTICLE_TYPES_CHOICES)
+    publish_status = models.CharField(max_length=1, verbose_name=_("Publish status"), choices=PUBLISH_STATUS_CHOICES)
+    publish_date = models.DateTimeField(blank=True,null=True, verbose_name=_("Publish date"))
+    article_type = models.CharField(max_length=1, choices=ARTICLE_TYPES_CHOICES, verbose_name=_("Article type"))
     gallery = models.ForeignKey(Gallery, null=True, blank=True,verbose_name=_("Gallery"))
     cover = ChainedForeignKey(
         Photo,

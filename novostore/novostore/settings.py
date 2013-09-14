@@ -4,7 +4,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop
 #import os
-from os import path
+from os import path, pardir
 import sys
 
 DEBUG = True
@@ -44,11 +44,11 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-#LANGUAGE_CODE = 'en-us'
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
-#        ('en', _('English')),
+        ('en', _('English')),
         ('ru', _('Russian')),
 )
 
@@ -143,9 +143,12 @@ TEMPLATE_DIRS = (
 )
 
 LOCALE_PATHS = (
-  path.join(PROJECT_ROOT,'locale'),
+  #path.join(PROJECT_ROOT,'locale'),
+  path.join(path.abspath(path.join(PROJECT_ROOT, pardir)),'locale'),
 )
-#print LOCALE_PATHS
+
+#print LOCALE_PATHS,   path.abspath(path.join(PROJECT_ROOT, pardir))
+
 
 INSTALLED_APPS = (
     'suit',
