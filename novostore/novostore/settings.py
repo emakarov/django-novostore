@@ -44,11 +44,11 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
-#LANGUAGE_CODE = 'ru'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 LANGUAGES = (
-        ('en', _('English')),
+#        ('en', _('English')),
         ('ru', _('Russian')),
 )
 
