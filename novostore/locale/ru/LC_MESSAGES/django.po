@@ -1,0 +1,1150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 django-novostore Evgeni Makarov
+# This file is distributed under the same license as the django-novostore package.
+# Evgeni Makarov <evgeni.makarov@gmail.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-14 17:32-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: accounts/forms.py:23
+msgid "User with this email already exists"
+msgstr "Пользователь с этим email уже существует"
+
+#: accounts/forms.py:40
+msgid "User with this credentials not found"
+msgstr "Пользователь с этими данными не найден"
+
+#: accounts/models.py:19
+msgid "Subscription"
+msgstr "Подписка"
+
+#: accounts/models.py:19
+msgid "Receive notifications by email?"
+msgstr "Получать уведомления по email?"
+
+#: accounts/models.py:20
+msgid "Url To photo"
+msgstr "URL фотографии"
+
+#: accounts/models.py:21
+msgid "Birthday"
+msgstr "День рождения"
+
+#: accounts/models.py:22
+msgid "Male"
+msgstr "Мужчина"
+
+#: accounts/models.py:22
+msgid "Female"
+msgstr "Женщина"
+
+#: accounts/models.py:23
+msgid "Confirmation Key"
+msgstr "Код подтверждения"
+
+#: accounts/models.py:23
+msgid "Key for password restore"
+msgstr "Ключ восстановления пароля"
+
+#: accounts/models.py:24
+msgid "Url To small photo"
+msgstr "URL мини фотографии"
+
+#: accounts/models.py:25
+msgid "Is this user worker"
+msgstr "Является сотрудником?"
+
+#: accounts/models.py:25
+msgid "Whether this user worker or not?"
+msgstr "Является сотрудником?"
+
+#: accounts/views.py:70
+#, fuzzy
+msgid "My profile"
+msgstr "Профиль"
+
+#: accounts/views.py:88
+msgid "Password Restore"
+msgstr "Восстановление пароля"
+
+#: blog/models.py:15
+msgid "Draft"
+msgstr ""
+
+#: blog/models.py:15
+msgid "Published"
+msgstr ""
+
+#: blog/models.py:16
+#, fuzzy
+msgid "Blog post"
+msgstr "Блог"
+
+#: blog/models.py:16
+#, fuzzy
+msgid "Photo Gallery"
+msgstr "Галлерея"
+
+#: blog/models.py:19 ncatalogue/models.py:40
+msgid "Term name"
+msgstr "Наименование категории"
+
+#: blog/models.py:20
+msgid "Term slug"
+msgstr ""
+
+#: blog/models.py:30
+#, fuzzy
+msgid "Blog term"
+msgstr "Блог"
+
+#: blog/models.py:31
+msgid "Blog terms"
+msgstr ""
+
+#: blog/models.py:35
+msgid "Author"
+msgstr ""
+
+#: blog/models.py:36
+msgid "Title"
+msgstr ""
+
+#: blog/models.py:37 ncatalogue/models.py:30 ncatalogue/models.py:51
+#: ncatalogue/models.py:89
+msgid "Description"
+msgstr "Описание"
+
+#: blog/models.py:38
+msgid "Terms"
+msgstr ""
+
+#: blog/models.py:39 ncatalogue/models.py:92 sitemanagement/models.py:19
+msgid "Text"
+msgstr "Текст"
+
+#: blog/models.py:43 ncatalogue/models.py:78
+msgid "Gallery"
+msgstr "Галлерея"
+
+#: blog/models.py:50
+msgid "Cover"
+msgstr ""
+
+#: blog/models.py:53
+#, fuzzy
+msgid "Longitude"
+msgstr "Долгота"
+
+#: blog/models.py:56 commerce/models.py:185
+msgid "Latitude"
+msgstr "Широта"
+
+#: blog/models.py:64
+#, fuzzy
+msgid "Blog article"
+msgstr "Статья"
+
+#: blog/models.py:65
+#, fuzzy
+msgid "Blog articles"
+msgstr "Статья"
+
+#: commerce/models.py:19 commerce/models.py:141 ncatalogue/models.py:24
+#: ncatalogue/models.py:88 ncatalogue/models.py:125 ncatalogue/models.py:138
+#: shops/models.py:19
+msgid "Name"
+msgstr "Наименование"
+
+#: commerce/models.py:20 ncatalogue/models.py:25
+msgid "Short name"
+msgstr "Сокращение"
+
+#: commerce/models.py:21 ncatalogue/models.py:27
+msgid "Name international"
+msgstr "Международное наименование"
+
+#: commerce/models.py:22 ncatalogue/models.py:28
+msgid "Short name international"
+msgstr "Сокращение международного наименования"
+
+#: commerce/models.py:32 commerce/models.py:144
+msgid "Currency"
+msgstr "Валюта"
+
+#: commerce/models.py:33
+msgid "Currencies"
+msgstr "Валюты"
+
+#: commerce/models.py:39 commerce/models.py:88
+msgid "Is active"
+msgstr "Активен"
+
+#: commerce/models.py:44 commerce/models.py:84
+msgid "Creation time"
+msgstr "Время создания"
+
+#: commerce/models.py:45 commerce/models.py:85
+msgid "Last-modified time"
+msgstr "Время последнего изменения"
+
+#: commerce/models.py:46
+msgid "Random key for direct links"
+msgstr "Случайный ключ для прямой ссылки"
+
+#: commerce/models.py:59 commerce/models.py:65 commerce/views.py:114
+msgid "Cart"
+msgstr "Корзина"
+
+#: commerce/models.py:60
+msgid "Carts"
+msgstr "Корзины"
+
+#: commerce/models.py:63 commerce/models.py:108 commerce/models.py:145
+#: ncatalogue/models.py:109 ncatalogue/models.py:115 ncatalogue/models.py:127
+msgid "Product"
+msgstr "Товар"
+
+#: commerce/models.py:64 commerce/models.py:109
+#: novostore/templates/default/commerce/cart_table.html:15
+#: novostore/templates/dorogatv/commerce/cart_table.html:15
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:15
+msgid "Quantity"
+msgstr "Количество"
+
+#: commerce/models.py:74 commerce/models.py:126
+msgid "Cart Element"
+msgstr "Элемент корзины"
+
+#: commerce/models.py:75 commerce/models.py:127
+msgid "Cart Elements"
+msgstr "Элементы корзины"
+
+#: commerce/models.py:86
+msgid "Waiting for delivery"
+msgstr "Ожидает доставки"
+
+#: commerce/models.py:87
+msgid "Payment on delivery"
+msgstr "Платеж при доставке"
+
+#: commerce/models.py:98 commerce/models.py:121 commerce/models.py:142
+#: novostore/templates/default/commerce/cart_table.html:14
+#: novostore/templates/dorogatv/commerce/cart_table.html:14
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:14
+msgid "Price"
+msgstr "Цена"
+
+#: commerce/models.py:104
+msgid "Preorder"
+msgstr "Предзаказ"
+
+#: commerce/models.py:105
+#, fuzzy
+msgid "Preorders"
+msgstr "Предзаказ"
+
+#: commerce/models.py:110
+msgid "PreOrder"
+msgstr "Предзаказ"
+
+#: commerce/models.py:122
+#: novostore/templates/default/commerce/cart_table.html:16
+#: novostore/templates/dorogatv/commerce/cart_table.html:16
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:16
+msgid "Sum"
+msgstr "Сумма"
+
+#: commerce/models.py:132
+msgid "From currency"
+msgstr "Из валюты"
+
+#: commerce/models.py:133
+msgid "To currency"
+msgstr "В валюту"
+
+#: commerce/models.py:134
+msgid "Course"
+msgstr "Курс"
+
+#: commerce/models.py:137 commerce/models.py:138
+msgid "Currency Exchange"
+msgstr "Обмен валют"
+
+#: commerce/models.py:143
+msgid "Quantity of items"
+msgstr "Количество"
+
+#: commerce/models.py:151
+msgid "Tariff"
+msgstr "Тариф"
+
+#: commerce/models.py:152
+msgid "Tariffs"
+msgstr "Тарифы"
+
+#: commerce/models.py:156
+#, fuzzy
+msgid "Name of partner"
+msgstr "Промо партнер"
+
+#: commerce/models.py:157
+msgid "User for this promo partner account"
+msgstr "Пользователь для партнерского аккаунта"
+
+#: commerce/models.py:163 commerce/models.py:168
+msgid "Promo Partner"
+msgstr "Промо партнер"
+
+#: commerce/models.py:164
+msgid "Promo Partners"
+msgstr "Промо партнеры"
+
+#: commerce/models.py:169
+msgid "Code"
+msgstr "Код"
+
+#: commerce/models.py:170
+msgid "Discount in percentage"
+msgstr "Скидка в процентах"
+
+#: commerce/models.py:171
+msgid "Number Of Activations Allowed"
+msgstr "Общее количество доступных активаций"
+
+#: commerce/models.py:172
+msgid "Number Of Activations Made"
+msgstr "Количество совершенных активаций"
+
+#: commerce/models.py:178
+msgid "Promo Code"
+msgstr "Промо код"
+
+#: commerce/models.py:179
+msgid "Promo Codes"
+msgstr "Промо коды"
+
+#: commerce/models.py:182
+msgid "City"
+msgstr "Город"
+
+#: commerce/models.py:183
+msgid "Street and house"
+msgstr "Улица и дом"
+
+#: commerce/models.py:184
+msgid "Zip Code"
+msgstr "Индекс"
+
+#: commerce/models.py:185 commerce/models.py:187
+#, fuzzy
+msgid "Location"
+msgstr "Действие"
+
+#: commerce/models.py:187
+msgid "Longitutde"
+msgstr "Долгота"
+
+#: commerce/models.py:189
+msgid "User"
+msgstr "Пользователь"
+
+#: commerce/models.py:190
+msgid "Phone"
+msgstr "Телефон"
+
+#: commerce/models.py:196
+#, fuzzy
+msgid "Delivery Address"
+msgstr "Адреса доставки"
+
+#: commerce/models.py:197
+msgid "Delivery Addresses"
+msgstr "Адреса доставки"
+
+#: commerce/views.py:122 novostore/templates/default/footer.html:47
+#: novostore/templates/default/commerce/cart_table.html:9
+#: novostore/templates/dorogatv/footer.html:47
+#: novostore/templates/dorogatv/commerce/cart_table.html:9
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:9
+msgid "Checkout"
+msgstr "Оплатить"
+
+#: ncatalogue/models.py:26
+#, fuzzy
+msgid "Per name"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:29
+msgid "Per name internationl"
+msgstr "За наименование междунар."
+
+#: ncatalogue/models.py:30
+msgid "Details of this measure unit"
+msgstr "Детали единицы измерения"
+
+#: ncatalogue/models.py:36
+msgid "Measure Unit"
+msgstr "Единица измерения"
+
+#: ncatalogue/models.py:37
+msgid "Measure Units"
+msgstr "Единицы измерения"
+
+#: ncatalogue/models.py:40
+msgid "Category name"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:41
+msgid "Slug"
+msgstr "slug"
+
+#: ncatalogue/models.py:42
+#, fuzzy
+msgid "Operating status"
+msgstr "Статус активности категории"
+
+#: ncatalogue/models.py:42
+msgid "Service category status"
+msgstr "Статус активности категории"
+
+#: ncatalogue/models.py:45
+msgid "Requires shipping?"
+msgstr "Требует доставки?"
+
+#: ncatalogue/models.py:49 shopleads/models.py:19 shops/models.py:32
+msgid "Shop"
+msgstr "Магазин"
+
+#: ncatalogue/models.py:50 novostore/confs/settings_gsmrepiter.py:75
+msgid "Photo"
+msgstr "Фото"
+
+#: ncatalogue/models.py:68 ncatalogue/models.py:139 ncatalogue/models.py:153
+msgid "Category"
+msgstr "Категория"
+
+#: ncatalogue/models.py:69 ncatalogue/models.py:91
+msgid "Categories"
+msgstr "Категории"
+
+#: ncatalogue/models.py:74
+msgid "UPC"
+msgstr "UPC"
+
+#: ncatalogue/models.py:75
+msgid ""
+"Universal Product Code (UPC) is an identifier for a product which is not "
+"specific to a particular  supplier. Eg an ISBN for a book."
+msgstr ""
+"Универсальный товарный код (UPC) это идентификатор продукта который не "
+"специфичен для конкретного поставщика. Например - ISBN для книги"
+
+#: ncatalogue/models.py:85
+msgid "Main photo"
+msgstr "Главное фото"
+
+#: ncatalogue/models.py:90
+msgid "Long description"
+msgstr "Расширенное описание"
+
+#: ncatalogue/models.py:93
+msgid "Base Price"
+msgstr "Базовая цена"
+
+#: ncatalogue/models.py:93
+msgid "Base price"
+msgstr "Базовая цена"
+
+#: ncatalogue/models.py:110
+msgid "Products"
+msgstr "Товары"
+
+#: ncatalogue/models.py:113
+#, fuzzy
+msgid "File name"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:114
+msgid "File"
+msgstr ""
+
+#: ncatalogue/models.py:121
+#, fuzzy
+msgid "Product Attachment"
+msgstr "Наименование товара"
+
+#: ncatalogue/models.py:122
+#, fuzzy
+msgid "Product Attachments"
+msgstr "Приложения"
+
+#: ncatalogue/models.py:125 ncatalogue/models.py:138
+#, fuzzy
+msgid "Detail name"
+msgstr "Характеристики"
+
+#: ncatalogue/models.py:126
+msgid "Value"
+msgstr ""
+
+#: ncatalogue/models.py:133
+#, fuzzy
+msgid "Product Detail"
+msgstr "Подробное описание товара"
+
+#: ncatalogue/models.py:134
+#, fuzzy
+msgid "Product Details"
+msgstr "Подробное описание товара"
+
+#: ncatalogue/models.py:148
+#, fuzzy
+msgid "Category Filter"
+msgstr "Категории"
+
+#: ncatalogue/models.py:149
+#, fuzzy
+msgid "Category Filters"
+msgstr "Категории"
+
+#: ncatalogue/models.py:152
+msgid "Filter group"
+msgstr ""
+
+#: ncatalogue/models.py:156
+#, fuzzy
+msgid "Category Filter Item"
+msgstr "Наименование категории"
+
+#: ncatalogue/models.py:157
+#, fuzzy
+msgid "Category Filter Items"
+msgstr "Категории"
+
+#: novostore/settings.py:51
+msgid "English"
+msgstr "Английский"
+
+#: novostore/settings.py:52
+msgid "Russian"
+msgstr "Русский"
+
+#: novostore/settings.py:233 novostore/confs/settings_gsmrepiter.py:50
+msgid "Users"
+msgstr "Пользователи"
+
+#: novostore/settings.py:246
+msgid "Common Settings"
+msgstr "Общие настройки"
+
+#: novostore/settings.py:253 novostore/confs/settings_gsmrepiter.py:81
+msgid "Commerce"
+msgstr "Коммерция"
+
+#: novostore/settings.py:305
+msgid "Register on e-commerce shop"
+msgstr "Регистрация в магазине"
+
+#: novostore/confs/settings_gsmrepiter.py:69
+msgid "Blog"
+msgstr "Блог"
+
+#: novostore/confs/settings_gsmrepiter.py:121
+msgid "Simple article"
+msgstr "Статья"
+
+#: novostore/confs/settings_gsmrepiter.py:122
+msgid "About page"
+msgstr "О компании"
+
+#: novostore/confs/settings_gsmrepiter.py:123
+msgid "Contacts"
+msgstr "Контакты"
+
+#: novostore/templates/admin/base.html:69
+msgid "Welcome,"
+msgstr "Добро пожаловать,"
+
+#: novostore/templates/admin/base.html:77
+msgid "Documentation"
+msgstr "Документация"
+
+#: novostore/templates/admin/base.html:80
+#: novostore/templates/default/accounts/set_up_new_passwd.html:31
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:31
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:31
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: novostore/templates/admin/base.html:82
+#: novostore/templates/default/nav_bar_top.html:32
+#: novostore/templates/dorogatv/nav_bar_top.html:32
+msgid "Log out"
+msgstr "Выйти"
+
+#: novostore/templates/admin/base.html:102
+#: novostore/templates/default/accounts/login.html:24
+#: novostore/templates/dorogatv/accounts/login.html:24
+#: novostore/templates/gsmrepiter/accounts/login.html:24
+msgid "Home"
+msgstr "Дом"
+
+#: novostore/templates/default/footer.html:24
+#: novostore/templates/dorogatv/footer.html:24
+msgid "Item added to cart"
+msgstr "Товар добавлен в корзину"
+
+#: novostore/templates/default/footer.html:41
+#: novostore/templates/default/nav_bar_top.html:24
+#: novostore/templates/dorogatv/footer.html:41
+#: novostore/templates/dorogatv/nav_bar_top.html:24
+msgid "My cart"
+msgstr "моей корзине"
+
+#: novostore/templates/default/nav_bar_top.html:16
+#: novostore/templates/default/scripts.html:3
+#: novostore/templates/dorogatv/nav_bar_top.html:16
+#: novostore/templates/dorogatv/scripts.html:3
+#: novostore/templates/gsmrepiter/scripts.html:3
+msgid "Currently there no"
+msgstr "Сейчас нет"
+
+#: novostore/templates/default/nav_bar_top.html:19
+#: novostore/templates/default/scripts.html:4
+#: novostore/templates/dorogatv/nav_bar_top.html:19
+#: novostore/templates/dorogatv/scripts.html:4
+#: novostore/templates/gsmrepiter/scripts.html:4
+msgid "item in"
+msgstr "товар в"
+
+#: novostore/templates/default/nav_bar_top.html:21
+#: novostore/templates/default/scripts.html:5
+#: novostore/templates/dorogatv/nav_bar_top.html:21
+#: novostore/templates/dorogatv/scripts.html:5
+#: novostore/templates/gsmrepiter/scripts.html:5
+msgid "items in"
+msgstr "товаров в"
+
+#: novostore/templates/default/nav_bar_top.html:31
+#: novostore/templates/dorogatv/nav_bar_top.html:31
+msgid "Profile"
+msgstr "Профиль"
+
+#: novostore/templates/default/nav_bar_top.html:34
+#: novostore/templates/dorogatv/nav_bar_top.html:34
+msgid "Admin panel"
+msgstr "Админ панель"
+
+#: novostore/templates/default/nav_bar_top.html:38
+#: novostore/templates/default/accounts/login_form.html:24
+#: novostore/templates/dorogatv/nav_bar_top.html:38
+#: novostore/templates/dorogatv/accounts/login_form.html:24
+#: novostore/templates/gsmrepiter/accounts/login_form.html:24
+msgid "Sign in"
+msgstr "Войти"
+
+#: novostore/templates/default/nav_bar_top.html:39
+#: novostore/templates/dorogatv/nav_bar_top.html:39
+msgid "New customer"
+msgstr "Новый пользователь"
+
+#: novostore/templates/default/nav_bar_top.html:49
+#: novostore/templates/dorogatv/nav_bar_top.html:49
+#: novostore/templates/gsmrepiter/nav_bar_top.html:19
+msgid "Search"
+msgstr "Поиск"
+
+#: novostore/templates/default/product_single.html:11
+#: novostore/templates/dorogatv/product_single.html:11
+#: novostore/templates/gsmrepiter/product_single.html:71
+msgid "Regular price"
+msgstr "Стандартная цена"
+
+#: novostore/templates/default/product_single.html:16
+#: novostore/templates/dorogatv/product_single.html:16
+#: novostore/templates/gsmrepiter/product_single.html:78
+msgid "Choose quantity"
+msgstr "Выберите кол-во"
+
+#: novostore/templates/default/product_single.html:23
+#: novostore/templates/dorogatv/product_single.html:23
+#: novostore/templates/gsmrepiter/product_single.html:85
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: novostore/templates/default/product_single.html:26
+#: novostore/templates/dorogatv/product_single.html:26
+#: novostore/templates/gsmrepiter/product_single.html:89
+msgid "Product details"
+msgstr "Подробное описание товара"
+
+#: novostore/templates/default/product_single.html:37
+#: novostore/templates/dorogatv/product_single.html:37
+#: novostore/templates/gsmrepiter/product_single.html:161
+msgid "You might also like"
+msgstr "Вам также может понравиться"
+
+#: novostore/templates/default/accounts/benefits_text.html:2
+#: novostore/templates/dorogatv/accounts/benefits_text.html:2
+#: novostore/templates/gsmrepiter/accounts/benefits_text.html:2
+msgid ""
+"\n"
+"<h5>New Online Customer? Nice to meet you.</h5>\n"
+"The benefits of having an account include:\n"
+"<ul>\n"
+"<li>Fast and easy checkout</li>\n"
+"<li>Exclusive offers</li>\n"
+"<li>Manage your own information</li>\n"
+"</ul>\n"
+msgstr ""
+"\n"
+"<h5>Вы новый покупатель на нашем сайте? Здравствуйте!</h5>\n"
+"Для зарегистрированных пользователей у нас бонусы:\n"
+"<ul>\n"
+"<li>Быстрое оформление заказа</li>\n"
+"<li>Эксклюзивные предложения</li>\n"
+"<li>Персональные настройки профиля</li>\n"
+"</ul>\n"
+
+#: novostore/templates/default/accounts/formfactor.html:13
+#: novostore/templates/dorogatv/accounts/formfactor.html:13
+#: novostore/templates/gsmrepiter/accounts/formfactor.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: novostore/templates/default/accounts/formfactor.html:16
+#: novostore/templates/dorogatv/accounts/formfactor.html:16
+#: novostore/templates/gsmrepiter/accounts/formfactor.html:16
+msgid "saved"
+msgstr "сохранено"
+
+#: novostore/templates/default/accounts/formfactor.html:18
+#: novostore/templates/dorogatv/accounts/formfactor.html:18
+#: novostore/templates/gsmrepiter/accounts/formfactor.html:18
+msgid "error happened"
+msgstr "произошла ошибка"
+
+#: novostore/templates/default/accounts/login.html:28
+#: novostore/templates/dorogatv/accounts/login.html:28
+#: novostore/templates/gsmrepiter/accounts/login.html:28
+msgid "Sign In or Create an Account"
+msgstr "Вход или регистрация"
+
+#: novostore/templates/default/accounts/login.html:33
+#: novostore/templates/dorogatv/accounts/login.html:33
+#: novostore/templates/gsmrepiter/accounts/login.html:33
+msgid "Create an Account"
+msgstr "Зарегистрироваться"
+
+#: novostore/templates/default/accounts/login_form.html:4
+#: novostore/templates/dorogatv/accounts/login_form.html:4
+#: novostore/templates/gsmrepiter/accounts/login_form.html:4
+msgid "Have an account on our site? Please sign in below."
+msgstr "У вас уже есть аккаунт на нашем сайте? Пожалуйста авторизуйтесь ниже."
+
+#: novostore/templates/default/accounts/login_form.html:5
+#: novostore/templates/dorogatv/accounts/login_form.html:5
+#: novostore/templates/gsmrepiter/accounts/login_form.html:5
+msgid "Enter your email or nickname and password to sign in."
+msgstr "Введите email (или логин) и пароль для входа на сайт"
+
+#: novostore/templates/default/accounts/login_form.html:10
+#: novostore/templates/default/accounts/register_form.html:36
+#: novostore/templates/dorogatv/accounts/login_form.html:10
+#: novostore/templates/dorogatv/accounts/register_form.html:36
+#: novostore/templates/gsmrepiter/accounts/login_form.html:10
+#: novostore/templates/gsmrepiter/accounts/register_form.html:36
+msgid "Email"
+msgstr "Email"
+
+#: novostore/templates/default/accounts/login_form.html:16
+#: novostore/templates/default/accounts/register_form.html:45
+#: novostore/templates/dorogatv/accounts/login_form.html:16
+#: novostore/templates/dorogatv/accounts/register_form.html:45
+#: novostore/templates/gsmrepiter/accounts/login_form.html:16
+#: novostore/templates/gsmrepiter/accounts/register_form.html:45
+msgid "Password"
+msgstr "Пароль"
+
+#: novostore/templates/default/accounts/login_form.html:29
+#: novostore/templates/dorogatv/accounts/login_form.html:29
+#: novostore/templates/gsmrepiter/accounts/login_form.html:29
+msgid "Forgot Your Password?"
+msgstr "Забыли пароль?"
+
+#: novostore/templates/default/accounts/login_form.html:34
+#: novostore/templates/dorogatv/accounts/login_form.html:34
+#: novostore/templates/gsmrepiter/accounts/login_form.html:34
+msgid "Enter your email"
+msgstr "Введите ваш email"
+
+#: novostore/templates/default/accounts/login_form.html:35
+#: novostore/templates/dorogatv/accounts/login_form.html:35
+#: novostore/templates/gsmrepiter/accounts/login_form.html:35
+msgid "Restore a password"
+msgstr "Восстановить пароль"
+
+#: novostore/templates/default/accounts/login_form.html:36
+#: novostore/templates/dorogatv/accounts/login_form.html:36
+#: novostore/templates/gsmrepiter/accounts/login_form.html:36
+msgid "Please check your email to proceed password restore."
+msgstr "Проверьте ваш email для восстановления пароля"
+
+#: novostore/templates/default/accounts/login_form.html:40
+#: novostore/templates/dorogatv/accounts/login_form.html:40
+#: novostore/templates/gsmrepiter/accounts/login_form.html:40
+msgid "You can also login to our site using social services"
+msgstr "Вы также можете войти на сайт через социальные сети"
+
+#: novostore/templates/default/accounts/login_form.html:41
+#: novostore/templates/dorogatv/accounts/login_form.html:41
+#: novostore/templates/gsmrepiter/accounts/login_form.html:41
+msgid "Login with Google"
+msgstr "Войти через Google"
+
+#: novostore/templates/default/accounts/login_form.html:44
+#: novostore/templates/dorogatv/accounts/login_form.html:44
+#: novostore/templates/gsmrepiter/accounts/login_form.html:44
+msgid "Login with Facebook"
+msgstr "Войти через Facebook"
+
+#: novostore/templates/default/accounts/login_form.html:55
+#: novostore/templates/dorogatv/accounts/login_form.html:55
+#: novostore/templates/gsmrepiter/accounts/login_form.html:55
+msgid "Create an account"
+msgstr "Создать аккаунт"
+
+#: novostore/templates/default/accounts/login_form.html:57
+#: novostore/templates/dorogatv/accounts/login_form.html:57
+#: novostore/templates/gsmrepiter/accounts/login_form.html:57
+msgid ""
+"\n"
+"<small>\n"
+"You don't need a credit card to create an account.<br> \n"
+"Payment information is not required until you make a purchase.\n"
+"</small>\n"
+msgstr ""
+"\n"
+"<small>\n"
+"Для создания аккаунта не нужна кредитная карта.<br> \n"
+"Платежная информация необходима только при совершении покупки.\n"
+"</small>\n"
+
+#: novostore/templates/default/accounts/profile.html:39
+#: novostore/templates/dorogatv/accounts/profile.html:39
+#: novostore/templates/gsmrepiter/accounts/profile.html:39
+msgid "Basic information"
+msgstr "Основная информация"
+
+#: novostore/templates/default/accounts/profile.html:41
+#: novostore/templates/dorogatv/accounts/profile.html:41
+#: novostore/templates/gsmrepiter/accounts/profile.html:41
+msgid "Delivery address"
+msgstr "Адрес доставки"
+
+#: novostore/templates/default/accounts/profile.html:42
+#: novostore/templates/dorogatv/accounts/profile.html:42
+#: novostore/templates/gsmrepiter/accounts/profile.html:42
+msgid "My orders"
+msgstr "Мои заказы"
+
+#: novostore/templates/default/accounts/profile.html:54
+#: novostore/templates/dorogatv/accounts/profile.html:54
+#: novostore/templates/gsmrepiter/accounts/profile.html:54
+msgid "Order number"
+msgstr "Номер заказа"
+
+#: novostore/templates/default/accounts/profile.html:55
+#: novostore/templates/dorogatv/accounts/profile.html:55
+#: novostore/templates/gsmrepiter/accounts/profile.html:55
+msgid "Date of order"
+msgstr "Дата заказа"
+
+#: novostore/templates/default/accounts/profile.html:56
+#: novostore/templates/dorogatv/accounts/profile.html:56
+#: novostore/templates/gsmrepiter/accounts/profile.html:56
+msgid "Payment status"
+msgstr "Статус оплаты"
+
+#: novostore/templates/default/accounts/register_form.html:3
+#: novostore/templates/dorogatv/accounts/register_form.html:3
+#: novostore/templates/gsmrepiter/accounts/register_form.html:3
+msgid ""
+"\n"
+"Enter your login, name, email address and password to create an account. \n"
+"We guarantee that every transaction you make at our site will be safe. \n"
+"This means you pay nothing if unauthorized charges are made to your credit "
+"card as a result of shopping here.\n"
+msgstr ""
+"\n"
+"Для создания аккаунта введите ваш логин, мя, email и пароль. \n"
+"Мы гарантируем безопасность всех транзакций, совершенных на нашем сайте. \n"
+"Это, в частности, означает что мы не храним данные о кредитных картах "
+"покупателей нашего сайта.\n"
+
+#: novostore/templates/default/accounts/register_form.html:15
+#: novostore/templates/dorogatv/accounts/register_form.html:15
+#: novostore/templates/gsmrepiter/accounts/register_form.html:15
+msgid "Login"
+msgstr "Логин"
+
+#: novostore/templates/default/accounts/register_form.html:24
+#: novostore/templates/dorogatv/accounts/register_form.html:24
+#: novostore/templates/gsmrepiter/accounts/register_form.html:24
+msgid "First Name"
+msgstr "Имя"
+
+#: novostore/templates/default/accounts/register_form.html:30
+#: novostore/templates/dorogatv/accounts/register_form.html:30
+#: novostore/templates/gsmrepiter/accounts/register_form.html:30
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: novostore/templates/default/accounts/register_form.html:54
+#: novostore/templates/dorogatv/accounts/register_form.html:54
+#: novostore/templates/gsmrepiter/accounts/register_form.html:54
+msgid "Repeat Password"
+msgstr "Повторите пароль"
+
+#: novostore/templates/default/accounts/register_form.html:65
+#: novostore/templates/dorogatv/accounts/register_form.html:65
+#: novostore/templates/gsmrepiter/accounts/register_form.html:65
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:10
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:10
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:10
+msgid "Set up new password"
+msgstr "Установить новый пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:12
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:12
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:12
+msgid ""
+"You logged in with social network, but you also can use standard login/"
+"password"
+msgstr ""
+"Вы вошли через социальную сеть, но также можете использовать обычный логин/"
+"пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:14
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:14
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:14
+msgid "Your login was automatically created from social account:"
+msgstr "Ваш логин был автоматически создан из социальной сети:"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:16
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:16
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:16
+msgid "Here please enter your desired password for this login:"
+msgstr "Пожалуйста, введите пароль для этого логина:"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:30
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:30
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:30
+msgid "Enter New Password"
+msgstr "Введите новый пароль"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:38
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:38
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:38
+msgid ""
+"No, thanks. I will always login with my social network account without login "
+"and password"
+msgstr ""
+"Нет, спасибо. Я всегда буду входить на сайт через социальную сеть без этого "
+"логина и пароля"
+
+#: novostore/templates/default/accounts/set_up_new_passwd.html:43
+#: novostore/templates/dorogatv/accounts/set_up_new_passwd.html:43
+#: novostore/templates/gsmrepiter/accounts/set_up_new_passwd.html:43
+msgid "Congratulations! Your password was changed successfully."
+msgstr "Поздравляем! Ваш пароль успешно изменен."
+
+#: novostore/templates/default/commerce/cart_table.html:13
+#: novostore/templates/dorogatv/commerce/cart_table.html:13
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:13
+msgid "Product Name"
+msgstr "Наименование товара"
+
+#: novostore/templates/default/commerce/cart_table.html:17
+#: novostore/templates/dorogatv/commerce/cart_table.html:17
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:17
+msgid "Action"
+msgstr "Действие"
+
+#: novostore/templates/default/commerce/cart_table.html:43
+#: novostore/templates/dorogatv/commerce/cart_table.html:43
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:43
+msgid "Delete"
+msgstr "Удалить"
+
+#: novostore/templates/default/commerce/cart_table.html:48
+#: novostore/templates/dorogatv/commerce/cart_table.html:48
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:48
+msgid "Total"
+msgstr "Итого"
+
+#: novostore/templates/default/commerce/cart_table.html:60
+#: novostore/templates/dorogatv/commerce/cart_table.html:60
+#: novostore/templates/gsmrepiter/commerce/cart_table.html:60
+msgid "Confirm and Checkout"
+msgstr "Подтвердить заказ"
+
+#: novostore/templates/default/commerce/checkout.html:17
+#: novostore/templates/dorogatv/commerce/checkout.html:17
+#: novostore/templates/gsmrepiter/commerce/checkout.html:17
+msgid "Please enter your delivery address"
+msgstr "Введите адрес доставки"
+
+#: novostore/templates/default/commerce/checkout.html:19
+#: novostore/templates/dorogatv/commerce/checkout.html:19
+#: novostore/templates/gsmrepiter/commerce/checkout.html:19
+msgid "Confirm your delivery address"
+msgstr "Подтверждение адреса доставки"
+
+#: novostore/templates/default/commerce/checkout.html:37
+#: novostore/templates/dorogatv/commerce/checkout.html:37
+#: novostore/templates/gsmrepiter/commerce/checkout.html:37
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: novostore/templates/default/commerce/checkout_confirmed.html:10
+#: novostore/templates/dorogatv/commerce/checkout_confirmed.html:10
+#: novostore/templates/gsmrepiter/commerce/checkout_confirmed.html:10
+msgid ""
+"Your order and delivery address are confirmed. Please wait for call from our "
+"manager."
+msgstr ""
+"Ваш заказ и адрес доставки подтверждены. Ожидайте звонка от нашего оператора."
+
+#: novostore/templates/default/commerce/checkout_confirmed.html:11
+#: novostore/templates/dorogatv/commerce/checkout_confirmed.html:11
+#: novostore/templates/gsmrepiter/commerce/checkout_confirmed.html:11
+msgid "Number of your order"
+msgstr "Номер Вашего заказа"
+
+#: novostore/templates/gsmrepiter/product_single.html:98
+msgid "Attachments"
+msgstr "Приложения"
+
+#: novostore/templates/gsmrepiter/product_single.html:107
+msgid "Details"
+msgstr "Характеристики"
+
+#: novostore/templates/gsmrepiter/blog/index.html:32
+msgid "read more"
+msgstr "читать далее"
+
+#: shopleads/models.py:20
+msgid "Content"
+msgstr "Контент"
+
+#: shopleads/models.py:20
+msgid "content"
+msgstr "контент"
+
+#: shopleads/models.py:21
+msgid "Received"
+msgstr "Получено"
+
+#: shopleads/models.py:29
+msgid "Lead"
+msgstr "Заявка"
+
+#: shopleads/models.py:30
+msgid "Leads"
+msgstr "Заявки"
+
+#: shopleads/views.py:26
+msgid "Request from site"
+msgstr "Заявка с сайта"
+
+#: shops/models.py:20
+msgid "Domain"
+msgstr "Домен"
+
+#: shops/models.py:22
+msgid "Theme of website"
+msgstr "Тема оформления"
+
+#: shops/models.py:23
+msgid "Contact email"
+msgstr "Контактный email"
+
+#: shops/models.py:23
+msgid "Email of shop owner"
+msgstr "Email администратора"
+
+#: shops/models.py:24
+msgid "Server email"
+msgstr "Серверный email"
+
+#: shops/models.py:24
+msgid "Email of shop robot"
+msgstr "Email робота рассылки писем"
+
+#: shops/models.py:33
+msgid "Shops"
+msgstr "Магазины"
+
+#: shops/models.py:45
+msgid "Worker"
+msgstr "Сотрудник"
+
+#: shops/models.py:46
+msgid "Workers"
+msgstr "Сотрудники"
+
+#: shops/models.py:58
+msgid "Client"
+msgstr "Клиент"
+
+#: shops/models.py:59
+msgid "Clients"
+msgstr "Клиенты"
+
+#: sitemanagement/models.py:19
+msgid "Text inside the block"
+msgstr "Текст в блоке"
+
+#: sitemanagement/models.py:20
+msgid "Url"
+msgstr "Url"
+
+#: sitemanagement/models.py:20
+msgid "Url if block is hyperlink by itself"
+msgstr "Url если блок имеет гиперссылку"
+
+#: sitemanagement/models.py:35 sitemanagement/models.py:36
+msgid "Website menu"
+msgstr "Меню вебсайта"
+
+#: utils/visibility.py:219
+msgid "None"
+msgstr "None"
+
+#: utils/visibility.py:310
+msgid "Passwords don't match"
+msgstr "Пароли не совпадают"
+
+#~ msgid "Call us"
+#~ msgstr "Позвоните нам"
+
+#~ msgid "Address confirmed"
+#~ msgstr "Адрес подтвержден"
