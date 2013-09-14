@@ -7,6 +7,8 @@ from django.utils.translation import ugettext_noop
 from os import path
 import sys
 
+TIME_ZONE = 'Europe/Moscow'
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
