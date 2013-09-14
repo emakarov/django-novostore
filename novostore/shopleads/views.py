@@ -20,6 +20,7 @@ import models as leads_models
 from django.core import serializers
 from django.utils import simplejson
 from django.http import QueryDict
+from django.core import mail
 
 def sendreply(request):
     subj = _("Request from site")
