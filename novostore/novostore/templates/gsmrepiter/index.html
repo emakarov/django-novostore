@@ -120,11 +120,97 @@ box-shadow: none;
     {% include "serviceenquiry.html" with hidecats=True index=True %}
     {% include "footer.html" %}
     {% endblock %}
+
+	<div id="myModalPlaceorder" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Подать заявку</h3>
+	  </div>
+	  <div class="modal-body">
+	  <div id="request_product_name"><h4>{{product.name}}</h4></div>
+	  <form id="sendrequestform" class="form-horizontal" style="padding-top:10px">{% csrf_token %}
+	  
+	  <input type="hidden" name="leadform" value="sendrequestform">
+
+	  <div class="control-group">
+	  <label class="control-label" for="inputnames">Ваше имя и фамилия</label>
+	    <div class="controls">
+	      <input type="text" name="inputnames">
+	    </div>
+	  </div>
+
+	  <div class="control-group">
+	  <label class="control-label" for="inputcorp">Организация</label>
+	    <div class="controls">
+	      <input type="text" name="inputcorp">
+	    </div>
+	  </div>
+
+
+	  <div class="control-group">
+	  <label class="control-label" for="inputphones">Контактный телефон</label>
+	    <div class="controls">
+	      <input type="text" name="inputphones">
+	    </div>
+	  </div>
+
+	  <div class="control-group">
+	  <label class="control-label" for="inputemail">Email</label>
+	    <div class="controls">
+	      <input type="text" name="inputemail">
+	    </div>
+	  </div>
+
+	  <div class="control-group">
+	  <label class="control-label" for="yourtypeobj">У вас</label>
+	    <div class="controls">
+	       <select name="yourtypeobj">
+	        <option value="Дом">Дом</option>
+	        <option value="Квартира">Квартира</option>
+	        <option value="Офис">Офис</option>
+	        <option value="Подвальное помещение">Подвальное помещение</option>
+	        <option value="Магазин">Магазин</option>
+	        <option value="Ресторан">Ресторан</option>
+	        <option value="Загородный дом">Загородный дом</option>
+	        <option value="Здание">Здание</option>
+	        <option value="Удаленная территория">Удаленная территория</option>
+	        <option value="Другое">Другое</option>
+	       </select>
+	    </div>
+	  </div>
+	  <div class="control-group">
+	  <label class="control-label" for="needed">Требуется</label>
+	    <div class="controls">
+	       <select name="needed">
+	        <option value="Провести обследование">Провести обследование</option>
+	        <option value="Приобрести товар в розницу">Приобрести товар в розницу</option>
+	        <option value="Приобрести товар оптом">Приобрести товар оптом</option>
+	        <option value="Подвальное помещение">Подвальное помещение</option>
+	        <option value="Установить оборудование">Установить оборудование</option>
+	        <option value="Другое">Другое</option>
+	       </select>
+	    </div>
+	  </div>
+
+	  <div class="control-group">
+	    <div class="controls">
+	      <div class="btn btn-brand-priem" onclick="sendreply('#sendrequestform')">Отправить запрос</div>
+	    </div>
+	  </div>
+	  </form>
+	  </div>
+	  <div class="modal-footer">
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+	  </div>
+	</div>
     </div>
     {% include "gsmrepiter/scripts.html" %}
     {% block additional_scripts %}
     <script>
     //$('.carousel').carousel()
+    $('.placeorder').on('click',function(){
+    	$('#myModalPlaceorder').modal('show');
+    });
     </script>
     {% endblock %}
   </body>

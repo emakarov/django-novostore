@@ -174,6 +174,7 @@ INSTALLED_APPS = (
     'django.contrib.comments',
     'sitemanagement',
     'blog',
+    'shopleads',
 )
 
 # A sample logging configuration. The only tangible logging

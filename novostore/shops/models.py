@@ -20,6 +20,8 @@ class Shop(models.Model):
   domain = models.CharField(_("Domain"),max_length=255)
   owner = models.ForeignKey(settings.AUTH_USER_MODEL,related_name="shops")
   theme = models.CharField(_("Theme of website"),max_length=50)
+  contact_email = models.CharField(_("Contact email"), help_text=_("Email of shop owner"), max_length=255, blank=True, null=True)
+  server_email = models.CharField(_("Server email"), help_text=_("Email of shop robot"), max_length=255, blank=True, null=True)
 
   objects = SuperUserVisibleManager(Q(owner=lambda r:r.user))
   

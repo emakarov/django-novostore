@@ -120,4 +120,8 @@ BLOG_TEMPLATES = (
   ('blog/contacts.html',_("Contacts")),
 )
 
+LEADS_TEMPLATES = {
+  'sendrequestform' : 'gsmrepiter/leads/sendrequestlead.html'
+}
+
 SINGLE_SHOP = True
