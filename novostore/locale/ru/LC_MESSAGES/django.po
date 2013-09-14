@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 17:32-0500\n"
+"POT-Creation-Date: 2013-09-14 17:47-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,9 +72,8 @@ msgid "Whether this user worker or not?"
 msgstr "Является сотрудником?"
 
 #: accounts/views.py:70
-#, fuzzy
 msgid "My profile"
-msgstr "Профиль"
+msgstr "Мой Профиль"
 
 #: accounts/views.py:88
 msgid "Password Restore"
@@ -82,21 +81,19 @@ msgstr "Восстановление пароля"
 
 #: blog/models.py:15
 msgid "Draft"
-msgstr ""
+msgstr "Черновик"
 
 #: blog/models.py:15
 msgid "Published"
-msgstr ""
+msgstr "Опубликовано"
 
 #: blog/models.py:16
-#, fuzzy
 msgid "Blog post"
-msgstr "Блог"
+msgstr "Статья"
 
 #: blog/models.py:16
-#, fuzzy
 msgid "Photo Gallery"
-msgstr "Галлерея"
+msgstr "Галерея"
 
 #: blog/models.py:19 ncatalogue/models.py:40
 msgid "Term name"
@@ -104,24 +101,23 @@ msgstr "Наименование категории"
 
 #: blog/models.py:20
 msgid "Term slug"
-msgstr ""
+msgstr "Слаг рубрики"
 
 #: blog/models.py:30
-#, fuzzy
 msgid "Blog term"
-msgstr "Блог"
+msgstr "Рубрика блога"
 
 #: blog/models.py:31
 msgid "Blog terms"
-msgstr ""
+msgstr "Рубрики блога"
 
 #: blog/models.py:35
 msgid "Author"
-msgstr ""
+msgstr "Автор"
 
 #: blog/models.py:36
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: blog/models.py:37 ncatalogue/models.py:30 ncatalogue/models.py:51
 #: ncatalogue/models.py:89
@@ -130,7 +126,7 @@ msgstr "Описание"
 
 #: blog/models.py:38
 msgid "Terms"
-msgstr ""
+msgstr "Рубрики"
 
 #: blog/models.py:39 ncatalogue/models.py:92 sitemanagement/models.py:19
 msgid "Text"
@@ -142,10 +138,9 @@ msgstr "Галлерея"
 
 #: blog/models.py:50
 msgid "Cover"
-msgstr ""
+msgstr "Обложка"
 
 #: blog/models.py:53
-#, fuzzy
 msgid "Longitude"
 msgstr "Долгота"
 
@@ -154,14 +149,12 @@ msgid "Latitude"
 msgstr "Широта"
 
 #: blog/models.py:64
-#, fuzzy
 msgid "Blog article"
 msgstr "Статья"
 
 #: blog/models.py:65
-#, fuzzy
 msgid "Blog articles"
-msgstr "Статья"
+msgstr "Статьи"
 
 #: commerce/models.py:19 commerce/models.py:141 ncatalogue/models.py:24
 #: ncatalogue/models.py:88 ncatalogue/models.py:125 ncatalogue/models.py:138
@@ -348,9 +341,8 @@ msgid "Zip Code"
 msgstr "Индекс"
 
 #: commerce/models.py:185 commerce/models.py:187
-#, fuzzy
 msgid "Location"
-msgstr "Действие"
+msgstr "Местоположение"
 
 #: commerce/models.py:187
 msgid "Longitutde"
@@ -381,9 +373,8 @@ msgid "Checkout"
 msgstr "Оплатить"
 
 #: ncatalogue/models.py:26
-#, fuzzy
 msgid "Per name"
-msgstr "Наименование категории"
+msgstr "За наименование"
 
 #: ncatalogue/models.py:29
 msgid "Per name internationl"
