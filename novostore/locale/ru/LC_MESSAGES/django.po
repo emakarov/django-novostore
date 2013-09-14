@@ -253,7 +253,6 @@ msgid "Preorder"
 msgstr "Предзаказ"
 
 #: commerce/models.py:105
-#, fuzzy
 msgid "Preorders"
 msgstr "Предзаказ"
 
@@ -297,7 +296,6 @@ msgid "Tariffs"
 msgstr "Тарифы"
 
 #: commerce/models.py:156
-#, fuzzy
 msgid "Name of partner"
 msgstr "Промо партнер"
 
@@ -367,9 +365,8 @@ msgid "Phone"
 msgstr "Телефон"
 
 #: commerce/models.py:196
-#, fuzzy
 msgid "Delivery Address"
-msgstr "Адреса доставки"
+msgstr "Адрес доставки"
 
 #: commerce/models.py:197
 msgid "Delivery Addresses"
@@ -413,7 +410,6 @@ msgid "Slug"
 msgstr "slug"
 
 #: ncatalogue/models.py:42
-#, fuzzy
 msgid "Operating status"
 msgstr "Статус активности категории"
 
@@ -474,66 +470,56 @@ msgid "Products"
 msgstr "Товары"
 
 #: ncatalogue/models.py:113
-#, fuzzy
 msgid "File name"
-msgstr "Наименование категории"
+msgstr "Имя файла"
 
 #: ncatalogue/models.py:114
 msgid "File"
-msgstr ""
+msgstr "Файл"
 
 #: ncatalogue/models.py:121
-#, fuzzy
 msgid "Product Attachment"
-msgstr "Наименование товара"
+msgstr "Приложение"
 
 #: ncatalogue/models.py:122
-#, fuzzy
 msgid "Product Attachments"
 msgstr "Приложения"
 
 #: ncatalogue/models.py:125 ncatalogue/models.py:138
-#, fuzzy
 msgid "Detail name"
-msgstr "Характеристики"
+msgstr "Характеристика"
 
 #: ncatalogue/models.py:126
 msgid "Value"
-msgstr ""
+msgstr "Значение"
 
 #: ncatalogue/models.py:133
-#, fuzzy
 msgid "Product Detail"
-msgstr "Подробное описание товара"
+msgstr "Характеристика товара"
 
 #: ncatalogue/models.py:134
-#, fuzzy
 msgid "Product Details"
-msgstr "Подробное описание товара"
+msgstr "Характеристики товара"
 
 #: ncatalogue/models.py:148
-#, fuzzy
 msgid "Category Filter"
-msgstr "Категории"
+msgstr "Фильтр категории"
 
 #: ncatalogue/models.py:149
-#, fuzzy
 msgid "Category Filters"
-msgstr "Категории"
+msgstr "Фильтры категории"
 
 #: ncatalogue/models.py:152
 msgid "Filter group"
-msgstr ""
+msgstr "Группа фильтров"
 
 #: ncatalogue/models.py:156
-#, fuzzy
 msgid "Category Filter Item"
-msgstr "Наименование категории"
+msgstr "Элемент фильтра"
 
 #: ncatalogue/models.py:157
-#, fuzzy
 msgid "Category Filter Items"
-msgstr "Категории"
+msgstr "Элементы фильтра"
 
 #: novostore/settings.py:51
 msgid "English"
