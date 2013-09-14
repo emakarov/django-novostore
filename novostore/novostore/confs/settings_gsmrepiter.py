@@ -83,6 +83,7 @@ SUIT_CONFIG = {
 #        		'shops.client',
         		'ncatalogue.category',
         		'ncatalogue.product',
+        		'shopleads.lead',
 #        	 	'commerce.tariff',
 #        		'commerce.preorder',
 #        		'commerce.deliveryaddress',
