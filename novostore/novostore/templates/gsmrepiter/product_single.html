@@ -16,11 +16,16 @@
 	  </div>
 	  <div class="modal-body">
 	  <div id="request_product_name"><h4>{{product.name}}</h4></div>
-	  <form class="form-horizontal" style="padding-top:10px">
+	  <form id="sendrequestform_product" class="form-horizontal" style="padding-top:10px">
+	  {% csrf_token %}
+          <input type="hidden" name="leadform" value="sendrequestform_footer">
+          <input type="hidden" name="product" value="{{product.name}}">
+          
+
 	  <div class="control-group">
-	  <label class="control-label" for="inputnotes">Требуемое количество</label>
+	  <label class="control-label" for="quantity">Требуемое количество</label>
 	    <div class="controls">
-	      <input type="text" name="inputnotes">
+	      <input type="text" name="quantity">
 	    </div>
 	  </div>
 
@@ -48,7 +53,7 @@
 
 	  <div class="control-group">
 	    <div class="controls">
-	      <div class="btn btn-brand-priem">Отправить запрос</div>
+	      <div onclick="sendreply('#sendrequestform_product')"  class="btn btn-brand-priem">Отправить запрос</div>
 	    </div>
 	  </div>
 
