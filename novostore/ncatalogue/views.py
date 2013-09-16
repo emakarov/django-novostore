@@ -35,7 +35,7 @@ def index(request):
   try:
     products = ncatalogue_models.Product.objects.filter(
   	  Q(categories = categories_all[0]) | Q(categories__parent=categories_all[0])
-  	).distinct()
+  	).distinct()[0:4]
   except:
     products = None
   params = {  
@@ -93,7 +93,7 @@ def productpage(request,product_id):
     child_category = product.categories.filter(is_operating = True)[0]
   might_like_products = ncatalogue_models.Product.objects.filter(
   	  Q(categories = categories[0]) | Q(categories__parent=categories[0])
-  	).exclude(id=product_id).distinct()
+  	).exclude(id=product_id).distinct().order_by('?')[0:4]
   params = {  
   	'product' : product,
   	'child_category' : child_category,
