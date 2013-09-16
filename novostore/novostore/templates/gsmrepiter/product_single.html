@@ -18,7 +18,7 @@
 	  <div id="request_product_name"><h4>{{product.name}}</h4></div>
 	  <form id="sendrequestform_product" class="form-horizontal" style="padding-top:10px">
 	  {% csrf_token %}
-          <input type="hidden" name="leadform" value="sendrequestform_footer">
+          <input type="hidden" name="leadform" value="sendrequestform_product">
           <input type="hidden" name="product" value="{{product.name}}">
           
 
