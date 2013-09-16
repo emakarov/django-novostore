@@ -125,7 +125,7 @@ BLOG_TEMPLATES = (
 
 LEADS_TEMPLATES = {
   'sendrequestform' : 'gsmrepiter/leads/sendrequestlead.html',
-  'sendrequestform_footer' : 'gsmrepiter/leads/sendrequestlead_simple.html'
+  'sendrequestform_footer' : 'gsmrepiter/leads/sendrequestlead_simple.html',
   'sendrequestform_product' : 'gsmrepiter/leads/sendrequestlead_product.html'
 }
 
