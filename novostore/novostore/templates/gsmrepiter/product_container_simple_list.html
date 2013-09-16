@@ -2,7 +2,14 @@
   <!--Products container-->
   <div class="container nsized" style="padding-bottom:0px;{% if index %}padding-top:10px;{% endif %}" >
     <div class="span12" style="padding-left:0;margin-left:0;padding-bottom:15px">
-    <span class="internalheader">Оборудование</span>
+    <span class="internalheader">Оборудование</span> > 
+    {% recursetree categories %}
+    {% if node.is_leaf_node %}
+      {% if node.id = category.id %}
+        {{ node.name }}
+      {% endif %}
+    {% endif %}
+    {% endrecursetree %}
     </div>
     <div class="span12" style="padding-left:0;margin-left:0;padding-bottom:5px;">
     {% recursetree categories %}
