@@ -2,7 +2,9 @@
   <div class="row" style="margin-left:0px;margin-right:0px;padding:20px 0 20px;background:#f4f4f4">
       <div class="span6">
       <center><h5>Заявка на осмотр помещения и монтаж оборудования.</h5></center>
-      <form class="form-horizontal" style="color:#000;padding: 19px 19px 0;">
+      <form id="sendrequestform_footer"  class="form-horizontal" style="color:#000;padding: 19px 19px 0;">
+      {% csrf_token %}
+      <input type="hidden" name="leadform" value="sendrequestform_footer">
       <div class="control-group">
         <label class="control-label" for="inputName">Ваше имя и фамилия</label>
         <div class="controls">
@@ -29,7 +31,7 @@
       </div>
       <div class="control-group">
         <div class="controls">
-        <div class="btn btn-brand-priem">Отправить заявку</div>
+        <div  onclick="sendreply('#sendrequestform_footer')" class="btn btn-brand-priem">Отправить заявку</div>
         </div>
       </div>
       </form>
