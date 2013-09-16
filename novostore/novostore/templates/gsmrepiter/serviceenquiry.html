@@ -6,27 +6,27 @@
       {% csrf_token %}
       <input type="hidden" name="leadform" value="sendrequestform_footer">
       <div class="control-group">
-        <label class="control-label" for="inputName">Ваше имя и фамилия</label>
+        <label class="control-label" for="inputnames">Ваше имя и фамилия</label>
         <div class="controls">
-        <input type="text" id="inputName" placeholder="Как к Вам обратиться">
+        <input type="text" name="inputnames" placeholder="Как к Вам обратиться">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputEmail">Электронная почта</label>
+        <label class="control-label" for="inputemail">Электронная почта</label>
         <div class="controls">
-        <input type="text" id="inputEmail" placeholder="Email">
+        <input type="text" id="inputemail" placeholder="Email">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputPhone">Контактный телефон</label>
+        <label class="control-label" for="inputphones">Контактный телефон</label>
         <div class="controls">
-        <input type="text" id="inputPhone" placeholder="+7...">
+        <input type="text" id="inputphones" placeholder="+7...">
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputCompany">Компания</label>
+        <label class="control-label" for="inputcorp">Компания</label>
         <div class="controls">
-        <input type="text" id="inputCompany" placeholder="">
+        <input type="text" name="inputcorp" placeholder="">
         </div>
       </div>
       <div class="control-group">
