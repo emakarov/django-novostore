@@ -6,7 +6,8 @@
     {% recursetree categories %}
     {% if node.is_leaf_node %}
       {% if node.id = category.id %}
-      <i style="margin-top:-1px" class="icon-chevron-right"></i> {{ node.name }}
+      <i style="margin-top:-1px" class="icon-chevron-right"></i> 
+      <span style="margin-top: -1px"> {{ node.name }} </span>
       {% endif %}
     {% endif %}
     {% endrecursetree %}
