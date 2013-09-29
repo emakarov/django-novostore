@@ -16,6 +16,7 @@ from django.utils.translation import get_language
 from ncatalogue import models as ncatalogue_models
 from django.db.models import Q,F
 from shops import models as shop_models
+from blog import models as blog_models
 
 PPP = settings.NCATALOGUE_PRODUCTS_PER_PAGE
 index_page_html = settings.INDEX_PAGE_HTML
