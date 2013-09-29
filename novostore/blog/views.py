@@ -26,14 +26,8 @@ blog_article_html = settings.BLOG_ARTICLE_HTML
 
 def index(request):
   articles = blog_models.Article.objects.filter(publish_status = '2')
-  articles_1 = None
-  try:
-    t = blog_models.Term.objects.get(termslug = 'mainpage')
-    articles_1 = blog_models.Article.objects.filter(terms = t)
-  except:
-    pass
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
-  params = { 'articles' : articles, 'articles_1' : articles_1, 'terms' : terms }
+  params = { 'articles' : articles, 'terms' : terms }
   return render_to_response(blog_index_html(request), params, context_instance = RequestContext(request))
   
 def blogtermpage(request,termslug):
