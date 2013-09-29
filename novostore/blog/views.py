@@ -29,7 +29,7 @@ def index(request):
   articles_1 = None
   try:
     t = blog_models.Term.objects.get(termslug = 'mainpage')
-    articles_1 = blog_models.Article.objects.filter(terms__in = term)
+    articles_1 = blog_models.Article.objects.filter(terms__in = t)
   except:
     pass
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
