@@ -2,25 +2,16 @@
 <div class="row">
       <div class="container nsized">
       <div class="row" style="margin-left:10px;margin-right: -10px;padding:20px 0 10px;">
+      {% for a in articles_1 %}
             <div class="span6">
              <center class="howheader">
-               О компании
+               {{ a.title }}
              </center> 
              <p style="padding-top:20px">
-             {% lorem %}
-             {% lorem %}
+             {{ a.text|safe }}
              </p>
             </div>
-            <div class="span6" style="padding-left:40px">
-             <center  class="howheader">
-               О компании
-             </center>
-             <p style="padding-top:20px">
-             {% lorem %}
-             {% lorem %}
-             </p>
-            </div>
-
+      {% endfor %}
       </div>
  </div>
 </div>
