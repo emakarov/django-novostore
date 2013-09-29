@@ -40,15 +40,19 @@ def index(request):
   except:
     products = None
   articles_1 = None
+  articles_2 = None
   try:
     t = blog_models.Term.objects.get(termslug = 'mainpage')
     articles_1 = blog_models.Article.objects.filter(terms = t)
+    t = blog_models.Term.objects.get(termslug = 'mainpagetop')
+    articles_2 = blog_models.Article.objects.filter(terms = t)
   except:
     pass
   params = {  
   	'products' : products,
   	'show_breadcrumb' : False,
-  	'articles_1' : articles_1
+  	'articles_1' : articles_1,
+  	'articles_2' : articles_2
   }
   return render_to_response(index_page_html(request), params, context_instance = RequestContext(request))
 

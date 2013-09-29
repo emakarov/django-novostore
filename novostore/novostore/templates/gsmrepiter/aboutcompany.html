@@ -2,38 +2,15 @@
     <div class="row">
       <div class="container nsized">
       <div class="row" style="margin-left:10px;margin-right: -10px;padding:20px 0 20px;background:#f4f4f4">
-      <div class="span3" style="padding-left: 40px;">
-      <div class="indexheader">Подвал</div>
+      {% for a in articles_2 %}
+      <div class="span3"{% if forloop.first %} style="padding-left: 40px;"{% endif %}>
+      <div class="indexheader">{{ a.title }}</div>
       <p>
-      {% lorem %}
+      {{ a.text|safe }}
       </p>
       <div class="placeorder btn btn-brand-priemgrey">Подать заявку</div>
       </div>
-      <div class="span3">
-      <div class="indexheader">Коттедж</div>
-      <p>
-      {% lorem %}
-      </p>
-      <div class="placeorder btn btn-brand-priemgrey">Подать заявку</div>
-      </div>
-      <div class="span3">
-      <div class="indexheader">
-      Здание
-      </div>
-      <p>
-      {% lorem %}
-      </p>
-      <div class="placeorder btn btn-brand-priemgrey">Подать заявку</div>
-      </div>
-      <div class="span3">
-      <div class="indexheader">
-      Территория
-      </div>
-      <p>
-      {% lorem %}
-      </p>
-      <div class="placeorder btn btn-brand-priemgrey">Подать заявку</div>
-      </div>
+      {% endfor %}
       </div>
       </div>
     </div>
