@@ -2,16 +2,23 @@
 <div class="row">
       <div class="container nsized">
       <div class="row" style="margin-left:10px;margin-right: -10px;padding:20px 0 10px;">
-      {% for a in articles_about %}
             <div class="span6">
              <center class="howheader">
-               {{ a.title }}
+               {{ articles_about.all.0.title }}
              </center> 
              <p style="padding-top:20px">
-             {{ a.text|safe }}
+              {{ articles_about.all.0.text|safe }}
              </p>
             </div>
-      {% endfor %}
+            <div class="span6" style="padding-left:40px">
+             <center  class="howheader">
+               {{ articles_about.all.1.title }}
+             </center>
+             <p style="padding-top:20px">
+               {{ articles_about.all.1.text|safe }}
+             </p>
+            </div>
+
       </div>
  </div>
 </div>
