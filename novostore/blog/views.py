@@ -65,9 +65,9 @@ def objects(request):
   articles_1 = None
   articles_2 = None
   try:
-    t = blog_models.Term.objects.get(termslug = 'uslugi')
-    articles_1 = blog_models.Article.objects.filter(terms = t)
     t = blog_models.Term.objects.get(termslug = 'uslugitop')
+    articles_1 = blog_models.Article.objects.filter(terms = t)
+    t = blog_models.Term.objects.get(termslug = 'uslugi')
     articles_2 = blog_models.Article.objects.filter(terms = t)
   except:
     pass
