@@ -41,7 +41,7 @@
 	  <div class="carousel-inner">
             {% for p in article.gallery.sample %}
 	    <div class="{% if forloop.first %}active {% endif %}item">
-              <img style="margin-bottom:10px" src="{{p.get_articlegallery_url}}" alt="" />
+              <img style="width:100%;margin-bottom:10px" src="{{p.get_articlegallery_url}}" alt="" />
 	    </div>
             {% endfor %}
 	  </div>
