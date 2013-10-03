@@ -10,9 +10,24 @@
     <div class="span9">
       <div style="font-size:20px;padding:0 0 20px;">{{ article.title }}</div>
       <div style="text-align:justify;">{{ article.text|safe }}</div>
-      {% for p in article.gallery.sample %}
-        <img style="width:100%;margin-bottom:10px" src="{{p.get_display_url}}" alt="" />
-      {% endfor %}
+      
+      <div id="myCarousel" class="carousel slide">
+	  <ol class="carousel-indicators">
+            {% for p in article.gallery.sample %}
+	    <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+            {% endfor %}
+	  </ol>
+	  <!-- Carousel items -->
+	  <div class="carousel-inner">
+            {% for p in article.gallery.sample %}
+	    <div class="{% if forloop.first %}active {% endif %}item">
+              <img style="width:100%;margin-bottom:10px" src="{{p.get_display_url}}" alt="" />
+	    </div>
+	  </div>
+	  <!-- Carousel nav -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	</div>
     </div>
     <div class="span3">
       <div>Другие статьи</div>
@@ -25,3 +40,8 @@
   </div>
   </div>
 {% endblock %}
+<script>
+$('.carousel').carousel({
+  interval: 2000
+})
+</script>
