@@ -9,13 +9,13 @@
   <div class="container nsized">
   <div class="row">
     <div class="span12" style="width:1080px;">
-      <center class="internalheader">Что мы делаем</center>
-      <div style="text-align:justify;padding-top:20px">{{ article.description|safe }}</div>
+      <center class="internalheader">{{ article_1.all.0.title }}</center>
+      <!--<div style="text-align:justify;padding-top:20px">{{ article.description|safe }}</div>-->
     </div>
   </div>
   <div class="row">
     <div class="span12" style="width:1080px;margin-bottom:20px;">
-     Мы предлагаем Вам разумное решение – установка локального репитера сотовой связи. Установка данного оборудования нашей компанией решит для Вас проблему с отсутствием мобильной связи максимально быстро и эффективно. Все оборудование и установка всего комплекса обойдутся не дороже установки кондиционера, но в отличие от него, работать будет круглый год, а может окупиться всего одним важным не пропущенным звонком
+    {{ article_1.all.0.description|safe }}
     </div>
   <div class="span12" style="background:url({{STATIC_URL}}gsmrepiter/upblock.jpg);height:20px;width:1080px;margin-bottom:20px">
   </div>
@@ -23,22 +23,22 @@
     <img src="{{STATIC_URL}}gsmrepiter/sell.png">
     </div>
     <div class="span3">
-    <h5>Продажа</h5>
-    {% lorem %}
+    <h5>{{ article_2.all.0.title }}</h5>
+    {{ article_2.all.0.description|safe }}
     </div>
     <div class="span1">
     <img src="{{STATIC_URL}}gsmrepiter/montage.png">
     </div>
     <div class="span3">
-    <h5>Монтаж</h5>
-    {% lorem %}
+    <h5>{{ article_2.all.1.title }}</h5>
+    {{ article_2.all.1.description|safe }}
     </div>
     <div class="span1">
     <img src="{{STATIC_URL}}gsmrepiter/research.png">
     </div>
     <div class="span3">
-    <h5>Обследование</h5>
-    {% lorem %}
+    <h5>{{ article_2.all.2.title }}</h5>
+    {{ article_2.all.2.description|safe }}
     </div>
   <div class="span12" style="background:url({{STATIC_URL}}gsmrepiter/downblock.jpg);height:40px;width:1080px;margin-top:20px;">
   </div>
