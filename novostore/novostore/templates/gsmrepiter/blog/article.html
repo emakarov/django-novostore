@@ -11,7 +11,7 @@
       <div style="font-size:20px;padding:0 0 20px;">{{ article.title }}</div>
       <div style="text-align:justify;">{{ article.text|safe }}</div>
       {% for p in article.gallery.sample %}
-        <img style="width:100%;" src="{{p.get_display_url}}" alt="" />
+        <img style="width:100%;margin-bottom:10px" src="{{p.get_display_url}}" alt="" />
       {% endfor %}
     </div>
     <div class="span3">
