@@ -139,6 +139,8 @@
        text-decoration:underline;cursor:pointer;cursor:hand;
       }
       
+      {% block carouselcss %}
+      
       .carousel-indicators {
       	left: 50%;
       	top: 250px;
@@ -181,6 +183,7 @@
       .carousel-inner>.item {
        height: 280px;
       }
+      {% endblock %}
       
       ul, ol {
       	padding: 0;
