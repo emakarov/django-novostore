@@ -29,7 +29,7 @@
    </div>
       {% for a in articles %}
         <div>
-          <a style="font-size:20px;font-weight:bold" href="/blog/article/{{a.id}}/">{{ a.title }}</a>
+          <a style="font-size:20px;font-weight:bold;color:#000" href="/blog/article/{{a.id}}/">{{ a.title }}</a>
         </div>
         <div>{{ a.description|safe }}</div>
         <a href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
