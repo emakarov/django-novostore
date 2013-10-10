@@ -21,13 +21,16 @@
   
   <div>
     {% for t in terms %}
+        {% if not t.is_servicecat %}
         <a style="margin-right:10px;font-size:14px;color:#009933;text-decoration:underline;" href="/articles/t/{{t.termslug}}/">
         {{ t.termname }}</a>
+        {% endif %}
     {% endfor %}
    </div>
-
       {% for a in articles %}
-        <div><a href="/blog/article/{{a.id}}/">{{ a.title }}</a></div>
+        <div>
+          <a style="font-size:20px;font-weight:bold" href="/blog/article/{{a.id}}/">{{ a.title }}</a>
+        </div>
         <div>{{ a.description|safe }}</div>
         <a href="/blog/article/{{a.id}}/">{% trans "read more" %}</a>
         <br><br>
