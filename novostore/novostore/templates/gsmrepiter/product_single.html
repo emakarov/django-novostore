@@ -94,16 +94,16 @@
     <div onclick="addproducttocart()" id="addtobagbtn" class="btn btn-brand-ebay">{% trans "Add to cart" %}</div>
     -->
     {% ifnotequal product.long_description '' %}
-    <div class="smallheader" style="margin-top:20px;">
+    <div class="smallheader" style="margin-top:20px;font-size:14px;">
     {% trans "Product details" %}
     </div>
-    <p style="font-size:11px;text-align:justify;">
+    <p style="font-size:13px;text-align:justify;">
     {{ product.long_description }}
     </p>
     {% endifnotequal %}
     {% for a in product.attachments.all %}
       {% if forloop.first %}
-       <div class="smallheader" style="margin-top:20px;">
+       <div class="smallheader" style="margin-top:20px;font-size:14px;">
         {% trans "Attachments" %}
        </div>
       {% endif %}
@@ -112,7 +112,7 @@
 
     {% for d in product.details.all %}
       {% if forloop.first %}
-       <div class="smallheader" style="margin-top:20px;">
+       <div class="smallheader" style="margin-top:20px;font-size:14px;">
         {% trans "Details" %}
        </div>
        <table class="table table-condensed table-bordered">
