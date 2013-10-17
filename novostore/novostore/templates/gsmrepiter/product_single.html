@@ -97,8 +97,8 @@
     <div class="smallheader" style="margin-top:20px;font-size:14px;">
     {% trans "Product details" %}
     </div>
-    <p style="font-size:13px;text-align:justify;">
-    {{ product.long_description }}
+    <p style="font-size:13px;">
+    {{ product.long_description|safe }}
     </p>
     {% endifnotequal %}
     {% for a in product.attachments.all %}
@@ -143,9 +143,6 @@
 	      <div class="padbot10">
 	        <div style="margin-top:10px;text-align:center;text-decoration:underline;font-size:14px;font-family:verdana;padding-top:3px;color:#333;">
 	        {{ p.name }}
-	        </div>
-	        <div style="text-align:center;margin-top: 10px;">
-	        {{p.description}}
 	        </div>
 	        <div style="font-weight: bold;text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">
 	        {% if product.price %}{{product.price}} {{product.currency.shortname}}{% else %} Цена по запросу {% endif %}
