@@ -66,7 +66,7 @@
     </div>
     <div class="span9">
     <h4>
-    {{product.name}} <span style="color:#00bb3f"> {{product.price}} {{product.currency.shortname}} </span>
+    {{product.name}} {% if product.price %}<span style="color:#00bb3f"> {{product.price}} {{product.currency.shortname}} </span> {% endif %}
     <div style="margin-top:0px;" class="btn btn-brand-priem pull-right" onclick="makeproductrequest()">
       Заказать
     </div>
