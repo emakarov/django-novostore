@@ -3,6 +3,7 @@
       <div class="container nsized">
       <div class="row" style="margin-left:10px;margin-right: -10px;padding:20px 0 20px;background:#f4f4f4">
       {% for a in articles_2 %}
+      {% if forloop.counter < 4 %}
       <div class="span3"{% if forloop.first %} style="padding-left: 40px;"{% endif %}>
       <div class="indexheader">{{ a.title }}</div>
       <p>
@@ -10,6 +11,7 @@
       </p>
       <div class="placeorder btn btn-brand-priemgrey">Подать заявку</div>
       </div>
+      {% endif %}
       {% endfor %}
       </div>
       </div>
