@@ -70,7 +70,7 @@
     </div>
     <div class="span9">
     <h4>
-    {{product.name}} {% if product.price %}<span style="color:#00bb3f"> {{product.price}} {{product.currency.shortname}} </span> {% endif %}
+    {{product.name}} {% if product.price %}<span style="color:#00bb3f"> {{product.price}} {{product.currency.shortname}} </span> {% else %} Цена по запросу {% endif %}
     <div style="margin-top:0px;" class="btn btn-brand-priem pull-right" onclick="makeproductrequest()">
       Заказать
     </div>
