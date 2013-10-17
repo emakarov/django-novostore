@@ -65,10 +65,16 @@
        <div onclick="loadfilter()" class="btn btn-brand-priem">Применить фильтр</div>
      </div>
     </div>
+    <!--
     <div class="span12" style="margin-top:40px;padding-left:0px;margin-left:0;">
 	<div class="thumbnails" style="width:1080px;margin-left: -12px;">
+	-->
 	  {% for p in products %}
-	  <div class="span3 bcgwhite" style="width:250px;">
+	  {% if forloop.counter0|divisibleby:"4" %}
+          <div class="span12" style="margin-top:10px;padding-left:0px;margin-left:0;">
+	    <ul class="thumbnails" style="width:1080px;margin-left: -12px;">
+	    {% endif %}
+	    <li class="span3 bcgwhite" style="width:250px;">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
 	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
 	      <!--<div class="block-note block-note-green">
@@ -91,11 +97,14 @@
 	        Заказать
 	        </div>
 	        </div>
-	      </div>
-	    </div>
+	      </li>
+	  {% if forloop.counter|divisibleby:"3" %}
+	    </ul>
 	  </div>
+	  {% endif %}
 	  {% endfor %}
-	</div>      
+<!--	</div>      
     </div>
+    -->
     </div>
   <!--End of products container-->
