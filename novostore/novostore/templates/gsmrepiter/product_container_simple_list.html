@@ -98,6 +98,8 @@
 	        <div style="font-weight: bold;text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">
 	        {% if p.price %}
 	        {{p.price}}{{p.currency.shortname}}
+	        {% else %}
+	        Цена по запросу
 	        {% endif %}
 	        </div>
 	        <div style="text-align:center;height:40px;">
