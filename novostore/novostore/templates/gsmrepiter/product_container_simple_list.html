@@ -66,9 +66,9 @@
      </div>
     </div>
     <div class="span12" style="margin-top:40px;padding-left:0px;margin-left:0;">
-	<ul class="thumbnails" style="width:1080px;margin-left: -12px;">
+	<div class="thumbnails" style="width:1080px;margin-left: -12px;">
 	  {% for p in products %}
-	  <li class="span3 bcgwhite" style="width:250px;">
+	  <div class="span3 bcgwhite" style="width:250px;">
 	    <div onclick="window.location.href='/product/{{p.id}}/'" href="#" class="thumbnail nopad noround cursored">
 	      <img class="fullpctwidth" src="{{p.cover.get_s280x280_url}}" alt="">
 	      <!--<div class="block-note block-note-green">
@@ -83,7 +83,7 @@
 	        {{p.description}}
 	        </div>
 	        -->
-	        <div style="font-weight: bold;text-align:center;line-height:12px;font-size:16px;padding-top:0px;font-family:verdana;">
+	        <div style="font-weight: bold;text-align:center;line-height:12px;font-size:16px;padding-top:10px;font-family:verdana;">
 	        {{p.price}}{{p.currency.shortname}}
 	        </div>
 	        <div style="text-align:center;height:40px;">
@@ -93,9 +93,9 @@
 	        </div>
 	      </div>
 	    </div>
-	  </li>
+	  </div>
 	  {% endfor %}
-	</ul>      
+	</div>      
     </div>
     </div>
   <!--End of products container-->
