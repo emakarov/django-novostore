@@ -70,6 +70,12 @@
 	<div class="thumbnails" style="width:1080px;margin-left: -12px;">
 	-->
 	  {% for p in products %}
+	  {% if not forloop.first %}
+	  {% if forloop.counter0|divisibleby:"4" %}
+	    </ul>
+	  </div>
+	  {% endif %}
+	  {% endif %}
 	  {% if forloop.counter0|divisibleby:"4" %}
           <div class="span12" style="margin-top:10px;padding-left:0px;margin-left:0;">
 	    <ul class="thumbnails" style="width:1080px;margin-left: -12px;">
@@ -98,10 +104,6 @@
 	        </div>
 	        </div>
 	      </li>
-	  {% if forloop.counter|divisibleby:"3" %}
-	    </ul>
-	  </div>
-	  {% endif %}
 	  {% endfor %}
 <!--	</div>      
     </div>
