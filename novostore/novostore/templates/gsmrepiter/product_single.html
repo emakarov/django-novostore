@@ -107,7 +107,7 @@
         {% trans "Attachments" %}
        </div>
       {% endif %}
-      <a href="{{ a.file.url }}">{{ a.name }}</a>
+      <a href="{{ a.file.url }}">{% if a.name %}{{ a.name }}{% else %}Документация{% endif %}</a>
     {% endfor %}
 
     {% for d in product.details.all %}
