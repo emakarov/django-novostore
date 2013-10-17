@@ -6,7 +6,11 @@
 	<img style="height:300px" id="mainimage" src="{{product.cover.get_s340x340_url}}" alt="">
 	<center style="margin-top:20px">
 	{% for p in product.gallery.sample %}
+	{% if forloop.first and forloop.last %}
+	{% else %}
           <img class="productimg{% if p.id = product.cover.id %} activeproductimg{% else %} productimgborder{% endif %}" src="{{p.get_s340x340_url}}" alt="">
+	{% endif %}
+	
 	{% endfor %}
 	</center>
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
