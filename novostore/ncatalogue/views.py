@@ -74,13 +74,13 @@ def category_list(request,category_slug):
       cat = ncatalogue_models.Category.objects.get(id=int(i))
       if cat.parent is not None:
         try:
-          filterings[cat.parent.id].append(cat)
+          filterings[cat.parent.id].append(cat.id)
         except:
           filterings[cat.parent.id] = []
-          filterings[cat.parent.id].append(cat)
+          filterings[cat.parent.id].append(cat.id)
     for f in filterings:
       cats = f
-      products = products.filter(categories__in=cats)
+      products = products.filter(categories__id__in=cats)
   if price_from:
     products = products.filter(price__gte=price_from)
   if price_to:
