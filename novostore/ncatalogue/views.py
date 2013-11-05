@@ -69,9 +69,18 @@ def category_list(request,category_slug):
   q = request.GET.get('q', None)
   if ids:
     ids = ids.replace('+', ' ').split(' ')
+    filterings = {}
     for i in ids:
       cat = ncatalogue_models.Category.objects.get(id=int(i))
-      products = products.filter(categories=cat)
+      if cat.parent is not None:
+        try:
+          filterings[cat.parent.id].append(cat)
+        except:
+          filterings[cat.parent.id] = []
+          filterings[cat.parent.id].append(cat)
+    for f in filterings:
+      cats = f
+      products = products.filter(categories__in=cats)
   if price_from:
     products = products.filter(price__gte=price_from)
   if price_to:
