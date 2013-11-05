@@ -36,6 +36,7 @@
 	       {{ c.category.name }}
 	   </span>
 	   {%for ch in c.category.get_children.all %}
+	   {% if ch.is_operating %}
 	   <div style="margin-top:5px;">
 	   <label class="checkbox">
 	     <input id="catcheck_{{ch.id}}" class="catchild" value="{{ch.id}}" type="checkbox"> {{ ch.name }}
@@ -43,6 +44,7 @@
            </div>
 	   {% endfor %}
 	  </div>
+	  {% endif %}
 	{% endfor %}
 
 
