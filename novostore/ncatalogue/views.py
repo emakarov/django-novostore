@@ -79,7 +79,8 @@ def category_list(request,category_slug):
           filterings[cat.parent.id] = []
           filterings[cat.parent.id].append(cat.id)
     for f in filterings:
-      cats = f
+      cats = filterings[f]
+      #print f
       products = products.filter(categories__id__in=cats)
   if price_from:
     products = products.filter(price__gte=price_from)
