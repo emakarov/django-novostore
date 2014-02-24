@@ -67,10 +67,12 @@ function init () {
             zoom: 10
     });
     {% for article in articles %}
-    var pm = new ymaps.Placemark([parseFloat("{{article.latitude}}".replace(",",".")), 
-                    parseFloat("{{article.longitude}}".replace(",","."))], {
-    });
-    myMap.geoObjects.add(pm);
+    var pm{{article_id}} = new ymaps.Placemark(
+          [parseFloat("{{article.latitude}}".replace(",",".")), parseFloat("{{article.longitude}}".replace(",","."))], 
+          {balloonContent : "{{article.title}}<br><a target=_blank href='/blog/article/{{article.id}}/'>Подробнее...</a>"},
+          {preset: "twirl#lightblueDotIcon"}
+    );
+    myMap.geoObjects.add(pm{{article_id}});
     {% endfor %}
 }
 </script>

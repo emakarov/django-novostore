@@ -57,6 +57,12 @@ def index(request):
   return render_to_response(index_page_html(request), params, context_instance = RequestContext(request))
 
 def category_list(request,category_slug):
+  external_id = request.GET.get('id',None)
+  if external_id:
+    try:
+      return productpage(request,ncatalogue_models.Product.objects.get(external_system_id = int(external_id)).id)
+    except:
+      pass
   category = ncatalogue_models.Category.objects.get(slug = category_slug)
   products = ncatalogue_models.Product.objects.filter(
   	  Q(categories = category) | Q(categories__parent=category)

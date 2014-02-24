@@ -93,6 +93,7 @@ class Product(models.Model):
   price = models.FloatField(_("Base Price"),blank=True,null=True,help_text=_("Base price"))
   currency = models.ForeignKey(Currency)
   measure_unit = models.ForeignKey(MeasureUnit)
+  external_system_id = models.IntegerField(_("External id"), blank=True, null=True, help_text=_("ID in external system for synchronization"))
   
   try:
     if not settings.SINGLE_SHOP:
