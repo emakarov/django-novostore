@@ -34,7 +34,7 @@ def blogtermpage(request,termslug):
   term = blog_models.Term.objects.filter(termslug = termslug)
   articles = blog_models.Article.objects.filter(terms__in = term, publish_status = '2')
   if termslug == 'objects':
-    articles = articles.exclude(longitude=None,latitude=None)
+    articles = articles.exclude( Q(longitude__isnull=True) | Q(latitude__isnull=True) )
   terms = blog_models.Term.objects.all().exclude(is_servicecat=True)
   params = { 'articles' : articles, 'terms' : terms }
   return render_to_response(blog_articlelist_html(request), params, context_instance = RequestContext(request))
