@@ -7,9 +7,10 @@ from django.utils.translation import ugettext_noop
 from os import path
 import sys
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
+ALLOWED_HOSTS = ['gsmrepiter.ru']
 
 TIME_ZONE = 'Europe/Moscow'
 
