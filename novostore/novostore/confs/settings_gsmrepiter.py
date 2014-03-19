@@ -10,7 +10,7 @@ import sys
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['gsmrepiter.ru']
+ALLOWED_HOSTS = ['gsmrepiter.ru', 'www.gsmrepiter.ru']
 
 TIME_ZONE = 'Europe/Moscow'
 
