@@ -12,5 +12,5 @@ urlpatterns = patterns('',
     (r'^faq/$', 'blog.views.blogtermpage', {'termslug' : 'faq' }),
 ) + urlpatterns
 
-handler404 = 'blog.views.index'
-handler500 = 'blog.views.index'
+#handler404 = 'blog.views.index'
+#handler500 = 'blog.views.index'
