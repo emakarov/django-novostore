@@ -133,4 +133,19 @@ LEADS_TEMPLATES = {
   'sendrequestform_product' : 'gsmrepiter/leads/sendrequestlead_product.html'
 }
 
+NCATALOGUE_THEME = 'gsmrepiter'
+NCATALOGUE_PRODUCTS_PER_PAGE = 20
+INDEX_PAGE_HTML = NCATALOGUE_THEME+'/index.html'
+PRODUCT_LIST_HTML = NCATALOGUE_THEME+'/product_list.html'
+PRODUCT_PAGE_HTML = NCATALOGUE_THEME+'/product.html'
+LOGIN_PAGE_HTML = NCATALOGUE_THEME+'/accounts/login.html'
+PROFILE_PAGE_HTML = NCATALOGUE_THEME+'/accounts/profile.html'
+SETUP_NEW_PASSWD_PAGE_HTML = NCATALOGUE_THEME+'/accounts/set_up_new_passwd.html'
+CART_PAGE_HTML = NCATALOGUE_THEME+'/commerce/cart.html'
+CHECKOUT_PAGE_HTML = NCATALOGUE_THEME+'/commerce/checkout.html'
+CHECKOUT_CONFIRMED_HTML = NCATALOGUE_THEME+'/commerce/checkout_confirmed.html'
+BLOG_INDEX_HTML = NCATALOGUE_THEME+'/blog/index.html'
+BLOG_ARTICLELIST_HTML = NCATALOGUE_THEME+'/blog/articlelist.html'
+BLOG_ARTICLE_HTML = NCATALOGUE_THEME+'/blog/article.html'
+
 SINGLE_SHOP = True
