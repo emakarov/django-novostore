@@ -7,6 +7,10 @@ from django.utils.translation import ugettext_noop
 from os import path
 import sys
 
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+
+
 TIME_ZONE = 'Europe/Moscow'
 
 DATABASES = {
