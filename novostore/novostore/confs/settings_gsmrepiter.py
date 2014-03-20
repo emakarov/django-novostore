@@ -7,6 +7,11 @@ from django.utils.translation import ugettext_noop
 from os import path
 import sys
 
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+
+ALLOWED_HOSTS = ['gsmrepiter.ru', 'www.gsmrepiter.ru']
+
 TIME_ZONE = 'Europe/Moscow'
 
 DATABASES = {
@@ -128,5 +133,20 @@ LEADS_TEMPLATES = {
   'sendrequestform_footer' : 'gsmrepiter/leads/sendrequestlead_simple.html',
   'sendrequestform_product' : 'gsmrepiter/leads/sendrequestlead_product.html'
 }
+
+NCATALOGUE_THEME = lambda r: 'gsmrepiter' #'default'
+NCATALOGUE_PRODUCTS_PER_PAGE = 20
+INDEX_PAGE_HTML = lambda r: ('gsmrepiter' + '/index.html')
+PRODUCT_LIST_HTML = lambda r: ('gsmrepiter' +'/product_list.html')
+PRODUCT_PAGE_HTML = lambda r: ('gsmrepiter' +'/product.html')
+LOGIN_PAGE_HTML = lambda r: ('gsmrepiter' +'/accounts/login.html')
+PROFILE_PAGE_HTML = lambda r: ('gsmrepiter' +'/accounts/profile.html')
+SETUP_NEW_PASSWD_PAGE_HTML = lambda r: ('gsmrepiter' +'/accounts/set_up_new_passwd.html')
+CART_PAGE_HTML = lambda r: ('gsmrepiter' +'/commerce/cart.html')
+CHECKOUT_PAGE_HTML = lambda r: ('gsmrepiter' +'/commerce/checkout.html')
+CHECKOUT_CONFIRMED_HTML = lambda r: ('gsmrepiter' + '/commerce/checkout_confirmed.html')
+BLOG_INDEX_HTML = lambda r: ('gsmrepiter' + '/blog/index.html')
+BLOG_ARTICLELIST_HTML = lambda r: ('gsmrepiter' + '/blog/articlelist.html')
+BLOG_ARTICLE_HTML = lambda r: ('gsmrepiter' + '/blog/article.html')
 
 SINGLE_SHOP = True

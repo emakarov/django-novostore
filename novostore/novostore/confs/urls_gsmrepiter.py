@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.defaults import *
 from novostore.urls import *
 
 urlpatterns = patterns('',
@@ -11,3 +11,6 @@ urlpatterns = patterns('',
     #(r'^objects/$', 'blog.views.blogtermpage', {'termslug' : 'objects' }),
     (r'^faq/$', 'blog.views.blogtermpage', {'termslug' : 'faq' }),
 ) + urlpatterns
+
+handler404 = 'blog.views.index'
+handler500 = 'blog.views.index'
