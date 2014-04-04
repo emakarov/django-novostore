@@ -86,10 +86,12 @@ class ProductAdmin(VisibleAdmin):
 
   class Media:
     css = {
-        	#'all' : ( '/static/redactor/redactor.css', )
-        }
+      'all' : ( '/static/redactor/redactor.css', )
+    }
     js = (
-            '/static/textredactor/textredactor.js',
+      '/static/redactor/redactor.js',
+      '/static/redactor/redactorlauncher.js',
+      '/static/utils/suit-admin-csrf.js',
     )                
 
 class ProductCategoryFilterGroupItemInline(admin.TabularInline):
