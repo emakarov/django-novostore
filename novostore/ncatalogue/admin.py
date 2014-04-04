@@ -84,6 +84,14 @@ class ProductAdmin(VisibleAdmin):
   exclude = ('upc','text',)
   actions = [duplicate_product]
 
+  class Media:
+    css = {
+        	#'all' : ( '/static/redactor/redactor.css', )
+        }
+    js = (
+            '/static/textredactor/textredactor.js',
+    )                
+
 class ProductCategoryFilterGroupItemInline(admin.TabularInline):
   model = ProductCategoryFilterGroupItem
 
