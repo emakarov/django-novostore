@@ -72,6 +72,16 @@ class CategoryAdmin(VisibleAdmin, MPTTModelAdmin, SortableModelAdmin):
   list_display = ['name','shop']
   sortable = 'order'
   #inlines = [CategoryInline,]
+
+  class Media:
+    css = {
+      'all' : ( '/static/redactor/redactor.css', )
+    }
+    js = (
+      '/static/redactor/redactor.js',
+      '/static/redactor/redactorlauncher.js',
+      '/static/utils/suit-admin-csrf.js',
+    )                
   
 
 class ProductAdmin(VisibleAdmin):
