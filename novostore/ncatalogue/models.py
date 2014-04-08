@@ -48,7 +48,9 @@ class Category(MPTTModel):
   order = models.PositiveIntegerField()
   shop = models.ForeignKey(shop_models.Shop,verbose_name = _("Shop"),related_name='categories')
   photo = models.ForeignKey(Photo, null=True, blank=True,verbose_name=_("Photo"))
-  description =  models.CharField(_("Description"), max_length=255, blank=True, default='', help_text = _("Description"),db_index=True)
+  title =  models.CharField(_("Page Title"), max_length=255, blank=True, default='', help_text = _("Page title"),db_index=True)
+  small_description =  models.CharField(_("Small Description"), max_length=255, blank=True, default='', help_text = _("Small Description for SEO"),db_index=True)
+  description =  models.TextField(_("Description"), blank=True, default='', help_text = _("Description"),db_index=True)
 
 
   objects = VisibleTreeManager(Q(shop__owner=lambda r:r.user))
