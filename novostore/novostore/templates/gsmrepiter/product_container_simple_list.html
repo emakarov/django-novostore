@@ -72,7 +72,7 @@
     {{ category.small_description|default:"" }}
     </h1>
     <div id="catdescr" style="font-size:14px">
-    {{ category.long_description|safe|default:"" }}
+    {{ category.long_description|default:""|safe }}
     </div>
     </div>
     <!--
