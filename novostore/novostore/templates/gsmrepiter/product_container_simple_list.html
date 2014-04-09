@@ -69,10 +69,10 @@
     </div>
     <div class="span12">
     <h1 style="font-size:14px">
-    {{ category.small_description }}
+    {{ category.small_description|default:"" }}
     </h1>
-    <p style="font-size:14px">
-    {{ category.long_description|safe }}
+    <p id="catdescr" style="font-size:14px">
+    {{ category.long_description|safe|default:"" }}
     </p>
     </div>
     <!--

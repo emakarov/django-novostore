@@ -9,6 +9,12 @@
 {% endblock %}
 {% block additional_scripts %}
     <script>
+    
+  $(document).on('ready', function(){
+    $("#catdescr").css('top', $(document).height()-40+'px')
+  });
+
+    
     var hidden = 0
     $("#hider").on('click', function(){
     	if (hidden == 0){
