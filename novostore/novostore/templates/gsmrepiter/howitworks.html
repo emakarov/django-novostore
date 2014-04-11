@@ -5,6 +5,8 @@
             <div class="span6">
              <center class="howheader">
                {{ articles_about.all.0.title }}
+               {% if request.user.is_superuser %}<br>
+               <a href="/admin/blog/article/{{articles_about.all.0.id}}/">Редактировать</a>{% endif %}
              </center> 
              <p style="padding-top:20px">
               {{ articles_about.all.0.text|safe }}
@@ -13,6 +15,8 @@
             <div class="span6" style="padding-left:40px">
              <center  class="howheader">
                {{ articles_about.all.1.title }}
+               {% if request.user.is_superuser %}<br>
+               <a href="/admin/blog/article/{{articles_about.all.0.id}}/">Редактировать</a>{% endif %}
              </center>
              <p style="padding-top:20px">
                {{ articles_about.all.1.text|safe }}

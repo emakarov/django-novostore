@@ -6,6 +6,7 @@
       {% if forloop.counter < 5 %}
       <div class="span3"{% if forloop.first %} style="padding-left: 40px;"{% endif %}>
       <div class="indexheader">{{ a.title }}</div>
+      {% if request.user.is_superuser %}<br><a href="/admin/blog/article/{{a.id}}/">Редактировать</a>{% endif %}
       <p>
       {{ a.text|safe }}
       </p>
