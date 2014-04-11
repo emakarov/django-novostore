@@ -20,9 +20,6 @@
 	  </div>
 	  <div class="modal-body">
 	  <div id="request_product_name"><h4>{{product.name}}</h4></div>
-	  {% if request.user.is_superuser %}
-	        <br><a href="/admin/ncatalogue/product/{{product.id}}/">Редактировать</a>{% endif %}
-
 	  <form id="sendrequestform_product" class="form-horizontal" style="padding-top:10px">
 	  {% csrf_token %}
           <input type="hidden" name="leadform" value="sendrequestform_product">
@@ -78,6 +75,11 @@
       Заказать
     </div>
     </h4>
+	  {% if request.user.is_superuser %}
+	        <br><a href="/admin/ncatalogue/product/{{product.id}}/">Редактировать</a>{% endif %}
+
+
+
     <!--
     <p>
     {% trans "Regular price" %}
