@@ -13,9 +13,9 @@
     </div>
     <div class="span5 freeconsb">
       <div class="h">Закажите бесплатную консультацию</div>
-      <form id="sendconsform" class="form-horizontal" style="color:#000;">
-        <input type="hidden" name="csrfmiddlewaretoken" value="XCkKwV08ItM1mOGv24QCna4OVRMblzsj">
-        <input type="hidden" name="leadform" value="sendconsform">
+      <form id="sendrequestform_engineer" class="form-horizontal" style="color:#000;">
+        {% csrf_token %}
+        <input type="hidden" name="leadform" value="sendrequestform_engineer">
         <div class="control-group">
           <label class="control-label" for="inputnames">Ваше имя</label>
           <div class="controls">
@@ -36,7 +36,7 @@
         </div>
         <div class="control-group">
           <div class="controls">
-          <div onclick="sendreply('#sendconsform')" class="btn btn-brand-priem">Отправить заявку инженеру</div>
+          <div onclick="sendreply('#sendrequestform_engineer')" class="btn btn-brand-priem">Отправить заявку инженеру</div>
           </div>
         </div>
       </form>
@@ -120,3 +120,10 @@
     </div>
   </div>
 </div>
+
+    <div id="sendrequestform_engineer_reply" style="display:none">
+	Спасибо! Наш специалист ответит Вам в ближайшее время. <br>
+	Если Вы не хотите ждать, позвоните нам! <br> 
+	Тел. +7(831)416-16-51    
+    </div>
+
