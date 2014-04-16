@@ -12,7 +12,7 @@
     
   $(document).on('ready', function(){
     $("#catdescr").css('position', 'absolute')
-    $("#catdescr").css('top', $("#wrap").height()-35+'px')
+    $("#catdescr").css('top', $(document).height()-35+'px')
   });
 
     
@@ -27,7 +27,7 @@
     	$("#filterproduct").toggle();
     	$("#filterprice").toggle();
     	hidden = 1 - hidden;
-        $("#catdescr").css('top', $("#wrap").height()-35+'px')
+        $("#catdescr").css('top', $(document).height()-35+'px')
     });
     function loadfilter(){
       var catchilds = $(".catchild");
