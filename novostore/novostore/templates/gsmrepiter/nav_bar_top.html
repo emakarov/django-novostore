@@ -54,4 +54,49 @@
       </div>
 
 <div style="height:8px;width:1080px;margin:0 auto;background:#dcdcdc;"></div>
+
+    <div id="myModalPlaceorder1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-header">
+	      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	      <h3 id="myModalLabel">Заказать звонок</h3>
+	    </div>
+    
+    <div class="modal-body">
+    <div id="request_product_name"><h4></h4></div>
+    <form id="sendrequestform" class="form-horizontal" style="padding-top:10px">
+    {% csrf_token %}
+    <input type="hidden" name="callbackform" value="sendrequestform">
+    <div class="control-group">
+    <label class="control-label" for="inputnames">Как Вас зовут?</label>
+      <div class="controls">
+        <input type="text" name="inputnames" required>
+      </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputphones">Номер телефона</label>
+      <div class="controls">
+        <input type="text" name="inputphones" required>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="btn btn-brand-priem" onclick="sendreply('#sendrequestform')">Отправить запрос</div>
+      </div>
+    </div>
+    </form>
+    </div>
+    
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+    </div>
+    </div>
+
+
+    </div>
+    
+    <div id="sendrequestform_reply" style="display:none">
+	Спасибо! Мы Вам позвоним в ближайшее время. <br>
+	Предлагаем ознакомиться с <a href='/repeaters'>каталогом оборудования</a>
+    </div>
+
     
