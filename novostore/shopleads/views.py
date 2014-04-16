@@ -37,7 +37,7 @@ def sendreply(request):
     c = Context({ 'leadcontent' : leadcontent})
     message = leadformtemplate.render(c)
     try:
-      mail.send_mail(subj, message, request.shop.server_email , [ request.shop.contact_email ])
+      mail.send_mail(subj, message, request.shop.server_email , request.shop.contact_email.split(",") )
     except:
       pass
     #print message.encode('utf-8')
