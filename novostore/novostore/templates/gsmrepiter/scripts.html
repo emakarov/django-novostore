@@ -77,11 +77,8 @@ $.fn.serializeObject = function()
 };
 function sendreply(id){
   var datasend = $(id).serializeObject();
-  console.log(datasend);
+  var replyhtml = $(id+"_reply").html()
   $.post('/sendreply/', datasend, function(data) {
-    var replyhtml = "Спасибо. <br><br> Ваша заявка обрабатывается. Наш менеджер свяжется с Вами в ближайшее время." ;
-    replyhtml += "<br><br>Если Вы не хотите ждать, позвоните нам по телефону 8-831-415-16-51, или ознакомьтесь "; 
-    replyhtml += "<a href='/repeaters'>с каталогом товаров</a>"
     $(id).html(replyhtml);
   });
 }
