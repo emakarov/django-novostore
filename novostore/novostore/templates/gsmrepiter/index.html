@@ -21,7 +21,7 @@
      font-weight: normal;
     }
     .sbtl{
-    background-image:url({{STATIC_URL}}/subtlenet/subtlenet2.png);
+    background-image:url(/static//subtlenet/subtlenet2.png);
     }
     .navbar-inner {
       padding-left:200px;
@@ -90,7 +90,7 @@
 	letter-spacing: 1px;
 	font-size: 11px;
 	font-family: 'PTSansNarrowBold', Arial, sans-serif;
-	background-image: url({{STATIC_URL}}img/block-note-bg.png);
+	background-image: url(/static/img/block-note-bg.png);
 	background-repeat: no-repeat;
 	cursor: default;
     }
@@ -150,7 +150,7 @@
        text-decoration:underline;cursor:pointer;cursor:hand;
       }
       
-      {% block carouselcss %}
+      
       
       .carousel-indicators {
       	left: 50%;
@@ -194,7 +194,7 @@
       .carousel-inner>.item {
        height: 280px;
       }
-      {% endblock %}
+      
       
       ul, ol {
       	padding: 0;
@@ -357,6 +357,8 @@
 
   <style>
   {% block additional_head %}
+
+  
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 1080px;
   }
@@ -413,7 +415,231 @@ border-radius: 4px;
 box-shadow: none;
 }
 
+  
+
+
   {% endblock %}
+  
+  {% block kereal %}
+
+  .troublesq {
+    margin-top: 20px;
+    }
+    .troublesq .h {
+      font-size: 16px;
+      margin-bottom: 24px;
+      color: #13a844;
+      text-decoration: underline;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      }
+    .troublesq ul {
+      margin-left: 8px;
+      list-style: none;
+      font-size: 16px;
+      }
+      .troublesq li {
+        margin-bottom: 4px;
+        }
+      .troublesq .fa {
+        color: rgb(250, 209, 2);
+        text-shadow: 0 1px 0 rgb(187, 160, 53);
+        }
+  .freeconsb {
+    margin-top: 20px;
+    }
+    .freeconsb .h {
+      font-size: 16px;
+      margin-bottom: 24px;
+      color: #13a844;
+      text-decoration: underline;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      white-space: nowrap;
+      }
+    .freeconsb .control-label {
+      text-align: left;
+      width: 110px;
+      }
+    .freeconsb .controls {
+      margin-left: 110px;
+      }
+
+  .actionb {
+    margin-top: 20px;
+    }
+    .actionb .h {
+      font-size: 16px;
+      margin-bottom: 24px;
+      color: #13a844;
+      text-decoration: underline;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      }
+  .servsteps {
+    margin-top: 36px;
+    margin-bottom: 38px;
+    }
+  .servsteps .h {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 36px;
+    }
+  .servsteps .steps {
+    margin: 0 54px;
+    padding: 0;
+    list-style: none;
+    }
+    .servsteps .steps li {
+      float: left;
+      position: relative;
+      width: 33.33%;
+      text-align: center;
+      }
+      .servsteps .steps .txt {
+        font-size: 20px;
+        }
+    .steps .icon .fa {
+      text-align: center;
+      display: inline-block;
+      width: 110px;
+      height: 110px;
+      line-height: 106px;
+      border: 1px solid #e3e3e3;
+      background: linear-gradient(to bottom, #fff 45%, #f6f6f6 100%) #fff;
+      border-radius: 5px;
+      font-size: 64px;
+      color: #2883CA;
+      margin-bottom: 12px;
+      text-shadow: 0 1px 1px #ddd;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      }
+  .steps .str {
+    position: absolute;
+    top: 35px;
+    right: -18px;
+    font-size: 44px;
+    color: #13a844;
+    }
+.wewarrb {
+  font-size: 18px;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  padding-bottom: 38px;
+  border-bottom: 1px solid #f3f3f3;
+  }
+  .wewarrb .h {
+    font-size: 24px;
+    margin-bottom: 22px;
+    }
+  .wewarrb ul {
+    padding: 0;
+    margin-left: 16px;
+    list-style: none;
+    }
+    .wewarrb li {
+      margin-bottom: 8px;
+      }
+    .wewarrb .fa {
+      font-size: 18px;
+      color: #13a844;
+      margin-right: 12px;
+      }
+  .wewarrb .dirc .title {
+    margin-bottom: 12px;
+    }
+  .wewarrb .dirq {}
+    .wewarrb .dirq .image {
+      float: left;
+      }
+    .wewarrb .dirq .q {
+      font-size: 14px;
+      font-style: italic;
+      margin-left: 113px;
+      }
+  .fclients {
+    clear: both;
+    list-style: none;
+    border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 44px;
+    }
+    .fclients .h {
+      font-size: 24px;
+      margin-bottom: 22px;
+      text-align: center;
+      }
+    .fclients ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      }
+    .fclients li {
+      text-align: center;
+      float: left;
+      margin: 0 12px 0 0;
+      width: 114px;
+      height: 114px;
+      padding: 14px;
+      border: 1px solid #e3e3e3;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+      transition: all .75s;
+      -moz-transition: all .75s;
+      -webkit-transition: all .75s;
+      -o-transition: all .75s;
+      }
+    .fclients li:hover {
+      -ms-transform: scale(1.025);
+      -webkit-transform: scale(1.025);
+      transform: scale(1.025);
+      transition: all .15s;
+      -moz-transition: all .15s;
+      -webkit-transition: all .15s;
+      -o-transition: all .15s;
+      }
+    .fclients li:last-child {
+      margin-right: 0;
+      }
+.offdocs {}
+  .offdocs .h {
+    font-size: 24px;
+    margin-bottom: 22px;
+    text-align: center;
+    }
+  .offdocs .doc {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+    transition: all .75s;
+    -moz-transition: all .75s;
+    -webkit-transition: all .75s;
+    -o-transition: all .75s;
+    }
+  .offdocs .doc:hover {
+    -ms-transform: scale(1.025);
+    -webkit-transform: scale(1.025);
+    transform: scale(1.025);
+    transition: all .15s;
+    -moz-transition: all .15s;
+    -webkit-transition: all .15s;
+    -o-transition: all .15s;
+    border-color: #13a844;
+    }
+
+  
+  {% endblock %}
+  
+  
+  
   </style>
   </head>
   <body>
@@ -477,6 +703,45 @@ box-shadow: none;
     {% include "serviceenquiry.html" with hidecats=True index=True %}
     {% include "footer.html" %}
     {% endblock %}
+    
+      <div id="myModalPlaceorder1" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="myModalLabel">Заказать звонок</h3>
+    </div>
+    
+    <div class="modal-body">
+    <div id="request_product_name"><h4></h4></div>
+    <form id="sendrequestform" class="form-horizontal" style="padding-top:10px">
+    {% csrf_token %}
+    <input type="hidden" name="callbackform" value="sendrequestform">
+    <div class="control-group">
+    <label class="control-label" for="inputnames">Как Вас зовут?</label>
+      <div class="controls">
+        <input type="text" name="inputnames" required>
+      </div>
+    </div>
+    <div class="control-group">
+    <label class="control-label" for="inputphones">Номер телефона</label>
+      <div class="controls">
+        <input type="text" name="inputphones" required>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <div class="btn btn-brand-priem" onclick="sendreply('#sendrequestform')">Отправить запрос</div>
+      </div>
+    </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+    </div>
+  </div>
+
+
+    </div>
+    
 
 	<div id="myModalPlaceorder" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
@@ -567,6 +832,9 @@ box-shadow: none;
     $('.carousel').carousel()
     $('.placeorder').on('click',function(){
     	$('#myModalPlaceorder').modal('show');
+    });
+    $('.placeorder1').on('click',function(){
+      $('#myModalPlaceorder1').modal('show');
     });
     </script>
     {% endblock %}
