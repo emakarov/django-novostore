@@ -9,7 +9,7 @@
 {% endblock %}
 {% block additional_scripts %}
     <script>
-    
+  var initial_h = 0;
   $(document).on('ready', function(){
     $("#catdescr").css('position', 'absolute')
     $("#catdescr").css('top', $(document).height()-35+'px')
@@ -18,6 +18,7 @@
     
     var hidden = 0
     $("#hider").on('click', function(){
+        $("#catdescr").hide();
     	if (hidden == 0){
     	  $("#hider").html('показать фильтр');
     	}
@@ -27,7 +28,8 @@
     	$("#filterproduct").toggle();
     	$("#filterprice").toggle();
     	hidden = 1 - hidden;
-        $("#catdescr").css('top', $(document).height()-35+'px')
+        $("#catdescr").css('top', $(document).height()-35+'px');
+        $("#catdescr").show();
     });
     function loadfilter(){
       var catchilds = $(".catchild");
