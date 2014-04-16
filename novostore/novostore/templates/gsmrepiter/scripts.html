@@ -77,7 +77,7 @@ $.fn.serializeObject = function()
 };
 function sendreply(id){
   var datasend = $(id).serializeObject();
-  var replyhtml = $(id+"_reply").html()
+  var replyhtml = $(id+"_reply").html();
   $.post('/sendreply/', datasend, function(data) {
     $(id).html(replyhtml);
   });
