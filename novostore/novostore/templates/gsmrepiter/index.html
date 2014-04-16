@@ -800,6 +800,9 @@ box-shadow: none;
     {% block additional_scripts %}
     <script>
     $('.carousel').carousel()
+    </script>
+    {% endblock %}
+    <script>
     $('.placeorder').on('click',function(){
     	$('#myModalPlaceorder').modal('show');
     });
@@ -807,6 +810,6 @@ box-shadow: none;
       $('#myModalPlaceorder1').modal('show');
     });
     </script>
-    {% endblock %}
+
   </body>
 </html>
