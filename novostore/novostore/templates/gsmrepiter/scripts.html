@@ -82,7 +82,7 @@ $.fn.serializeObject = function()
 function sendreply(id){
   var datasend = $(id).serializeObject();
   var replyhtml = $(id+"_reply").html();
-  if ($(id).parsley().validate() {
+  if ($(id).parsley().validate() ){
     $.post('/sendreply/', datasend, function(data) {
       $(id).html(replyhtml);
     });
