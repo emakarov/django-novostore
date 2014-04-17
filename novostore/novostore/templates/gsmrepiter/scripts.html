@@ -82,10 +82,14 @@ $.fn.serializeObject = function()
 function sendreply(id){
   var datasend = $(id).serializeObject();
   var replyhtml = $(id+"_reply").html();
-  if ($(id).parsley().validate() ){
+  var valid = $(id).parsley().validate() ;
+  if ( valid ){
     $.post('/sendreply/', datasend, function(data) {
       $(id).html(replyhtml);
     });
+  }
+  else{
+    $("#catdescr").css('top', parseInt($("#catdescr").css('top').replace("px",""))+20+"px" )
   }
 }
 </script>
