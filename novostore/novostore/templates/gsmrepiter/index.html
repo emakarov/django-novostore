@@ -712,7 +712,7 @@ box-shadow: none;
 	  </div>
 	  <div class="modal-body">
 	  <div id="request_product_name"><h4>{{product.name}}</h4></div>
-	  <form id="sendrequestform" class="form-horizontal" style="padding-top:10px">{% csrf_token %}
+	  <form data-parsley-validate id="sendrequestform" class="form-horizontal" style="padding-top:10px">{% csrf_token %}
 	  
 	  <input type="hidden" name="leadform" value="sendrequestform">
 
@@ -734,14 +734,14 @@ box-shadow: none;
 	  <div class="control-group">
 	  <label class="control-label" for="inputphones">Контактный телефон</label>
 	    <div class="controls">
-	      <input type="text" name="inputphones">
+	      <input type="text" name="inputphones" data-parsley-minlength="7" required>
 	    </div>
 	  </div>
 
 	  <div class="control-group">
 	  <label class="control-label" for="inputemail">Email</label>
 	    <div class="controls">
-	      <input type="text" name="inputemail">
+	      <input type="text" data-parsley-type="email" name="inputemail" required>
 	    </div>
 	  </div>
 
