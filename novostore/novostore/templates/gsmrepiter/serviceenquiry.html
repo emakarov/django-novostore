@@ -2,7 +2,7 @@
   <div class="row" style="margin-left:0px;margin-right:0px;padding:20px 0 20px;background:#f4f4f4">
       <div class="span6">
       <center><h5>Заявка на осмотр помещения и монтаж оборудования.</h5></center>
-      <form id="sendrequestform_footer"  class="form-horizontal" style="color:#000;padding: 19px 19px 0;">
+      <form id="sendrequestform_footer"  class="form-horizontal" style="color:#000;padding: 19px 19px 0;" data-parsley-validate>
       {% csrf_token %}
       <input type="hidden" name="leadform" value="sendrequestform_footer">
       <div class="control-group">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputphones">Контактный телефон</label>
+        <label class="control-label" for="inputphones" data-parsley-minlength="7" required>Контактный телефон</label>
         <div class="controls">
         <input type="text" name="inputphones" placeholder="+7...">
         </div>
@@ -49,6 +49,13 @@
       <br> ул. Алексеевская, д.20, офис 1.
       </span>
       <br><br>
+
+    <div id="sendrequestform_footer_reply" style="display:none">
+	Спасибо! Наш специалист ответит Вам в ближайшее время. <br>
+	Если Вы не хотите ждать, позвоните нам! <br> 
+	Тел. +7(831)416-16-51    
+    </div>
+
       
                 <!-- Yandex.Metrika informer -->
 <a href="https://metrika.yandex.ru/stat/?id=24181999&amp;from=informer"
