@@ -16,8 +16,8 @@ var changeelementincarturl = "{% url 'commerce.views.changeelementincart' %}";
 <script src="{{STATIC_URL}}bootstrap/js/bootstrap.js"></script>
 <script src="{{STATIC_URL}}apps/js/ncatalogue.js"></script>
 <script src="{{STATIC_URL}}apps/js/commerce.js"></script>
-<script src="{{STATIC_URL}}parsley/ru.js"></script>
 <script src="{{STATIC_URL}}parsley/parsley.js"></script>
+<script src="{{STATIC_URL}}parsley/ru.js"></script>
 
 <script>
 resetitemsincart({{ cart.number_of_items.quantity__sum|default:0 }}, '');
