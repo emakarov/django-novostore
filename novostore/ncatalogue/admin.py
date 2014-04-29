@@ -93,6 +93,7 @@ class ProductAdmin(VisibleAdmin):
   ]
   exclude = ('upc','text',)
   actions = [duplicate_product]
+  list_filter = [ 'categories']
   search_fields = ['name']                                                                                                     
 
   class Media:
