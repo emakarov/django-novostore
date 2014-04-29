@@ -112,9 +112,11 @@ class VisibleChangeList(ChangeList):
                         break
 
         if use_distinct:
-            return self.model.objects.visible(request).distinct()
+#            return self.model.objects.visible(request).distinct()
+            return qs.visible(request).distinct()
         else:
-            return self.model.objects.visible(request)
+            return qs.visible(request)
+#            return self.model.objects.visible(request)
 
 class VisibleManager(models.Manager):
 
