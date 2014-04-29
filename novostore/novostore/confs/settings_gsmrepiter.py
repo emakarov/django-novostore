@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_noop
 from os import path
 import sys
 
-DEBUG = False
+DEBUG = True # False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = ['gsmrepiter.ru', 'www.gsmrepiter.ru']
