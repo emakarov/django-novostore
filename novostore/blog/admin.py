@@ -20,15 +20,16 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'publish_status')
     list_per_page = 20
     list_filter = ['user','terms']
+    search_fields = ['title','description','text']                                                                                                     
     class Media:
         css = {
-        	'all' : ( '/static/redactor/redactor.css', )
+        	#'all' : ( '/static/redactor/redactor.css', )
         }
         js = (
-            '/static/redactor/redactor.js',
-            '/static/redactor/redactorlauncher.js',
-            '/static/utils/suit-admin-csrf.js',
-            #'/static/textredactor/textredactor.js',
+            #'/static/redactor/redactor.js',
+            #'/static/redactor/redactorlauncher.js',
+            #'/static/utils/suit-admin-csrf.js',
+            '/static/textredactor/textredactor.js',
         )                
 #    inlines = [
 #        ArticleCoverInline,
